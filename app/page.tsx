@@ -45,19 +45,19 @@ export default function HomePage() {
 
       <TestimonialCarousel testimonials={[...homeContent.testimonials]} />
 
-      <section className="bg-surface pb-section pt-section" aria-labelledby="pause-heading">
+      <section className="bg-surface py-12 sm:py-14 md:py-16" aria-labelledby="pause-heading">
         <div className={siteContentFrame}>
-          <FadeIn className="flex w-full flex-col items-center py-20 text-center sm:py-24">
+          <FadeIn className="flex w-full flex-col items-center text-center">
             <h2 id="pause-heading" className="font-heading text-h2 font-light text-text">
               {homeContent.closingCta.headline}
             </h2>
-            <p className="mx-auto mt-6 max-w-measure font-body font-light leading-[1.75] text-muted">
+            <p className="mx-auto mt-5 max-w-measure font-body font-light leading-[1.75] text-muted sm:mt-6">
               {homeContent.closingCta.body}
             </p>
 
             <Link
               href={homeContent.closingCta.link.href}
-              className="mt-12 inline-flex rounded-full border border-forest/35 bg-transparent px-10 py-3 font-tag font-body text-[0.65rem] uppercase tracking-[0.32em] text-forest transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:border-forest hover:bg-almond active:translate-y-0 motion-reduce:hover:translate-y-0"
+              className="mt-8 inline-flex rounded-full border border-forest/35 bg-transparent px-10 py-3 font-tag font-body text-[0.65rem] uppercase tracking-[0.32em] text-forest transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:border-forest hover:bg-almond active:translate-y-0 motion-reduce:hover:translate-y-0 sm:mt-10"
             >
               {homeContent.closingCta.link.label}
             </Link>

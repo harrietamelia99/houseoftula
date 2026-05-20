@@ -127,7 +127,7 @@ export function SiteFooter() {
 
         <SectionRule className="mt-14 opacity-75" />
 
-        <div className="mt-8 space-y-6">
+        <div className="mt-8">
           <small className="block font-body font-light leading-relaxed text-muted">
             © 2026 {site.name}. Website by{" "}
             <a
@@ -139,9 +139,6 @@ export function SiteFooter() {
               Collectiv. Studio
             </a>
             .
-          </small>
-          <small className="block max-w-[40rem] font-body text-xs font-light italic text-muted/80">
-            No final logo pack yet  -  JPEG / screenshot references only until branded assets land ({site.ownerName}).
           </small>
         </div>
       </div>
