@@ -11,10 +11,11 @@ type SiteLogoProps = {
 
 const variantClass: Record<NonNullable<SiteLogoProps["variant"]>, string> = {
   header:
-    "h-9 max-h-10 w-auto max-w-[min(92vw,20rem)] object-contain object-left sm:h-10 sm:max-w-[22rem] md:h-11 md:max-w-[24rem]",
-  mobile: "h-9 max-h-10 w-auto max-w-[min(92vw,18rem)] object-contain object-left sm:h-10",
+    "h-6 max-h-7 w-auto max-w-[min(92vw,13rem)] object-contain object-left sm:h-7 sm:max-w-[15rem] md:h-8 md:max-w-[16rem]",
+  mobile:
+    "h-6 max-h-7 w-auto max-w-[min(92vw,12rem)] object-contain object-left sm:h-7 sm:max-w-[14rem]",
   footer:
-    "h-10 max-h-11 w-auto max-w-[min(94vw,22rem)] object-contain object-left sm:h-11 sm:max-w-[24rem]",
+    "h-6 max-h-7 w-auto max-w-[min(94vw,13rem)] object-contain object-left sm:h-7 sm:max-w-[15rem] md:h-8 md:max-w-[16rem]",
 };
 
 /**
@@ -29,7 +30,7 @@ export function SiteLogo({ priority = false, variant = "header", className = "" 
       width={1017}
       height={95}
       priority={priority}
-      sizes="(max-width: 768px) 85vw, 360px"
+      sizes="(max-width: 768px) 55vw, 240px"
       className={`${variantClass[variant]} ${className}`.trim()}
     />
   );

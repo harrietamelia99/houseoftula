@@ -22,7 +22,7 @@ export function StudioTriptych({
 }: StudioTriptychProps) {
   return (
     <section
-      className="border-border border-t bg-almond pb-section pt-8 sm:pt-10 md:pt-12"
+      className="border-border border-t bg-almond pb-0 pt-0"
       aria-labelledby="studio-intro-heading"
     >
       <div className="flex flex-col gap-14 lg:flex-row lg:items-stretch lg:gap-0">
@@ -56,7 +56,7 @@ export function StudioTriptych({
               {link.label}
             </Link>
 
-            <div className="mt-12 grid w-full gap-6 sm:grid-cols-2 lg:hidden">
+            <div className="mt-8 grid w-full gap-6 sm:grid-cols-2 lg:hidden">
               <SitePhoto src={siteImages.classThreeWarriors} alt={imageAltWide} aspect="portrait" />
               <SitePhoto src={siteImages.detailMatStretch} alt={imageAltNarrow} aspect="portrait" />
             </div>

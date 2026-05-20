@@ -35,21 +35,46 @@ def dist_rgb(
     return math.sqrt((r - br) ** 2 + (g - bg) ** 2 + (b - bb) ** 2)
 
 
+def luminance(r: int, g: int, b: int) -> float:
+    return 0.299 * r + 0.587 * g + 0.114 * b
+
+
+def smoothstep(x: float, lo: float, hi: float) -> float:
+    """Map x from [lo, hi] to [0, 1] with clamping (linear; enough for soft edges)."""
+    if x <= lo:
+        return 0.0
+    if x >= hi:
+        return 1.0
+    return (x - lo) / max(hi - lo, 1e-6)
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--src", type=Path, required=True)
     parser.add_argument("--out", type=Path, required=True)
     parser.add_argument(
-        "--edge-low",
+        "--dist-soft-low",
         type=float,
-        default=28.0,
-        help="Distance below this: fully transparent (default: 28)",
+        default=26.0,
+        help="Colour distance fully transparent below this (default: 26)",
     )
     parser.add_argument(
-        "--edge-high",
+        "--dist-soft-high",
         type=float,
-        default=36.0,
-        help="Distance above this: fully opaque white (default: 36)",
+        default=40.0,
+        help="Colour distance fully opaque above this (default: 40)",
+    )
+    parser.add_argument(
+        "--luma-soft-low",
+        type=float,
+        default=138.0,
+        help="Luminance fully transparent below this on tan fields (default: 138)",
+    )
+    parser.add_argument(
+        "--luma-soft-high",
+        type=float,
+        default=150.0,
+        help="Luminance fully opaque above this for cream/white ink (default: 150)",
     )
     parser.add_argument(
         "--max-width",
@@ -66,19 +91,24 @@ def main() -> None:
     out = Image.new("RGBA", (w, h), (0, 0, 0, 0))
     opx = out.load()
 
-    lo, hi = args.edge_low, args.edge_high
-    span = max(hi - lo, 1e-6)
+    d_lo, d_hi = args.dist_soft_low, args.dist_soft_high
+    l_lo, l_hi = args.luma_soft_low, args.luma_soft_high
 
     for j in range(h):
         for i in range(w):
             r, g, b, _ = px[i, j]
             d = dist_rgb(r, g, b, br, bg, bb)
-            if d <= lo:
-                a = 0
-            elif d >= hi:
-                a = 255
-            else:
-                a = int(round(255 * (d - lo) / span))
+            l = luminance(r, g, b)
+            # Distance alone keyed out low-contrast vertical strokes; blend with luminance.
+            a = int(
+                round(
+                    255
+                    * max(
+                        smoothstep(d, d_lo, d_hi),
+                        smoothstep(l, l_lo, l_hi),
+                    )
+                )
+            )
             if a:
                 opx[i, j] = (255, 255, 255, a)
             else:
@@ -98,7 +128,8 @@ def main() -> None:
     out.save(args.out, optimize=True)
     print(
         f"Wrote {args.out} ({out.size[0]}×{out.size[1]}) "
-        f"bg ref=({br:.1f},{bg:.1f},{bb:.1f}) edges={lo}..{hi}"
+        f"bg ref=({br:.1f},{bg:.1f},{bb:.1f}) "
+        f"dist={d_lo}..{d_hi} luma={l_lo}..{l_hi}"
     )
 
 
