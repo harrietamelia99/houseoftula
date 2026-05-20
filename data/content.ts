@@ -95,15 +95,6 @@ export const homeContent = {
     secondaryEyebrow: "House of Tula · Chew Magna",
     figureAlt:
       "Yoga instructor gently adjusting a guest in Warrior II in a bright studio with natural light",
-    ticker: [
-      "Still rooms",
-      "Slower rhythms",
-      "Breath‑led attention",
-      "Earth beneath you",
-      "Seasonal softness",
-      "Private + small gatherings",
-      "Treatments stitched with care",
-    ],
   },
   pullQuote:
     "Tula means balance in Sanskrit  -  in busy seasons, we're here to help you find yours.",

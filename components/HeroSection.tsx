@@ -14,17 +14,17 @@ export function HeroSection() {
       id="hero-section"
       className="relative isolate flex min-h-[calc(100svh_-_var(--site-header-height))] flex-col bg-forest-soft text-almond"
     >
-      {/* Full-bleed photography + read-through scrim */}
-      <div className="pointer-events-none absolute inset-0 -z-20" aria-hidden>
+      {/* Full-bleed photography + read-through scrim (scale recesses the photo; low opacity keeps it soft) */}
+      <div className="pointer-events-none absolute inset-0 -z-20 overflow-hidden" aria-hidden>
         <Image
           src={siteImages.heroFigure}
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover object-[center_28%] opacity-45 sm:object-center"
+          className="scale-[1.08] object-cover object-[center_28%] opacity-[0.28] sm:scale-110 sm:object-center"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-forest-slab/88 via-forest-soft/84 to-forest-soft/92" />
+        <div className="absolute inset-0 bg-gradient-to-b from-forest-slab/92 via-forest-soft/90 to-forest-soft/95" />
       </div>
 
       <div aria-hidden className="grain-forest pointer-events-none absolute inset-0 z-0" />
@@ -78,7 +78,7 @@ export function HeroSection() {
         </div>
       </div>
 
-      <HeroTicker phrases={hero.ticker} />
+      <HeroTicker phrases={homeContent.services.map((s) => s.title)} />
     </section>
   );
 }
