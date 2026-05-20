@@ -88,8 +88,10 @@ export const navLinks = [
 export const homeContent = {
   hero: {
     titleLines: ["A space to be.", "Not to perform."],
-    subheading:
-      "Yoga, breathwork and holistic treatments in Chew Magna, Somerset.",
+    subheadingLines: [
+      "Yoga, breathwork and holistic treatments in",
+      "Chew Magna, Somerset.",
+    ] as const,
     primaryCta: { label: "Discover Tula", href: "/about" },
     reservationCta: { label: "Enquire calmly", href: "/contact" },
     secondaryEyebrow: "House of Tula · Chew Magna",

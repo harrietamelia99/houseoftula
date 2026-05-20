@@ -53,8 +53,12 @@ export function HeroSection() {
           </FadeIn>
 
           <FadeIn delayMs={110} className="mt-12">
-            <p className="mx-auto max-w-[40ch] font-body font-light leading-[1.85] text-almond/88">
-              {hero.subheading}
+            <p className="mx-auto max-w-[min(100%,42rem)] font-body font-light leading-[1.85] text-almond/88">
+              {hero.subheadingLines.map((line) => (
+                <span key={line} className="block">
+                  {line}
+                </span>
+              ))}
             </p>
           </FadeIn>
 

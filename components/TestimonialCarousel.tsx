@@ -49,7 +49,7 @@ export function TestimonialCarousel({ testimonials }: Props) {
   return (
     <FadeIn delayMs={40}>
       <section
-        className="relative isolate overflow-hidden border-t border-sienna/22 bg-surface pb-section pt-section text-text grain-backdrop"
+        className="relative isolate overflow-hidden border-t border-sienna/22 bg-almond pb-section pt-section text-text grain-backdrop"
         aria-labelledby="kind-words-heading"
       >
         <div className={`relative z-[1] flex flex-col gap-12 lg:flex-row lg:gap-24 ${siteContentFrame}`}>

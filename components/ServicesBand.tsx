@@ -59,12 +59,12 @@ export function ServicesBand({
         <div className="mt-16 grid gap-14 lg:grid-cols-3 lg:gap-x-14 lg:gap-y-16">
           {columns.map((column, index) => (
             <FadeIn key={column.title} delayMs={40 + index * 60}>
-              <article className="flex flex-col bg-white px-8 py-10 text-left lg:min-h-[320px]">
+              <article className="flex flex-col bg-almond px-8 py-10 text-left lg:min-h-[320px]">
                 <p className="font-tag font-body text-[0.65rem] uppercase tracking-[0.36em] text-muted">{column.title}</p>
                 <p className="mt-8 font-body font-light leading-[1.8] text-text">{column.description}</p>
                 <Link
                   href={column.href}
-                  className="mt-10 inline-flex font-tag font-body text-[0.58rem] uppercase tracking-[0.32em] text-forest transition-colors hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/25 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
+                  className="mt-10 inline-flex font-tag font-body text-[0.58rem] uppercase tracking-[0.32em] text-forest transition-colors hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/25 focus-visible:ring-offset-2 focus-visible:ring-offset-almond"
                 >
                   Learn gently
                 </Link>

@@ -45,22 +45,24 @@ export default function HomePage() {
 
       <TestimonialCarousel testimonials={[...homeContent.testimonials]} />
 
-      <section className="bg-almond pb-section pt-section" aria-labelledby="pause-heading">
-        <FadeIn className="flex w-full flex-col items-center border border-border bg-surface/90 px-10 py-20 text-center sm:px-20">
-          <h2 id="pause-heading" className="font-heading text-h2 font-light text-forest">
-            {homeContent.closingCta.headline}
-          </h2>
-          <p className="mx-auto mt-6 max-w-measure font-body font-light leading-[1.75] text-muted">
-            {homeContent.closingCta.body}
-          </p>
+      <section className="bg-burnt-orange pb-section pt-section" aria-labelledby="pause-heading">
+        <div className={siteContentFrame}>
+          <FadeIn className="flex w-full flex-col items-center py-20 text-center sm:py-24">
+            <h2 id="pause-heading" className="font-heading text-h2 font-light text-almond">
+              {homeContent.closingCta.headline}
+            </h2>
+            <p className="mx-auto mt-6 max-w-measure font-body font-light leading-[1.75] text-almond/88">
+              {homeContent.closingCta.body}
+            </p>
 
-          <Link
-            href={homeContent.closingCta.link.href}
-            className="mt-12 inline-flex rounded-full border border-forest bg-forest px-10 py-3 font-tag font-body text-[0.65rem] uppercase tracking-[0.32em] text-almond transition-colors hover:border-sienna hover:bg-sienna"
-          >
-            {homeContent.closingCta.link.label}
-          </Link>
-        </FadeIn>
+            <Link
+              href={homeContent.closingCta.link.href}
+              className="mt-12 inline-flex rounded-full border border-almond/75 bg-transparent px-10 py-3 font-tag font-body text-[0.65rem] uppercase tracking-[0.32em] text-almond transition-colors hover:border-almond hover:bg-almond/15"
+            >
+              {homeContent.closingCta.link.label}
+            </Link>
+          </FadeIn>
+        </div>
       </section>
     </>
   );

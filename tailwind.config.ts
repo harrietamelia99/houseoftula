@@ -24,6 +24,8 @@ const config: Config = {
         /** Hero ticker / bridging tone */
         "forest-soft": "#6D7056",
         sienna: "#9A7844",
+        /** Closing CTA band – warm burnt orange */
+        "burnt-orange": "#B9552E",
         text: "#494A41",
         muted: "#737264",
         border: "#CFCCBD",
