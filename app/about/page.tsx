@@ -1,9 +1,10 @@
 import Link from "next/link";
 import { FadeIn } from "@/components/FadeIn";
-import { ImagePlaceholder } from "@/components/ImagePlaceholder";
+import { SitePhoto } from "@/components/SitePhoto";
 import { SectionRule } from "@/components/SectionRule";
 import { aboutPage } from "@/data/content";
 import { buildPageMeta } from "@/lib/metadata";
+import { siteImages } from "@/lib/siteImages";
 import { siteContentFrame } from "@/lib/siteLayout";
 
 export const metadata = buildPageMeta({
@@ -77,7 +78,11 @@ export default function AboutPage() {
           </FadeIn>
 
           <FadeIn delayMs={90}>
-            <ImagePlaceholder alt={aboutPage.space.imageAlt} aspectRatio="landscape" />
+            <SitePhoto
+              src={siteImages.studioDownwardDog}
+              alt={aboutPage.space.imageAlt}
+              aspect="landscape"
+            />
           </FadeIn>
         </div>
         </div>

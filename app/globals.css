@@ -39,9 +39,7 @@ body {
 }
 
 /**
- * Plain CSS mirror of Tailwind’s `max-w-content` + `px-gutter` on `siteContentFrame` (`site-frame` class).
- * If `/_next/static/css/...` fails or Tailwind utilities don’t apply, gutters and max width still match the nav
- * instead of going full-bleed with inline links glued together.
+ * Plain CSS mirror of `siteContentFrame` (`site-frame` class) — same cap + gutters as the nav sitewide.
  */
 .site-frame {
   box-sizing: border-box;
@@ -52,7 +50,6 @@ body {
   padding-left: clamp(1.25rem, 4vw, 2.5rem);
   padding-right: clamp(1.25rem, 4vw, 2.5rem);
 }
-
 /* Header row + nav: readable even when utility classes are missing */
 header > div.site-frame {
   display: flex;

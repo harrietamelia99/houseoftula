@@ -94,7 +94,7 @@ export const homeContent = {
     reservationCta: { label: "Enquire calmly", href: "/contact" },
     secondaryEyebrow: "House of Tula · Chew Magna",
     figureAlt:
-      "Placeholder portrait warm studio vignette awaiting Emma's lifestyle photography beside the headline",
+      "Yoga instructor gently adjusting a guest in Warrior II in a bright studio with natural light",
     ticker: [
       "Still rooms",
       "Slower rhythms",
@@ -146,9 +146,9 @@ export const homeContent = {
       "This is yoga and wellness slowed right down — companionable guidance without pressure to strive or perform.",
     ],
     imageAlt:
-      "Placeholder for a softly lit photograph of the House of Tula studio interior in warm, natural tones",
+      "Practitioner in earthy activewear in a side stretch on a yoga mat against a calm studio wall",
     imageAltFlank:
-      "Placeholder for a vignette capturing props, linens or hands pausing beside the hearth of the studio",
+      "Small group in a sunlit studio practising a seated back-bend variation together on their mats",
     link: { label: "More about Emma", href: "/about" },
   },
   testimonials: [
@@ -197,7 +197,7 @@ export const aboutPage = {
       "Decor follows the countryside outside the door — linen, reclaimed wood touches, greenery in corners, nothing clamouring for applause. Props are thoughtfully chosen; playlists, when music features, stay low.",
     ],
     imageAlt:
-      "Placeholder for photography of trees and muted landscape near Chew Magna framing the ethos of House of Tula",
+      "Two people in Downward-Facing Dog in a bright room with wooden floors and soft daylight",
   },
   philosophy: [
     {

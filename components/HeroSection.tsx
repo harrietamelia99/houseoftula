@@ -1,8 +1,10 @@
 import Link from "next/link";
 import { FadeIn } from "@/components/FadeIn";
 import { HeroTicker } from "@/components/HeroTicker";
-import { ImagePlaceholder } from "@/components/ImagePlaceholder";
+import { SitePhoto } from "@/components/SitePhoto";
 import { homeContent } from "@/data/content";
+import { siteImages } from "@/lib/siteImages";
+import { siteContentFrame } from "@/lib/siteLayout";
 
 export function HeroSection() {
   const hero = homeContent.hero;
@@ -14,8 +16,9 @@ export function HeroSection() {
     >
       <div aria-hidden className="grain-forest pointer-events-none absolute inset-0 -z-10" />
 
-      <div className="flex min-h-0 flex-1 flex-col lg:flex-row lg:items-stretch">
-        <div className="relative z-[1] flex min-h-0 flex-1 flex-col justify-center overflow-y-auto overscroll-contain px-gutter pb-8 pt-[clamp(2.5rem,6vw,5rem)] lg:max-w-[58%] lg:overflow-visible lg:pb-16 lg:pt-[clamp(5rem,12vw,7.5rem)]">
+      <div className="flex min-h-0 flex-1 flex-col">
+        <div className={`${siteContentFrame} flex min-h-0 flex-1 flex-col lg:flex-row lg:items-stretch`}>
+          <div className="relative z-[1] flex min-h-0 flex-1 flex-col justify-center overflow-y-auto overscroll-contain pb-8 pt-[clamp(2.5rem,6vw,5rem)] lg:max-w-[58%] lg:overflow-visible lg:pb-16 lg:pt-[clamp(5rem,12vw,7.5rem)]">
           <FadeIn delayMs={0}>
             <p className="font-tag font-body text-[0.65rem] uppercase tracking-[0.34em] text-almond/60">{hero.secondaryEyebrow}</p>
           </FadeIn>
@@ -50,14 +53,26 @@ export function HeroSection() {
           </FadeIn>
 
           <FadeIn delayMs={180} className="mt-14 lg:hidden">
-            <ImagePlaceholder alt={hero.figureAlt} aspectRatio="portrait" />
+            <SitePhoto
+              src={siteImages.heroFigure}
+              alt={hero.figureAlt}
+              aspect="portrait"
+              className="mx-auto max-h-[min(640px,85vh)] w-full max-w-[560px]"
+            />
           </FadeIn>
         </div>
 
-        <div className="relative hidden lg:flex lg:min-h-0 lg:flex-[0.85] lg:items-end lg:justify-end lg:self-stretch lg:pb-28 lg:pr-gutter lg:pt-28">
+        <div className="relative hidden lg:flex lg:min-h-0 lg:flex-[0.85] lg:flex-row lg:items-center lg:justify-end lg:self-stretch lg:py-10">
           <FadeIn delayMs={90} className="w-full max-w-[560px]">
-            <ImagePlaceholder alt={hero.figureAlt} aspectRatio="portrait" />
+            <SitePhoto
+              src={siteImages.heroFigure}
+              alt={hero.figureAlt}
+              aspect="portrait"
+              priority
+              className="max-h-[min(640px,78vh)] w-full"
+            />
           </FadeIn>
+        </div>
         </div>
       </div>
 
