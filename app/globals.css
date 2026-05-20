@@ -156,9 +156,3 @@ footer nav[aria-label="Footer"] {
   }
 
 }
-
-@media (prefers-reduced-motion: reduce) {
-  .motion-safe-marquee :where(.motion-safe-marquee-track) {
-    animation: none;
-  }
-}

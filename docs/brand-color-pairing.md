@@ -7,7 +7,7 @@ This maps Emma’s identity sheet (**olive · warm brown · cream**) onto the to
 | Role on the sheet        | Tailwind tokens                    | Typical use                                      |
 |-------------------------|------------------------------------|--------------------------------------------------|
 | **Cream (lightest)**    | `almond` (#F9F8EB), `surface` (#DCD6BA) | Default page wash, headers over dark, calm cards |
-| **Muted olive**         | `olive` (#9F9C6C), `forest` (#555439)*, **`forest-slab`** (#364132), **`forest-soft`** (#6D7056) | Accent + type on almond · **home hero** uses **`forest-soft`** (lighter slab); **`forest-slab`** still suits deep bands + marquee ribbon contrast |
+| **Muted olive**         | `olive` (#9F9C6C), `forest` (#555439)*, **`forest-slab`** (#364132), **`forest-soft`** (#6D7056) | Accent + type on almond · **home hero** uses **`forest-soft`** (lighter slab); **`forest-slab`** suits deep bands and inverse panels |
 | **Warm brown / tan**    | `sienna` (#9A7844), `forest-soft`, **`burnt-orange`** (#B9552E)    | Alternate ribbon, earthy CTAs, ticker bridge     |
 
 **Note:** Section “blocks” (`bg-sienna`, `bg-surface`, `bg-forest-slab` on `#hero-section`, etc.) are independent of the sticky header. The header stays a **light almond bar** with dark text so it always contrasts the hero  -  it does not swap to a forest slab. If the whole page *looks* like one cream field, check section `bg-*` classes, not nav scroll state.
@@ -22,7 +22,7 @@ This maps Emma’s identity sheet (**olive · warm brown · cream**) onto the to
 
 Use **`text-almond`** (and almond-tint whites) on **`bg-forest-slab`** (hero + inverse header slabs), **`bg-forest`** (smaller fills), or **`bg-olive`**-leaning solids.
 
-> Hero, inverted nav labels, marquee over dark green tones.
+> Hero, inverted nav labels, deep green UI bands.
 
 ### 2. **Cream on sienna brown**
 

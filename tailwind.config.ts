@@ -21,7 +21,7 @@ const config: Config = {
          * (the legacy `forest` hex doubles as body type; alone it can read as “more cream/mud”).
          */
         "forest-slab": "#364132",
-        /** Hero ticker / bridging tone */
+        /** Hero wash / bridging tone */
         "forest-soft": "#6D7056",
         sienna: "#9A7844",
         /** Closing CTA band – warm burnt orange */
@@ -56,15 +56,6 @@ const config: Config = {
       },
       transitionTimingFunction: {
         "out-soft": "cubic-bezier(0.33, 1, 0.64, 1)",
-      },
-      keyframes: {
-        marquee: {
-          "0%": { transform: "translateX(0)" },
-          "100%": { transform: "translateX(-50%)" },
-        },
-      },
-      animation: {
-        marquee: "marquee 52s linear infinite",
       },
     },
   },

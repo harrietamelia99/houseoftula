@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "@/components/FadeIn";
-import { HeroTicker } from "@/components/HeroTicker";
 import { homeContent } from "@/data/content";
 import { siteImages } from "@/lib/siteImages";
 import { siteContentFrame } from "@/lib/siteLayout";
@@ -81,8 +80,6 @@ export function HeroSection() {
           </FadeIn>
         </div>
       </div>
-
-      <HeroTicker phrases={homeContent.services.map((s) => s.title)} />
     </section>
   );
 }
