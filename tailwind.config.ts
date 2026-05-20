@@ -51,6 +51,8 @@ const config: Config = {
       },
       transitionDuration: {
         layout: "400ms",
+        /** Hover / micro-interactions (slightly slower than layout for a calmer feel) */
+        calm: "520ms",
       },
       transitionTimingFunction: {
         "out-soft": "cubic-bezier(0.33, 1, 0.64, 1)",

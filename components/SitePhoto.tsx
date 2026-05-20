@@ -32,14 +32,14 @@ export function SitePhoto({
   const frame = border ? "border border-border bg-surface" : "";
 
   return (
-    <div className={`relative ${aspectClass[aspect]} w-full overflow-hidden ${frame} ${className}`.trim()}>
+    <div className={`group relative ${aspectClass[aspect]} w-full overflow-hidden ${frame} ${className}`.trim()}>
       <Image
         src={src}
         alt={alt}
         fill
         priority={priority}
         sizes="(min-width: 1024px) 38vw, 100vw"
-        className={`object-cover object-center ${imgClassName}`.trim()}
+        className={`object-cover object-center transition-transform duration-calm ease-out-soft will-change-transform group-hover:scale-[1.025] motion-reduce:transition-none motion-reduce:group-hover:scale-100 ${imgClassName}`.trim()}
       />
     </div>
   );

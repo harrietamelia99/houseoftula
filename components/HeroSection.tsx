@@ -68,13 +68,13 @@ export function HeroSection() {
           >
             <Link
               href={hero.primaryCta.href}
-              className="inline-flex min-h-[3rem] items-center justify-center rounded-full bg-almond px-9 py-2.5 text-center font-body text-sm font-light leading-none text-forest transition-colors hover:bg-surface sm:min-h-[52px] sm:min-w-[12rem] sm:py-0"
+              className="inline-flex min-h-[3rem] items-center justify-center rounded-full bg-almond px-9 py-2.5 text-center font-body text-sm font-light leading-none text-forest transition-[transform,background-color,box-shadow] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-surface hover:shadow-[0_12px_32px_-18px_rgba(0,0,0,0.25)] active:translate-y-0 motion-reduce:hover:translate-y-0 sm:min-h-[52px] sm:min-w-[12rem] sm:py-0"
             >
               {hero.primaryCta.label}
             </Link>
             <Link
               href={hero.reservationCta.href}
-              className="inline-flex min-h-[3rem] items-center justify-center rounded-full border border-almond/60 px-9 py-2.5 text-center font-body text-sm font-light leading-none text-almond transition-colors hover:border-almond hover:bg-almond/15 sm:min-h-[52px] sm:min-w-[12rem] sm:py-0"
+              className="inline-flex min-h-[3rem] items-center justify-center rounded-full border border-almond/60 px-9 py-2.5 text-center font-body text-sm font-light leading-none text-almond transition-[transform,border-color,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:border-almond hover:bg-almond/18 active:translate-y-0 motion-reduce:hover:translate-y-0 sm:min-h-[52px] sm:min-w-[12rem] sm:py-0"
             >
               {hero.reservationCta.label}
             </Link>

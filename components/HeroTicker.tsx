@@ -3,7 +3,7 @@ type HeroTickerProps = {
 };
 
 export function HeroTicker({ phrases }: HeroTickerProps) {
-  const ribbon = phrases.join("   ·   ");
+  const ribbon = phrases.join(" · ");
 
   return (
     <div
@@ -11,7 +11,7 @@ export function HeroTicker({ phrases }: HeroTickerProps) {
       className="motion-safe-marquee shrink-0 border-t border-almond/25 bg-forest-slab/90 shadow-[inset_0_1px_0_rgba(249,248,235,0.12)]"
     >
       <div className="relative overflow-hidden py-4">
-        <div className="motion-safe-marquee-track flex w-max animate-marquee items-center gap-32 px-10">
+        <div className="motion-safe-marquee-track flex w-max animate-marquee items-center gap-10 px-10 md:gap-14">
           <p className="font-tag font-body whitespace-nowrap text-[0.62rem] uppercase tracking-[0.34em] text-almond/80">
             {ribbon}
           </p>

@@ -9,7 +9,10 @@ type FadeInProps = {
   delayMs?: number;
 };
 
-/** Soft lift-in on reveal. Important: opacity stays at 100% so SSR, no‑JS and JS‑blocked previews are never blank. */
+/**
+ * Calm scroll reveal: gentle lift + soft opacity (never fully transparent so copy stays readable
+ * before hydration and if motion is reduced we snap to fully visible).
+ */
 
 export function FadeIn({ children, className = "", delayMs = 0 }: FadeInProps) {
   const ref = useRef<HTMLDivElement>(null);
@@ -69,8 +72,8 @@ export function FadeIn({ children, className = "", delayMs = 0 }: FadeInProps) {
   return (
     <div
       ref={ref}
-      className={`ease-out-soft transform-gpu transition-[transform] duration-[780ms] opacity-100 ${
-        entered ? "translate-y-0" : "translate-y-3"
+      className={`ease-out-soft transform-gpu transition-[transform,opacity] duration-[820ms] will-change-[transform,opacity] ${
+        entered ? "translate-y-0 opacity-100" : "translate-y-4 opacity-[0.88]"
       } ${className}`}
       style={{ transitionDelay: `${delayMs}ms` }}
     >

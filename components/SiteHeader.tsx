@@ -29,7 +29,7 @@ export function SiteHeader() {
 
   const ringOffsetTone = "focus-visible:ring-offset-almond";
 
-  const tagLinks = `font-tag font-body uppercase text-[0.68rem] tracking-[0.28em] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-olive/45 focus-visible:ring-offset-4 ${ringOffsetTone}`;
+  const tagLinks = `font-tag font-body uppercase text-[0.68rem] tracking-[0.28em] transition-[color,opacity,border-color,background-color] duration-layout ease-out-soft focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-olive/45 focus-visible:ring-offset-4 ${ringOffsetTone}`;
 
   /** Deliberately strong  -  `text-muted` on almond was easy to miss, especially on smaller / outdoor screens. */
   const inactiveNav = "text-text/85 hover:text-text";
@@ -69,7 +69,7 @@ export function SiteHeader() {
 
           <Link
             href="/contact"
-            className={`${tagLinks} rounded-full border border-olive/45 px-7 py-[0.55rem] text-olive-dark hover:border-olive hover:bg-surface hover:text-forest`}
+            className={`${tagLinks} rounded-full border border-olive/45 px-7 py-[0.55rem] text-olive-dark transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:border-olive hover:bg-surface hover:text-forest hover:-translate-y-0.5 active:translate-y-0`}
           >
             Book a class
           </Link>
@@ -104,7 +104,7 @@ export function SiteHeader() {
 
               <button
                 type="button"
-                className="font-tag font-body uppercase text-[0.65rem] tracking-[0.28em] text-muted transition-colors hover:text-text"
+                className="font-tag font-body uppercase text-[0.65rem] tracking-[0.28em] text-muted transition-colors duration-layout ease-out-soft hover:text-text"
                 onClick={() => setMenuOpen(false)}
               >
                 Close
@@ -116,7 +116,7 @@ export function SiteHeader() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="font-heading text-3xl font-light text-text"
+                  className="font-heading text-3xl font-light text-text transition-colors duration-layout ease-out-soft hover:text-olive"
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.label}
@@ -125,7 +125,7 @@ export function SiteHeader() {
 
               <Link
                 href="/contact"
-                className="mt-auto inline-flex max-w-fit rounded-full border border-forest bg-forest px-8 py-3 font-tag font-body uppercase text-[0.65rem] tracking-[0.32em] text-almond"
+                className="mt-auto inline-flex max-w-fit rounded-full border border-forest bg-forest px-8 py-3 font-tag font-body uppercase text-[0.65rem] tracking-[0.32em] text-almond transition-[transform,background-color,border-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-forest-soft hover:border-forest-soft active:translate-y-0"
                 onClick={() => setMenuOpen(false)}
               >
                 Book a class

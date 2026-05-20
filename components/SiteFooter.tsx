@@ -63,7 +63,11 @@ export function SiteFooter() {
       <div className={`${siteContentFrame}`}>
         <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_auto] md:items-start md:gap-x-16 lg:gap-x-24">
           <div>
-            <Link href="/" aria-label={`${site.name} home`}>
+            <Link
+              href="/"
+              aria-label={`${site.name} home`}
+              className="transition-opacity duration-layout ease-out-soft hover:opacity-90"
+            >
               <p className="font-heading text-3xl font-light text-text">{site.name}</p>
             </Link>
             <span className="font-tag mt-3 block font-body uppercase text-muted">{site.taglineUpper}</span>
@@ -76,7 +80,7 @@ export function SiteFooter() {
               <li className="flex gap-3">
                 <IconPhone className={iconClass} />
                 <a
-                  className="text-muted transition-colors hover:text-text"
+                  className="text-muted transition-colors duration-layout ease-out-soft hover:text-text"
                   href={`tel:${site.phoneTel}`}
                 >
                   {site.phoneDisplay}
@@ -85,7 +89,7 @@ export function SiteFooter() {
               <li className="flex gap-3">
                 <IconEnvelope className={iconClass} />
                 <a
-                  className="text-muted transition-colors hover:text-text"
+                  className="text-muted transition-colors duration-layout ease-out-soft hover:text-text"
                   href={`mailto:${site.email}`}
                 >
                   {site.email}
@@ -94,7 +98,7 @@ export function SiteFooter() {
               <li className="flex gap-3">
                 <IconInstagram className={iconClass} />
                 <a
-                  className="text-muted transition-colors hover:text-text"
+                  className="text-muted transition-colors duration-layout ease-out-soft hover:text-text"
                   href={site.instagram.url}
                   rel="noopener noreferrer"
                   target="_blank"
@@ -110,7 +114,11 @@ export function SiteFooter() {
             className="flex flex-col gap-4 font-tag font-body text-[0.6875rem] uppercase tracking-[0.28em] text-muted md:items-end md:text-right"
           >
             {navLinks.map((item) => (
-              <Link key={item.href} href={item.href} className="transition-colors hover:text-text">
+              <Link
+                key={item.href}
+                href={item.href}
+                className="transition-colors duration-layout ease-out-soft hover:text-text"
+              >
                 {item.label}
               </Link>
             ))}
@@ -126,7 +134,7 @@ export function SiteFooter() {
               href="https://collectivstudio.uk"
               target="_blank"
               rel="noreferrer noopener"
-              className="text-olive transition-colors hover:text-text"
+              className="text-olive transition-colors duration-layout ease-out-soft hover:text-text"
             >
               Collectiv. Studio
             </a>

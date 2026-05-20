@@ -47,7 +47,7 @@ export function ContactForm() {
   }
 
   const inputClass =
-    "mt-3 w-full border border-border bg-almond px-4 py-3 font-body font-light text-text caret-olive focus:border-olive focus:outline-none";
+    "mt-3 w-full border border-border bg-almond px-4 py-3 font-body font-light text-text caret-olive transition-[border-color,box-shadow] duration-layout ease-out-soft focus:border-olive focus:outline-none focus:ring-1 focus:ring-olive/35";
 
   const labelClass =
     "font-tag block font-body text-[0.6875rem] uppercase tracking-[0.28em] text-muted";
@@ -138,7 +138,7 @@ export function ContactForm() {
 
       <button
         type="submit"
-        className="border border-olive px-10 py-3 font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-olive transition-colors hover:border-olive-dark hover:bg-olive hover:text-almond"
+        className="border border-olive px-10 py-3 font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-olive transition-[background-color,border-color,color,transform] duration-layout ease-out-soft hover:border-olive-dark hover:bg-olive hover:text-almond hover:-translate-y-0.5 active:translate-y-0 motion-reduce:hover:translate-y-0"
       >
         Submit
       </button>

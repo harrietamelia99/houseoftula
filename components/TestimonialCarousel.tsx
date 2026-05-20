@@ -87,14 +87,14 @@ export function TestimonialCarousel({ testimonials }: Props) {
             <div className="mt-10 flex flex-wrap items-center gap-x-12 gap-y-4">
               <button
                 type="button"
-                className="font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-muted underline decoration-transparent decoration-2 underline-offset-8 transition-colors hover:text-forest hover:decoration-border"
+                className="font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-muted underline decoration-transparent decoration-2 underline-offset-8 transition-[color,text-decoration-color] duration-layout ease-out-soft hover:text-forest hover:decoration-border"
                 onClick={() => go(-1)}
               >
                 Prev
               </button>
               <button
                 type="button"
-                className="font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-muted underline decoration-transparent decoration-2 underline-offset-8 transition-colors hover:text-forest hover:decoration-border"
+                className="font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-muted underline decoration-transparent decoration-2 underline-offset-8 transition-[color,text-decoration-color] duration-layout ease-out-soft hover:text-forest hover:decoration-border"
                 onClick={() => go(1)}
               >
                 Next

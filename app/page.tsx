@@ -25,7 +25,7 @@ export default function HomePage() {
       <section className="border-border border-y bg-almond py-section" aria-label="Introducing balance">
         <div className={siteContentFrame}>
           <FadeIn className="mx-auto max-w-[48rem] text-center">
-            <p className="font-heading text-[clamp(1.55rem,2.8vw,2.35rem)] font-light italic leading-snug text-forest">
+            <p className="font-heading text-[clamp(1.55rem,2.8vw,2.35rem)] font-light leading-snug text-forest">
               {homeContent.pullQuote}
             </p>
           </FadeIn>
@@ -45,19 +45,19 @@ export default function HomePage() {
 
       <TestimonialCarousel testimonials={[...homeContent.testimonials]} />
 
-      <section className="bg-burnt-orange pb-section pt-section" aria-labelledby="pause-heading">
+      <section className="bg-surface pb-section pt-section" aria-labelledby="pause-heading">
         <div className={siteContentFrame}>
           <FadeIn className="flex w-full flex-col items-center py-20 text-center sm:py-24">
-            <h2 id="pause-heading" className="font-heading text-h2 font-light text-almond">
+            <h2 id="pause-heading" className="font-heading text-h2 font-light text-text">
               {homeContent.closingCta.headline}
             </h2>
-            <p className="mx-auto mt-6 max-w-measure font-body font-light leading-[1.75] text-almond/88">
+            <p className="mx-auto mt-6 max-w-measure font-body font-light leading-[1.75] text-muted">
               {homeContent.closingCta.body}
             </p>
 
             <Link
               href={homeContent.closingCta.link.href}
-              className="mt-12 inline-flex rounded-full border border-almond/75 bg-transparent px-10 py-3 font-tag font-body text-[0.65rem] uppercase tracking-[0.32em] text-almond transition-colors hover:border-almond hover:bg-almond/15"
+              className="mt-12 inline-flex rounded-full border border-forest/35 bg-transparent px-10 py-3 font-tag font-body text-[0.65rem] uppercase tracking-[0.32em] text-forest transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:border-forest hover:bg-almond active:translate-y-0 motion-reduce:hover:translate-y-0"
             >
               {homeContent.closingCta.link.label}
             </Link>

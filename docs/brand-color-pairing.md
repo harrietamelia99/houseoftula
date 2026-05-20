@@ -8,7 +8,7 @@ This maps Emma’s identity sheet (**olive · warm brown · cream**) onto the to
 |-------------------------|------------------------------------|--------------------------------------------------|
 | **Cream (lightest)**    | `almond` (#F9F8EB), `surface` (#DCD6BA) | Default page wash, headers over dark, calm cards |
 | **Muted olive**         | `olive` (#9F9C6C), `forest` (#555439)*, **`forest-slab`** (#364132), **`forest-soft`** (#6D7056) | Accent + type on almond · **home hero** uses **`forest-soft`** (lighter slab); **`forest-slab`** still suits deep bands + marquee ribbon contrast |
-| **Warm brown / tan**    | `sienna` (#9A7844), `forest-soft`, **`burnt-orange`** (#B9552E)    | Alternate ribbon, earthy CTAs, ticker bridge; **closing “Ready to pause?”** band |
+| **Warm brown / tan**    | `sienna` (#9A7844), `forest-soft`, **`burnt-orange`** (#B9552E)    | Alternate ribbon, earthy CTAs, ticker bridge     |
 
 **Note:** Section “blocks” (`bg-sienna`, `bg-surface`, `bg-forest-slab` on `#hero-section`, etc.) are independent of the sticky header. The header stays a **light almond bar** with dark text so it always contrasts the hero  -  it does not swap to a forest slab. If the whole page *looks* like one cream field, check section `bg-*` classes, not nav scroll state.
 
@@ -30,11 +30,11 @@ Use **`text-almond`** / **`border-almond/`*** on **`bg-sienna`**.
 
 > Services ribbon, earthy blocks where you still want softness, not stark white.
 
-### 2b. **Cream on burnt orange**
+### 2b. **Type on raw linen (`surface`)**
 
-Use **`text-almond`** / **`text-almond/88`** on **`bg-burnt-orange`** with a light outline button (`border-almond`, ghost fill on hover).
+Use **`text-text`** / **`text-muted`** on **`bg-surface`** (#DCD6BA); outline buttons with **`border-forest/`*** and **`text-forest`**.
 
-> Home closing CTA ("Ready to pause?").
+> Home closing CTA (“Ready to pause?”), editorial panels on linen.
 
 ### 3. **Olive / forest on cream / linen**
 
