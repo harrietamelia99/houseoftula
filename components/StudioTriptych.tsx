@@ -21,7 +21,10 @@ export function StudioTriptych({
   imageAltNarrow,
 }: StudioTriptychProps) {
   return (
-    <section className="border-border border-t bg-almond py-section" aria-labelledby="studio-intro-heading">
+    <section
+      className="border-border border-t bg-almond pb-section pt-8 sm:pt-10 md:pt-12"
+      aria-labelledby="studio-intro-heading"
+    >
       <div className="flex flex-col gap-14 lg:flex-row lg:items-stretch lg:gap-0">
         <FadeIn className="hidden min-h-0 min-w-0 shrink-0 lg:flex lg:flex-1 lg:self-stretch">
           <SitePhoto

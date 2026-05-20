@@ -1,5 +1,7 @@
 import Link from "next/link";
+import type { CSSProperties } from "react";
 import { FadeIn } from "@/components/FadeIn";
+import { siteImages } from "@/lib/siteImages";
 import { siteContentFrame } from "@/lib/siteLayout";
 
 export type ServicesBandCard = {
@@ -9,7 +11,6 @@ export type ServicesBandCard = {
 };
 
 type ServicesBandProps = {
-  monogram?: string;
   eyebrow?: string;
   heading: string;
   lead: string;
@@ -19,7 +20,6 @@ type ServicesBandProps = {
 };
 
 export function ServicesBand({
-  monogram = "T",
   eyebrow,
   heading,
   lead,
@@ -42,9 +42,26 @@ export function ServicesBand({
         <div className="mx-auto mt-10 flex justify-center">
           <div
             aria-hidden
-            className="flex h-16 w-16 items-center justify-center rounded-full border border-almond/35 font-heading text-3xl font-light text-almond"
+            className="flex h-16 min-w-[6.25rem] max-w-[calc(100vw-2rem)] items-center justify-center rounded-full border border-almond/35 px-4 py-2 sm:min-w-[7rem]"
           >
-            {monogram}
+            <div
+              className="h-9 w-[5.25rem] max-w-full shrink-0 sm:h-10 sm:w-[5.75rem]"
+              style={
+                {
+                  backgroundColor: "var(--color-almond)",
+                  WebkitMaskImage: `url("${siteImages.monogramH}")`,
+                  maskImage: `url("${siteImages.monogramH}")`,
+                  WebkitMaskSize: "contain",
+                  maskSize: "contain",
+                  WebkitMaskRepeat: "no-repeat",
+                  maskRepeat: "no-repeat",
+                  WebkitMaskPosition: "center",
+                  maskPosition: "center",
+                  WebkitMaskType: "luminance",
+                  maskType: "luminance",
+                } as CSSProperties
+              }
+            />
           </div>
         </div>
 

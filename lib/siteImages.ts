@@ -2,6 +2,10 @@
  * On-disk photos in `/public/images/site`. Update when new assets are added.
  */
 export const siteImages = {
+  /** Raster wordmark (gold on black)  -  swap for SVG when a vector pack lands */
+  logoWordmark: "/images/site/logo-wordmark.png",
+  /** Decorative H monogram for services band (raster); cream via CSS mask + `--color-almond` */
+  monogramH: "/images/site/monogram-h.png",
   heroFigure: "/images/site/hero-instructor-assist.png",
   /** Studio triptych  -  desktop flanks */
   studioStretchSide: "/images/site/studio-side-stretch.png",

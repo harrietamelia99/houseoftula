@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { navLinks, site } from "@/data/content";
 import { siteContentFrame } from "@/lib/siteLayout";
+import { SiteLogo } from "@/components/SiteLogo";
 
 function lockBody(scrollLocked: boolean) {
   document.documentElement.style.overflow = scrollLocked ? "hidden" : "";
@@ -40,13 +41,11 @@ export function SiteHeader() {
       <div className={`${siteContentFrame} flex items-center justify-between gap-4 py-6 sm:gap-6 md:gap-10 md:py-7`}>
         <Link
           href="/"
-          className="group shrink-0 max-w-[18rem]"
+          className="group flex shrink-0 max-w-[min(100%,22rem)] flex-col gap-2 md:max-w-[22rem]"
           aria-label={`${site.name} home`}
         >
-          <p className="font-heading text-[clamp(1.35rem,2.4vw,2.15rem)] font-light tracking-tight text-text">
-            {site.name}
-          </p>
-          <span className="font-tag mt-2 block font-body text-[0.63rem] tracking-[0.32em] text-olive-dark/75">
+          <SiteLogo priority variant="header" />
+          <span className="font-tag font-body text-[0.63rem] tracking-[0.32em] text-olive-dark/75">
             {site.taglineUpper}
           </span>
         </Link>
@@ -97,10 +96,15 @@ export function SiteHeader() {
 
           <div id="mobile-navigation" className="relative z-10 flex h-full flex-col overflow-y-auto bg-almond px-gutter pb-14 pt-8">
             <div className="flex items-start justify-between">
-              <div>
-                <p className="font-heading text-3xl font-light text-text">{site.name}</p>
-                <p className="font-tag mt-3 text-muted">{site.taglineUpper}</p>
-              </div>
+              <Link
+                href="/"
+                className="flex flex-col gap-2"
+                aria-label={`${site.name} home`}
+                onClick={() => setMenuOpen(false)}
+              >
+                <SiteLogo variant="mobile" />
+                <p className="font-tag text-muted">{site.taglineUpper}</p>
+              </Link>
 
               <button
                 type="button"

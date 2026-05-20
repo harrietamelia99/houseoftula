@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { SVGProps } from "react";
 import { SectionRule } from "@/components/SectionRule";
+import { SiteLogo } from "@/components/SiteLogo";
 import { navLinks, site } from "@/data/content";
 import { siteContentFrame } from "@/lib/siteLayout";
 
@@ -66,9 +67,9 @@ export function SiteFooter() {
             <Link
               href="/"
               aria-label={`${site.name} home`}
-              className="transition-opacity duration-layout ease-out-soft hover:opacity-90"
+              className="flex flex-col gap-3 transition-opacity duration-layout ease-out-soft hover:opacity-90"
             >
-              <p className="font-heading text-3xl font-light text-text">{site.name}</p>
+              <SiteLogo variant="footer" />
             </Link>
             <span className="font-tag mt-3 block font-body uppercase text-muted">{site.taglineUpper}</span>
 
