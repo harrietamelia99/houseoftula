@@ -2,7 +2,7 @@
  * On-disk photos in `/public/images/site`. Update when new assets are added.
  */
 export const siteImages = {
-  /** Raster wordmark (gold on black)  -  swap for SVG when a vector pack lands */
+  /** Wordmark PNG (transparent); source asset may be re-exported from brand pack */
   logoWordmark: "/images/site/logo-wordmark.png",
   /** Decorative H monogram for services band (raster); cream via CSS mask + `--color-almond` */
   monogramH: "/images/site/monogram-h.png",

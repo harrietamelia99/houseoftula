@@ -62,63 +62,63 @@ export function SiteFooter() {
   return (
     <footer className="border-border bg-almond pb-14 pt-section">
       <div className={`${siteContentFrame}`}>
-        <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_auto] md:items-start md:gap-x-16 lg:gap-x-24">
-          <div>
-            <Link
-              href="/"
-              aria-label={`${site.name} home`}
-              className="flex flex-col gap-3 transition-opacity duration-layout ease-out-soft hover:opacity-90"
-            >
-              <SiteLogo variant="footer" />
-            </Link>
-            <span className="font-tag mt-3 block font-body uppercase text-muted">{site.taglineUpper}</span>
+        <div className="mb-10 md:mb-12">
+          <Link
+            href="/"
+            aria-label={`${site.name} home`}
+            className="inline-flex flex-col gap-3 transition-opacity duration-layout ease-out-soft hover:opacity-90"
+          >
+            <SiteLogo variant="footer" />
+          </Link>
+          <span className="font-tag mt-3 block font-body uppercase text-muted">{site.taglineUpper}</span>
+        </div>
 
-            <ul className="mt-10 space-y-4 text-[0.9375rem] font-body font-light leading-snug text-muted">
-              <li className="flex gap-3">
-                <IconMapPin className={iconClass} />
-                <span>{site.registeredAddress}</span>
-              </li>
-              <li className="flex gap-3">
-                <IconPhone className={iconClass} />
-                <a
-                  className="text-muted transition-colors duration-layout ease-out-soft hover:text-text"
-                  href={`tel:${site.phoneTel}`}
-                >
-                  {site.phoneDisplay}
-                </a>
-              </li>
-              <li className="flex gap-3">
-                <IconEnvelope className={iconClass} />
-                <a
-                  className="text-muted transition-colors duration-layout ease-out-soft hover:text-text"
-                  href={`mailto:${site.email}`}
-                >
-                  {site.email}
-                </a>
-              </li>
-              <li className="flex gap-3">
-                <IconInstagram className={iconClass} />
-                <a
-                  className="text-muted transition-colors duration-layout ease-out-soft hover:text-text"
-                  href={site.instagram.url}
-                  rel="noopener noreferrer"
-                  target="_blank"
-                >
-                  {site.instagram.handle}
-                </a>
-              </li>
-            </ul>
-          </div>
+        <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_auto] md:items-start md:gap-x-16 lg:gap-x-24">
+          <ul className="space-y-4 text-[0.9375rem] font-body font-light leading-snug text-muted">
+            <li className="flex gap-3">
+              <IconMapPin className={iconClass} />
+              <span>{site.registeredAddress}</span>
+            </li>
+            <li className="flex gap-3">
+              <IconPhone className={iconClass} />
+              <a
+                className="text-muted transition-colors duration-layout ease-out-soft hover:text-text"
+                href={`tel:${site.phoneTel}`}
+              >
+                {site.phoneDisplay}
+              </a>
+            </li>
+            <li className="flex gap-3">
+              <IconEnvelope className={iconClass} />
+              <a
+                className="text-muted transition-colors duration-layout ease-out-soft hover:text-text"
+                href={`mailto:${site.email}`}
+              >
+                {site.email}
+              </a>
+            </li>
+            <li className="flex gap-3">
+              <IconInstagram className={iconClass} />
+              <a
+                className="text-muted transition-colors duration-layout ease-out-soft hover:text-text"
+                href={site.instagram.url}
+                rel="noopener noreferrer"
+                target="_blank"
+              >
+                {site.instagram.handle}
+              </a>
+            </li>
+          </ul>
 
           <nav
             aria-label="Footer"
-            className="flex flex-col gap-4 font-tag font-body text-[0.6875rem] uppercase tracking-[0.28em] text-muted md:items-end md:text-right"
+            className="flex flex-col space-y-4 font-tag font-body text-[0.6875rem] uppercase tracking-[0.28em] text-muted md:items-end md:text-right"
           >
             {navLinks.map((item) => (
               <Link
                 key={item.href}
                 href={item.href}
-                className="transition-colors duration-layout ease-out-soft hover:text-text"
+                className="block leading-snug transition-colors duration-layout ease-out-soft hover:text-text"
               >
                 {item.label}
               </Link>

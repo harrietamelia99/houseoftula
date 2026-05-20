@@ -23,6 +23,7 @@
 # misc
 .DS_Store
 *.pem
+scripts/.python-lib/
 
 # debug
 npm-debug.log*
