@@ -12,7 +12,7 @@ export function HeroSection() {
   return (
     <section
       id="hero-section"
-      className="relative flex h-[calc(100svh_-_var(--site-header-height))] min-h-0 flex-col bg-forest-slab text-almond"
+      className="relative flex h-[calc(100svh_-_var(--site-header-height))] min-h-0 flex-col bg-forest-soft text-almond"
     >
       <div aria-hidden className="grain-forest pointer-events-none absolute inset-0 -z-10" />
 
@@ -42,13 +42,13 @@ export function HeroSection() {
           <FadeIn delayMs={150} className="mt-14 flex flex-col gap-5 sm:mt-16 sm:flex-row sm:flex-wrap sm:gap-6">
             <Link
               href={hero.primaryCta.href}
-              className="inline-flex justify-center rounded-full bg-almond px-9 py-3 text-center font-body text-sm font-light text-forest transition-colors hover:bg-surface sm:min-h-[52px] sm:min-w-[12rem]"
+              className="inline-flex min-h-[3rem] items-center justify-center rounded-full bg-almond px-9 py-2.5 text-center font-body text-sm font-light leading-none text-forest transition-colors hover:bg-surface sm:min-h-[52px] sm:min-w-[12rem] sm:py-0"
             >
               {hero.primaryCta.label}
             </Link>
             <Link
               href={hero.reservationCta.href}
-              className="inline-flex justify-center rounded-full border border-almond/60 px-9 py-3 text-center font-body text-sm font-light text-almond transition-colors hover:border-almond hover:bg-almond/15 sm:min-h-[52px] sm:min-w-[12rem]"
+              className="inline-flex min-h-[3rem] items-center justify-center rounded-full border border-almond/60 px-9 py-2.5 text-center font-body text-sm font-light leading-none text-almond transition-colors hover:border-almond hover:bg-almond/15 sm:min-h-[52px] sm:min-w-[12rem] sm:py-0"
             >
               {hero.reservationCta.label}
             </Link>

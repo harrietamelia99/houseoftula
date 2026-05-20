@@ -8,7 +8,7 @@ export function HeroTicker({ phrases }: HeroTickerProps) {
   return (
     <div
       aria-hidden
-      className="motion-safe-marquee shrink-0 border-t border-almond/20 bg-forest-soft/95 shadow-[inset_0_1px_0_rgba(249,248,235,0.14)]"
+      className="motion-safe-marquee shrink-0 border-t border-almond/25 bg-forest-slab/90 shadow-[inset_0_1px_0_rgba(249,248,235,0.12)]"
     >
       <div className="relative overflow-hidden py-4">
         <div className="motion-safe-marquee-track flex w-max animate-marquee items-center gap-32 px-10">

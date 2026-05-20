@@ -34,7 +34,8 @@ const config: Config = {
       },
       fontSize: {
         tag: ["0.75rem", { lineHeight: "1.25", letterSpacing: "0.28em" }],
-        hero: ["clamp(3rem,7vw,6rem)", { lineHeight: "1.12" }],
+        /** Home hero only — capped lower so “Not to perform.” stays one line beside the figure */
+        hero: ["clamp(2.5rem, 5.25vw, 4.35rem)", { lineHeight: "1.12" }],
         h2: ["clamp(2rem,4vw,3.5rem)", { lineHeight: "1.15" }],
         h3: ["clamp(1.25rem,2vw,1.75rem)", { lineHeight: "1.3" }],
       },
