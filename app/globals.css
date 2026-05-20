@@ -1,26 +1,167 @@
-@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --color-almond: #f9f8eb;
+  --color-surface: #dcd6ba;
+  --color-olive: #9f9c6c;
+  --color-olive-dark: #555439;
+  --color-forest: #555439;
+  --color-forest-slab: #364132;
+  --color-forest-soft: #6d7056;
+  --color-sienna: #9a7844;
+  --color-text: #494a41;
+  --color-muted: #737264;
+  --color-border: #cfccbd;
+  /**
+   * Approximate sticky header row height (logo block + py-6/md:py-7).
+   * Used so the hero can fill `100svh - header` and sit on one screen below the nav.
+   */
+  --site-header-height: 6rem;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--color-almond);
+  color: var(--color-text);
+  font-feature-settings: "kern" 1, "liga" 1;
+  text-rendering: optimizeLegibility;
+}
+
+/**
+ * Plain CSS mirror of Tailwind’s `max-w-content` + `px-gutter` on `siteContentFrame` (`site-frame` class).
+ * If `/_next/static/css/...` fails or Tailwind utilities don’t apply, gutters and max width still match the nav
+ * instead of going full-bleed with inline links glued together.
+ */
+.site-frame {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(1.25rem, 4vw, 2.5rem);
+  padding-right: clamp(1.25rem, 4vw, 2.5rem);
+}
+
+/* Header row + nav: readable even when utility classes are missing */
+header > div.site-frame {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+header nav[aria-label="Primary"] {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  column-gap: 1.25rem;
+  row-gap: 0.5rem;
+}
+
+footer nav[aria-label="Footer"] {
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2.5rem;
+  row-gap: 1rem;
+}
+
+::selection {
+  background-color: color-mix(in srgb, var(--color-olive) 34%, transparent);
+}
+
+@layer utilities {
+  /* Light panels (Almond + Raw Linen) */
+  .grain-backdrop::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.14;
+    mix-blend-mode: multiply;
+    background-image:
+      repeating-linear-gradient(
+        118deg,
+        rgba(207, 204, 189, 0.45),
+        rgba(207, 204, 189, 0.45) 1px,
+        transparent 1px,
+        transparent 58px
+      ),
+      repeating-linear-gradient(
+        32deg,
+        rgba(249, 248, 235, 0.55),
+        rgba(249, 248, 235, 0.55) 1px,
+        transparent 1px,
+        transparent 46px
+      );
+  }
+
+  /* Forest Seed full-bleed blocks */
+  .grain-forest::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.12;
+    mix-blend-mode: screen;
+    background-image:
+      repeating-linear-gradient(
+        118deg,
+        rgba(249, 248, 235, 0.15),
+        rgba(249, 248, 235, 0.15) 1px,
+        transparent 1px,
+        transparent 88px
+      ),
+      repeating-linear-gradient(
+        35deg,
+        rgba(159, 156, 108, 0.22),
+        rgba(159, 156, 108, 0.22) 1px,
+        transparent 1px,
+        transparent 112px
+      );
+  }
+
+  /* Toasted Sienna bands */
+  .grain-sienna::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: 0.1;
+    mix-blend-mode: screen;
+    background-image:
+      repeating-linear-gradient(
+        122deg,
+        rgba(249, 248, 235, 0.22),
+        rgba(249, 248, 235, 0.22) 1px,
+        transparent 1px,
+        transparent 72px
+      ),
+      repeating-linear-gradient(
+        48deg,
+        rgba(73, 74, 48, 0.15),
+        rgba(73, 74, 48, 0.15) 1px,
+        transparent 1px,
+        transparent 104px
+      );
+  }
+
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .motion-safe-marquee :where(.motion-safe-marquee-track) {
+    animation: none;
+  }
 }

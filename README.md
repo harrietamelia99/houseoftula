@@ -1,36 +1,42 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## House of Tula Website
 
-## Getting Started
+Quiet marketing site for the Chew Magna studio — Yoga, holistic treatments and seasonal gatherings.
 
-First, run the development server:
+### Stack
 
-```bash
+- Next.js App Router (`next@14`)
+- Tailwind CSS 3 tokens aligned to the House of Tula palette
+- Google Fonts wired through `next/font` (Cormorant Garamond + DM Sans)
+
+### Brand colour pairings
+
+See [`docs/brand-color-pairing.md`](docs/brand-color-pairing.md) for which cream / olive / brown combinations to use together (aligned with Emma’s identity sheet).
+
+### Content
+
+Marketing copy centralises in [`data/content.ts`](data/content.ts). **Client onboarding** (May 2026) is archived as [`docs/source/house-of-tula-website-onboarding-form-2026-05-18.csv`](docs/source/house-of-tula-website-onboarding-form-2026-05-18.csv) and summarised as the `onboardingSubmission` export so requirements stay traceable.
+
+### Local development
+
+```
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Visit [`http://localhost:3000`](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+### Troubleshooting
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+**Page looks like raw HTML (system fonts, black text, links run together).**  
+Tailwind is not loading — usually the stylesheet request to `/_next/static/css/...` failed or never ran.
 
-## Learn More
+- In the browser **Network** tab, reload and check whether `layout.css` (under `/_next/static/css/`) returns **200**. A **404** often means a stale build: stop the server, run `rm -rf .next` and `npm run dev` again (or `npm run build && npm run start` after a clean build).
+- Hard refresh: **⌘⇧R** (Safari/Chrome) or clear the cache for `localhost`.
+- Prefer your **normal browser** (Safari, Chrome). Some embedded in-IDE previews load HTML but block or mishandle dev assets; use the same URL it prints (e.g. `http://localhost:3000`).
+- Confirm the address bar is **`http://localhost:…`** (or `http://127.0.0.1:…`), not a `file://` path or an old tab from a different project/port.
 
-To learn more about Next.js, take a look at the following resources:
+The shared content frame adds a `site-frame` class with plain CSS in `app/globals.css`; if you still see no cream background and no gutters, **`globals.css` itself isn’t loading** — fix the dev server / Network error first.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### Deployment
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Optimized for Vercel. Set `NEXT_PUBLIC_SITE_URL` to the production hostname for accurate canonical URLs plus sitemap wiring.

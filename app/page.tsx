@@ -1,65 +1,67 @@
-import Image from "next/image";
+import Link from "next/link";
+import { FadeIn } from "@/components/FadeIn";
+import { HeroSection } from "@/components/HeroSection";
+import { ServicesBand } from "@/components/ServicesBand";
+import { StudioTriptych } from "@/components/StudioTriptych";
+import { TestimonialCarousel } from "@/components/TestimonialCarousel";
+import { homeContent } from "@/data/content";
+import { buildPageMeta } from "@/lib/metadata";
+import { siteContentFrame } from "@/lib/siteLayout";
 
-export default function Home() {
+export const metadata = buildPageMeta({
+  title: "Home",
+  description:
+    "Sink into slower yoga, breathwork and restorative treatments nestled in Chew Magna with House of Tula.",
+  path: "/",
+});
+
+export default function HomePage() {
+  const pillars = homeContent.services.slice(0, 3);
+
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex flex-1 w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
+    <>
+      <HeroSection />
+
+      <section className="border-border border-y bg-almond py-section" aria-label="Introducing balance">
+        <div className={siteContentFrame}>
+          <FadeIn className="mx-auto max-w-[48rem] text-center">
+            <p className="font-heading text-[clamp(1.55rem,2.8vw,2.35rem)] font-light italic leading-snug text-forest">
+              {homeContent.pullQuote}
+            </p>
+          </FadeIn>
+        </div>
+      </section>
+
+      <StudioTriptych
+        eyebrow={homeContent.aboutTeaser.studioEyebrow}
+        title={homeContent.aboutTeaser.heading}
+        paragraphs={homeContent.aboutTeaser.body}
+        link={homeContent.aboutTeaser.link}
+        imageAltWide={homeContent.aboutTeaser.imageAlt}
+        imageAltNarrow={homeContent.aboutTeaser.imageAltFlank}
+      />
+
+      <ServicesBand heading={homeContent.servicesHeading} lead={homeContent.servicesBandLead} columns={pillars} />
+
+      <TestimonialCarousel testimonials={[...homeContent.testimonials]} />
+
+      <section className="bg-almond pb-section pt-section" aria-labelledby="pause-heading">
+        <FadeIn className="flex w-full flex-col items-center border border-border bg-surface/90 px-10 py-20 text-center sm:px-20">
+          <h2 id="pause-heading" className="font-heading text-h2 font-light text-forest">
+            {homeContent.closingCta.headline}
+          </h2>
+          <p className="mx-auto mt-6 max-w-measure font-body font-light leading-[1.75] text-muted">
+            {homeContent.closingCta.body}
           </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
+
+          <Link
+            href={homeContent.closingCta.link.href}
+            className="mt-12 inline-flex rounded-full border border-forest bg-forest px-10 py-3 font-tag font-body text-[0.65rem] uppercase tracking-[0.32em] text-almond transition-colors hover:border-sienna hover:bg-sienna"
           >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+            {homeContent.closingCta.link.label}
+          </Link>
+        </FadeIn>
+      </section>
+    </>
   );
 }
