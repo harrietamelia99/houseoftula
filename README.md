@@ -1,6 +1,6 @@
 ## House of Tula Website
 
-Quiet marketing site for the Chew Magna studio — Yoga, holistic treatments and seasonal gatherings.
+Quiet marketing site for the Chew Magna studio  -  Yoga, holistic treatments and seasonal gatherings.
 
 ### Stack
 
@@ -32,14 +32,14 @@ Visit [`http://localhost:3000`](http://localhost:3000).
 ### Troubleshooting
 
 **Page looks like raw HTML (system fonts, black text, links run together).**  
-Tailwind is not loading — usually the stylesheet request to `/_next/static/css/...` failed or never ran.
+Tailwind is not loading  -  usually the stylesheet request to `/_next/static/css/...` failed or never ran.
 
 - In the browser **Network** tab, reload and check whether `layout.css` (under `/_next/static/css/`) returns **200**. A **404** often means a stale build: stop the server, run `rm -rf .next` and `npm run dev` again (or `npm run build && npm run start` after a clean build).
 - Hard refresh: **⌘⇧R** (Safari/Chrome) or clear the cache for `localhost`.
 - Prefer your **normal browser** (Safari, Chrome). Some embedded in-IDE previews load HTML but block or mishandle dev assets; use the same URL it prints (e.g. `http://localhost:3000`).
 - Confirm the address bar is **`http://localhost:…`** (or `http://127.0.0.1:…`), not a `file://` path or an old tab from a different project/port.
 
-The header and main content share `site-frame` / `siteContentFrame` in `app/globals.css` and `lib/siteLayout.ts`. If you still see no cream background and no gutters, **`globals.css` itself isn’t loading** — fix the dev server / Network error first.
+The header and main content share `site-frame` / `siteContentFrame` in `app/globals.css` and `lib/siteLayout.ts`. If you still see no cream background and no gutters, **`globals.css` itself isn’t loading**  -  fix the dev server / Network error first.
 
 ### Deployment
 

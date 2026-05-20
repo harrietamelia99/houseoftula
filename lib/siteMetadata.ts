@@ -12,7 +12,7 @@ export const siteMetadata: Metadata = {
   openGraph: {
     title: seo.titleSuffix,
     description:
-      "A grounded studio inviting stillness — yoga, breathwork, holistic treatments near Bristol.",
+      "A grounded studio inviting stillness  -  yoga, breathwork, holistic treatments near Bristol.",
     url: getSiteUrl(),
     locale: "en_GB",
     siteName: site.name,

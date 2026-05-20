@@ -128,7 +128,7 @@ export function ContactForm() {
           className={`${inputClass} min-h-[220px] resize-y leading-[1.7]`}
           id="message"
           name="message"
-          placeholder='Share whatever feels truthful — nerves are welcome.'
+          placeholder='Share whatever feels truthful  -  nerves are welcome.'
           rows={10}
           required
         />

@@ -2,7 +2,6 @@ import Link from "next/link";
 import { FadeIn } from "@/components/FadeIn";
 import { SitePhoto } from "@/components/SitePhoto";
 import { siteImages } from "@/lib/siteImages";
-import { siteContentFrame } from "@/lib/siteLayout";
 
 type StudioTriptychProps = {
   eyebrow: string;
@@ -23,18 +22,18 @@ export function StudioTriptych({
 }: StudioTriptychProps) {
   return (
     <section className="border-border border-t bg-almond py-section" aria-labelledby="studio-intro-heading">
-      <div className={siteContentFrame}>
-        <div className="flex flex-col gap-14 lg:flex-row lg:items-stretch lg:gap-16">
-        <FadeIn className="hidden min-w-0 shrink-0 lg:flex lg:flex-[0.92] lg:self-stretch">
+      <div className="flex flex-col gap-14 lg:flex-row lg:items-stretch lg:gap-0">
+        <FadeIn className="hidden min-h-0 min-w-0 shrink-0 lg:flex lg:flex-1 lg:self-stretch">
           <SitePhoto
             src={siteImages.studioStretchSide}
             alt={imageAltWide}
             aspect="portrait"
-            className="max-h-[640px] w-full"
+            border={false}
+            className="max-h-[640px] w-full border-y border-r border-border bg-surface lg:max-h-none lg:rounded-none lg:border-l-0"
           />
         </FadeIn>
 
-        <div className="flex min-w-0 flex-[1_1_auto] flex-col items-center px-0 text-center lg:max-w-[31rem] lg:shrink-0 lg:items-start lg:self-stretch lg:justify-center lg:text-left">
+        <div className="flex min-w-0 flex-[1_1_auto] flex-col items-center px-gutter text-center lg:max-w-[min(100%,31rem)] lg:flex-none lg:shrink-0 lg:items-start lg:self-stretch lg:justify-center lg:px-10 lg:text-left xl:px-12">
           <FadeIn delayMs={30}>
             <p className="font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-muted">{eyebrow}</p>
             <h2 id="studio-intro-heading" className="font-heading mt-6 text-h2 font-light leading-tight text-forest">
@@ -61,15 +60,15 @@ export function StudioTriptych({
           </FadeIn>
         </div>
 
-        <FadeIn delayMs={60} className="hidden min-w-0 shrink-0 lg:flex lg:flex-[0.92] lg:self-stretch">
+        <FadeIn delayMs={60} className="hidden min-h-0 min-w-0 shrink-0 lg:flex lg:flex-1 lg:self-stretch">
           <SitePhoto
             src={siteImages.studioGroupMermaid}
             alt={imageAltNarrow}
             aspect="portrait"
-            className="max-h-[640px] w-full"
+            border={false}
+            className="max-h-[640px] w-full border-y border-l border-border bg-surface lg:max-h-none lg:rounded-none lg:border-r-0"
           />
         </FadeIn>
-      </div>
       </div>
     </section>
   );

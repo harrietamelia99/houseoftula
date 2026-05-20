@@ -39,7 +39,7 @@ body {
 }
 
 /**
- * Plain CSS mirror of `siteContentFrame` (`site-frame` class) — same cap + gutters as the nav sitewide.
+ * Plain CSS mirror of `siteContentFrame` (`site-frame` class)  -  same cap + gutters as the nav sitewide.
  */
 .site-frame {
   box-sizing: border-box;

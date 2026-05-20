@@ -1,4 +1,4 @@
-# House of Tula — colour pairing (quick reference)
+# House of Tula  -  colour pairing (quick reference)
 
 This maps Emma’s identity sheet (**olive · warm brown · cream**) onto the tokens in **`tailwind.config.ts`** so copy, nav, and blocks stay intentional.
 
@@ -10,7 +10,7 @@ This maps Emma’s identity sheet (**olive · warm brown · cream**) onto the to
 | **Muted olive**         | `olive` (#9F9C6C), `forest` (#555439)*, **`forest-slab`** (#364132), **`forest-soft`** (#6D7056) | Accent + type on almond · **home hero** uses **`forest-soft`** (lighter slab); **`forest-slab`** still suits deep bands + marquee ribbon contrast |
 | **Warm brown / tan**    | `sienna` (#9A7844), `forest-soft`    | Alternate ribbon, earthy CTAs, ticker bridge     |
 
-**Note:** Section “blocks” (`bg-sienna`, `bg-surface`, `bg-forest-slab` on `#hero-section`, etc.) are independent of the sticky header. The header stays a **light almond bar** with dark text so it always contrasts the hero — it does not swap to a forest slab. If the whole page *looks* like one cream field, check section `bg-*` classes, not nav scroll state.
+**Note:** Section “blocks” (`bg-sienna`, `bg-surface`, `bg-forest-slab` on `#hero-section`, etc.) are independent of the sticky header. The header stays a **light almond bar** with dark text so it always contrasts the hero  -  it does not swap to a forest slab. If the whole page *looks* like one cream field, check section `bg-*` classes, not nav scroll state.
 
 \*`forest` doubles as deep green for legible headings on almond (close to **olive-green on cream** in the guidelines).
 
@@ -49,7 +49,7 @@ Avoid stacking **two saturated blocks** back-to-back (e.g. sienna beside full ol
 
 ## Navigation contrast (checklist)
 
-The sticky header is always a **light almond bar** (`bg-almond/95`, subtle border) with **dark type** (`text-text` / `text-muted`) so it reads clearly over the **forest-slab hero** and other bands. Book uses the outlined olive CTA — no forest “inverse” nav slab.
+The sticky header is always a **light almond bar** (`bg-almond/95`, subtle border) with **dark type** (`text-text` / `text-muted`) so it reads clearly over the **forest-slab hero** and other bands. Book uses the outlined olive CTA  -  no forest “inverse” nav slab.
 
 | Element        | Classes / notes                                              |
 |----------------|--------------------------------------------------------------|

@@ -3,7 +3,7 @@
  */
 export const siteImages = {
   heroFigure: "/images/site/hero-instructor-assist.png",
-  /** Studio triptych — desktop flanks */
+  /** Studio triptych  -  desktop flanks */
   studioStretchSide: "/images/site/studio-side-stretch.png",
   studioGroupMermaid: "/images/site/studio-group-mermaid.png",
   /** Mobile-only pair below triptych copy */

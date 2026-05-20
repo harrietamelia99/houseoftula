@@ -13,11 +13,11 @@ const config: Config = {
         almond: "#F9F8EB",
         surface: "#DCD6BA",
         olive: "#9F9C6C",
-        /** Same as Forest Seed — typography / links on Almond, small UI fills */
+        /** Same as Forest Seed  -  typography / links on Almond, small UI fills */
         "olive-dark": "#555439",
         forest: "#555439",
         /**
-         * Deep band for hero + inverse header slabs — clearly separates from `almond` wash on screen
+         * Deep band for hero + inverse header slabs  -  clearly separates from `almond` wash on screen
          * (the legacy `forest` hex doubles as body type; alone it can read as “more cream/mud”).
          */
         "forest-slab": "#364132",
@@ -34,7 +34,7 @@ const config: Config = {
       },
       fontSize: {
         tag: ["0.75rem", { lineHeight: "1.25", letterSpacing: "0.28em" }],
-        /** Home hero only — capped lower so “Not to perform.” stays one line beside the figure */
+        /** Home hero only  -  capped lower so “Not to perform.” stays one line beside the figure */
         hero: ["clamp(2.5rem, 5.25vw, 4.35rem)", { lineHeight: "1.12" }],
         h2: ["clamp(2rem,4vw,3.5rem)", { lineHeight: "1.15" }],
         h3: ["clamp(1.25rem,2vw,1.75rem)", { lineHeight: "1.3" }],

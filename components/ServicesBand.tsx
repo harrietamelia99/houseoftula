@@ -59,12 +59,12 @@ export function ServicesBand({
         <div className="mt-16 grid gap-14 lg:grid-cols-3 lg:gap-x-14 lg:gap-y-16">
           {columns.map((column, index) => (
             <FadeIn key={column.title} delayMs={40 + index * 60}>
-              <article className="flex flex-col border border-almond/30 bg-almond/12 px-8 py-10 text-left lg:min-h-[320px]">
-                <p className="font-tag font-body text-[0.65rem] uppercase tracking-[0.36em] text-almond/65">{column.title}</p>
-                <p className="mt-8 font-body font-light leading-[1.8] text-almond/82">{column.description}</p>
+              <article className="flex flex-col bg-white px-8 py-10 text-left lg:min-h-[320px]">
+                <p className="font-tag font-body text-[0.65rem] uppercase tracking-[0.36em] text-muted">{column.title}</p>
+                <p className="mt-8 font-body font-light leading-[1.8] text-text">{column.description}</p>
                 <Link
                   href={column.href}
-                  className="mt-10 inline-flex rounded-full border border-almond/40 px-6 py-2 font-tag font-body text-[0.58rem] uppercase tracking-[0.32em] text-almond transition-colors hover:border-almond hover:bg-almond/18 focus-visible:bg-almond focus-visible:text-forest"
+                  className="mt-10 inline-flex font-tag font-body text-[0.58rem] uppercase tracking-[0.32em] text-forest transition-colors hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/25 focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                 >
                   Learn gently
                 </Link>
@@ -82,7 +82,7 @@ export function ServicesBand({
           </Link>
 
           <p className="max-w-xl font-body text-sm font-light text-almond/70">
-            Seasonal happenings also unfurl quietly — revisit them anytime on {""}
+            Seasonal happenings also unfurl quietly  -  revisit them anytime on {""}
             <Link href="/events" className="border-b border-almond/35 pb-[1px] text-almond transition-colors hover:border-almond">
               Events + pop-ups
             </Link>

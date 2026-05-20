@@ -12,7 +12,7 @@ function lockBody(scrollLocked: boolean) {
 
 /**
  * Light bar + dark type on every route so the sticky nav always contrasts the forest hero
- * and other colour blocks — no scroll-based “inverse” forest header.
+ * and other colour blocks  -  no scroll-based “inverse” forest header.
  */
 export function SiteHeader() {
   const pathname = usePathname();
@@ -31,7 +31,7 @@ export function SiteHeader() {
 
   const tagLinks = `font-tag font-body uppercase text-[0.68rem] tracking-[0.28em] transition-colors duration-150 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-olive/45 focus-visible:ring-offset-4 ${ringOffsetTone}`;
 
-  /** Deliberately strong — `text-muted` on almond was easy to miss, especially on smaller / outdoor screens. */
+  /** Deliberately strong  -  `text-muted` on almond was easy to miss, especially on smaller / outdoor screens. */
   const inactiveNav = "text-text/85 hover:text-text";
   const activeNav = "text-text font-medium";
 
