@@ -25,7 +25,7 @@ export default function HomePage() {
       <section className="border-border border-y bg-almond py-section" aria-label="Introducing balance">
         <div className={siteContentFrame}>
           <FadeIn className="mx-auto max-w-[48rem] text-center">
-            <p className="font-heading text-[clamp(1.55rem,2.8vw,2.35rem)] font-light leading-snug text-forest">
+            <p className="font-heading text-[clamp(1.55rem,2.8vw,2.35rem)] font-light leading-[1.08] text-forest">
               {homeContent.pullQuote}
             </p>
           </FadeIn>

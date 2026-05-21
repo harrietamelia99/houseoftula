@@ -56,7 +56,7 @@ export function ServicesBand({
         </div>
 
         <FadeIn delayMs={20}>
-          <h2 id="services-band-heading" className="font-heading mx-auto mt-10 max-w-4xl text-h2 font-light leading-tight text-almond">
+          <h2 id="services-band-heading" className="font-heading mx-auto mt-10 max-w-4xl text-h2 font-light text-almond">
             {heading}
           </h2>
 

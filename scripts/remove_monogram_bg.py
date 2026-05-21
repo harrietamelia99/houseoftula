@@ -82,6 +82,11 @@ def main() -> None:
         default=1024,
         help="Resize so width <= this after crop (0 = no resize)",
     )
+    parser.add_argument(
+        "--preserve-color",
+        action="store_true",
+        help="Keep source RGB; default writes white ink for CSS masks",
+    )
     args = parser.parse_args()
 
     img = Image.open(args.src).convert("RGBA")
@@ -110,7 +115,8 @@ def main() -> None:
                 )
             )
             if a:
-                opx[i, j] = (255, 255, 255, a)
+                ink = (r, g, b, a) if args.preserve_color else (255, 255, 255, a)
+                opx[i, j] = ink
             else:
                 opx[i, j] = (0, 0, 0, 0)
 

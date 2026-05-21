@@ -61,7 +61,7 @@ export function TestimonialCarousel({ testimonials }: Props) {
             >
               Kind voices
             </p>
-            <p className="font-heading mt-6 text-h3 font-medium italic leading-[1.3] text-forest">
+            <p className="font-heading mt-6 text-h3 font-medium italic text-forest">
               Tender reflections while final words gather.
             </p>
           </div>
@@ -76,7 +76,7 @@ export function TestimonialCarousel({ testimonials }: Props) {
           >
             <blockquote
               key={current.quote}
-              className="font-heading text-[clamp(1.5rem,2.6vw,1.925rem)] font-light italic leading-[1.44] text-forest"
+              className="font-heading text-[clamp(1.5rem,2.6vw,1.925rem)] font-light italic leading-[1.1] text-forest"
               lang="en-GB"
             >
               “{current.quote}”

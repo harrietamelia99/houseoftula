@@ -32,7 +32,7 @@ export default function EventsPage() {
         <div className={siteContentFrame}>
         {happenings.length === 0 ? (
           <FadeIn className="border border-border bg-surface/90 px-10 py-20 text-center sm:px-20">
-            <p className="font-heading text-h3 font-normal italic leading-snug text-olive-dark">{eventsPage.emptyState.title}</p>
+            <p className="font-heading text-h3 font-normal italic text-olive-dark">{eventsPage.emptyState.title}</p>
             <p className="mx-auto mt-8 max-w-[36rem] font-body font-light leading-[1.75] text-muted">
               {eventsPage.emptyState.subtitle}
             </p>

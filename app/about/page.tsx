@@ -42,7 +42,7 @@ export default function AboutPage() {
             ))}
 
             <blockquote className="my-14 break-inside-avoid px-6 text-center [column-span:all]">
-              <p className="font-heading text-[clamp(1.45rem,2.7vw,1.95rem)] font-normal italic leading-[1.42] text-olive-dark">
+              <p className="font-heading text-[clamp(1.45rem,2.7vw,1.95rem)] font-normal italic leading-[1.12] text-olive-dark">
                 “{aboutPage.pullQuote}”
               </p>
             </blockquote>

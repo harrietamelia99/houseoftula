@@ -24,7 +24,7 @@ export function ServicesGrid({ eyebrow = "Offering", heading, intro, services }:
           <p className="font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-muted">
             {eyebrow}
           </p>
-          <h2 className="font-heading mt-6 max-w-4xl text-h2 font-light text-text leading-tight">
+          <h2 className="font-heading mt-6 max-w-4xl text-h2 font-light text-text">
             {heading}
           </h2>
           <p className="mt-6 max-w-measure font-body font-light leading-[1.7] text-muted">

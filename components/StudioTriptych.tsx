@@ -39,7 +39,7 @@ export function StudioTriptych({
         <div className="flex min-w-0 flex-[1_1_auto] flex-col items-center px-gutter text-center lg:max-w-[min(100%,31rem)] lg:flex-none lg:shrink-0 lg:items-start lg:self-stretch lg:justify-center lg:px-10 lg:text-left xl:px-12">
           <FadeIn delayMs={30}>
             <p className="font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-muted">{eyebrow}</p>
-            <h2 id="studio-intro-heading" className="font-heading mt-6 text-h2 font-light leading-tight text-forest">
+            <h2 id="studio-intro-heading" className="font-heading mt-6 text-h2 font-light text-forest">
               {title}
             </h2>
 
