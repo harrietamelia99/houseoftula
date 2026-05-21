@@ -28,19 +28,21 @@ export default function HomePage() {
         <div className={siteContentFrame}>
           <FadeIn className="mx-auto max-w-[48rem] text-center">
             <div className="mx-auto mb-8 flex justify-center sm:mb-10" aria-hidden>
-              <div className="flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center rounded-full border border-forest/35 sm:h-20 sm:w-20">
-                <Image
-                  src={siteImages.monogramHForest}
-                  alt=""
-                  width={465}
-                  height={362}
-                  sizes="48px"
-                  className="h-9 w-auto max-w-[2.65rem] object-contain sm:h-10 sm:max-w-[2.85rem]"
-                />
-              </div>
+              <Image
+                src={siteImages.monogramHCircle}
+                alt=""
+                width={240}
+                height={240}
+                sizes="80px"
+                className="h-[4.5rem] w-[4.5rem] object-contain sm:h-20 sm:w-20"
+              />
             </div>
             <p className="font-heading text-[clamp(1.55rem,2.8vw,2.35rem)] font-light leading-[1.08] text-forest">
-              {homeContent.pullQuote}
+              {homeContent.pullQuoteLines.map((line, index) => (
+                <span key={line} className={index > 0 ? "block" : undefined}>
+                  {line}
+                </span>
+              ))}
             </p>
           </FadeIn>
         </div>

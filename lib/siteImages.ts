@@ -8,6 +8,8 @@ export const siteImages = {
   monogramH: "/images/site/monogram-h.png",
   /** Forest-green H monogram for pull-quote band under hero */
   monogramHForest: "/images/site/monogram-h-forest.png",
+  /** Forest H inside ring — transparent PNG for pull-quote band */
+  monogramHCircle: "/images/site/monogram-h-circle.png",
   heroFigure: "/images/site/hero-instructor-assist.png",
   /** Studio triptych  -  desktop flanks */
   studioStretchSide: "/images/site/studio-side-stretch.png",

@@ -22,7 +22,7 @@ export function StudioTriptych({
 }: StudioTriptychProps) {
   return (
     <section
-      className="border-border border-t bg-almond pb-0 pt-0"
+      className="bg-almond pb-0 pt-0"
       aria-labelledby="studio-intro-heading"
     >
       <div className="flex flex-col gap-14 lg:flex-row lg:items-stretch lg:gap-0">
@@ -32,7 +32,7 @@ export function StudioTriptych({
             alt={imageAltWide}
             aspect="portrait"
             border={false}
-            className="max-h-[640px] w-full border-y border-r border-border bg-surface lg:max-h-none lg:rounded-none lg:border-l-0"
+            className="max-h-[640px] w-full border-r border-border bg-surface lg:max-h-none lg:rounded-none lg:border-l-0"
           />
         </FadeIn>
 
@@ -69,7 +69,7 @@ export function StudioTriptych({
             alt={imageAltNarrow}
             aspect="portrait"
             border={false}
-            className="max-h-[640px] w-full border-y border-l border-border bg-surface lg:max-h-none lg:rounded-none lg:border-r-0"
+            className="max-h-[640px] w-full border-l border-border bg-surface lg:max-h-none lg:rounded-none lg:border-r-0"
           />
         </FadeIn>
       </div>
