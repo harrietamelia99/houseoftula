@@ -24,11 +24,11 @@ export default function HomePage() {
     <>
       <HeroSection />
 
-      <section className="bg-monogram-ink py-section text-almond" aria-label="Introducing balance">
+      <section className="bg-surface py-section" aria-label="Introducing balance">
         <div className={siteContentFrame}>
           <FadeIn className="mx-auto max-w-[48rem] text-center">
             <div className="mx-auto mb-8 flex justify-center sm:mb-10" aria-hidden>
-              <div className="flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center rounded-full border border-almond/50 bg-almond sm:h-20 sm:w-20">
+              <div className="flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center rounded-full border border-forest/35 sm:h-20 sm:w-20">
                 <Image
                   src={siteImages.monogramHForest}
                   alt=""
@@ -39,12 +39,8 @@ export default function HomePage() {
                 />
               </div>
             </div>
-            <p className="font-heading text-[clamp(1.55rem,2.8vw,2.35rem)] font-light leading-[1.08] text-almond">
-              {homeContent.pullQuoteLines.map((line, index) => (
-                <span key={line} className={index > 0 ? "block" : undefined}>
-                  {line}
-                </span>
-              ))}
+            <p className="font-heading text-[clamp(1.55rem,2.8vw,2.35rem)] font-light leading-[1.08] text-forest">
+              {homeContent.pullQuote}
             </p>
           </FadeIn>
         </div>

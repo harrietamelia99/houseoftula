@@ -8,7 +8,6 @@
   --color-olive: #9f9c6c;
   --color-olive-dark: #555439;
   --color-forest: #555439;
-  --color-monogram-ink: #55533c;
   --color-forest-slab: #364132;
   --color-forest-soft: #6d7056;
   --color-sienna: #9a7844;
@@ -54,8 +53,8 @@ body {
 .site-header-frame {
   box-sizing: border-box;
   width: 100%;
-  padding-left: clamp(0.5rem, 1.25vw, 0.875rem);
-  padding-right: clamp(0.5rem, 1.25vw, 0.875rem);
+  padding-left: clamp(0.75rem, 1.75vw, 1.125rem);
+  padding-right: clamp(0.75rem, 1.75vw, 1.125rem);
 }
 
 header nav[aria-label="Primary"] {

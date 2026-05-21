@@ -98,10 +98,8 @@ export const homeContent = {
     figureAlt:
       "Yoga instructor gently adjusting a guest in Warrior II in a bright studio with natural light",
   },
-  pullQuoteLines: [
-    "Tula means balance in Sanskrit",
-    "— in busy seasons, we're here to help you find yours.",
-  ],
+  pullQuote:
+    "Tula means balance in Sanskrit  -  in busy seasons, we're here to help you find yours.",
   servicesIntro:
     "A quiet studio in the village. A little time carved out just for you.",
   servicesHeading: "Ways we hold your attention",
