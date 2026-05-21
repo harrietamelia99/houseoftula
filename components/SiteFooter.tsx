@@ -108,11 +108,13 @@ export function SiteFooter() {
                 {site.instagram.handle}
               </a>
             </li>
-            <li className="flex gap-3">
-              <span className="mt-0.5 h-5 w-5 shrink-0" aria-hidden />
+            <li className="flex items-center gap-3 pt-1">
+              <span className={`${iconClass} invisible`} aria-hidden>
+                <span className="block h-5 w-5" />
+              </span>
               <Link
                 href="/contact"
-                className="font-tag font-body text-[0.6875rem] uppercase tracking-[0.28em] text-olive-dark transition-colors duration-layout ease-out-soft hover:text-text"
+                className="inline-flex min-h-[2.5rem] items-center rounded-full border border-olive/45 px-6 py-2 font-tag font-body text-[0.6875rem] uppercase tracking-[0.28em] text-olive-dark transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:border-olive hover:bg-surface hover:text-forest active:translate-y-0"
               >
                 Book now
               </Link>
