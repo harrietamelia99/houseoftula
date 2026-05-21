@@ -52,7 +52,7 @@ export function SiteHeader() {
   return (
     <header className={`sticky top-0 z-50 isolate shrink-0 transition-colors duration-layout ${surface}`}>
       <div className={`${siteHeaderFrame} relative py-6 md:py-7`}>
-        <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-8">
+        <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-4 lg:gap-6">
           <nav
             aria-label="Primary"
             className="flex min-w-0 flex-wrap items-center justify-start gap-x-5 gap-y-2 lg:gap-x-7"

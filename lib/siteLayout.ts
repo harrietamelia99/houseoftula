@@ -5,5 +5,5 @@
  */
 export const siteContentFrame = "site-frame mx-auto w-full max-w-content px-gutter";
 
-/** Nav row only — slightly tighter side padding than {@link siteContentFrame}. */
-export const siteHeaderFrame = "site-header-frame mx-auto w-full max-w-content";
+/** Nav row only — full width with minimal edge padding (not capped at content width). */
+export const siteHeaderFrame = "site-header-frame w-full";

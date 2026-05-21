@@ -54,11 +54,8 @@ body {
 .site-header-frame {
   box-sizing: border-box;
   width: 100%;
-  max-width: 72rem;
-  margin-left: auto;
-  margin-right: auto;
-  padding-left: clamp(0.75rem, 2vw, 1.25rem);
-  padding-right: clamp(0.75rem, 2vw, 1.25rem);
+  padding-left: clamp(0.5rem, 1.25vw, 0.875rem);
+  padding-right: clamp(0.5rem, 1.25vw, 0.875rem);
 }
 
 header nav[aria-label="Primary"] {
