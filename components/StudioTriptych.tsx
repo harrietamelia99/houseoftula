@@ -36,7 +36,7 @@ export function StudioTriptych({
           />
         </FadeIn>
 
-        <div className="flex min-w-0 flex-[1_1_auto] flex-col items-center py-10 text-center max-lg:px-[max(1rem,env(safe-area-inset-left))] max-lg:pr-[max(1rem,env(safe-area-inset-right))] lg:max-w-[min(100%,31rem)] lg:flex-none lg:shrink-0 lg:items-start lg:self-stretch lg:justify-center lg:px-10 lg:py-0 lg:text-left xl:px-12">
+        <div className="flex min-w-0 flex-[1_1_auto] flex-col items-center py-10 pb-12 text-center max-lg:px-[max(1rem,env(safe-area-inset-left))] max-lg:pr-[max(1rem,env(safe-area-inset-right))] lg:max-w-[min(100%,31rem)] lg:flex-none lg:shrink-0 lg:items-start lg:self-stretch lg:justify-center lg:px-10 lg:py-12 lg:pb-16 lg:pt-10 lg:text-left xl:px-12 xl:pb-20">
           <FadeIn delayMs={30} className="flex w-full flex-col items-center max-lg:mx-auto max-lg:max-w-[40rem]">
             <p className="font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-muted">{eyebrow}</p>
             <h2 id="studio-intro-heading" className="font-heading mt-4 text-h2 font-light text-forest md:mt-6">
@@ -51,7 +51,7 @@ export function StudioTriptych({
 
             <Link
               href={link.href}
-              className="tap-target mt-8 inline-flex min-h-[3rem] w-full max-w-[min(100%,18rem)] items-center justify-center rounded-full border border-forest/30 bg-forest px-8 py-3 font-tag font-body text-[0.65rem] uppercase tracking-[0.32em] text-almond transition-[transform,background-color,border-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:border-sienna hover:bg-sienna hover:text-almond focus-visible:border-sienna focus-visible:bg-sienna motion-reduce:hover:translate-y-0 md:mt-10 lg:w-auto"
+              className="tap-target mt-8 inline-flex min-h-[3rem] w-full max-w-[min(100%,18rem)] items-center justify-center rounded-full border border-forest/30 bg-forest px-8 py-3 font-tag font-body text-[0.65rem] uppercase tracking-[0.32em] text-almond transition-[transform,background-color,border-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:border-sienna hover:bg-sienna hover:text-almond focus-visible:border-sienna focus-visible:bg-sienna motion-reduce:hover:translate-y-0 md:mt-10 lg:mb-2 lg:w-auto"
             >
               {link.label}
             </Link>

@@ -77,12 +77,12 @@ export function SiteFooter() {
         </div>
 
         <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-start md:gap-12 md:gap-x-16 lg:gap-x-24">
-          <ul className="space-y-4 text-[0.9375rem] font-body font-light leading-snug text-muted">
-            <li className="flex gap-3">
+          <ul className="grid grid-cols-[1.25rem_minmax(0,1fr)] items-start gap-x-3 gap-y-4 text-[0.9375rem] font-body font-light leading-snug text-muted">
+            <li className="contents">
               <IconMapPin className={iconClass} />
               <span>{site.registeredAddress}</span>
             </li>
-            <li className="flex gap-3">
+            <li className="contents">
               <IconPhone className={iconClass} />
               <a
                 className="text-muted transition-colors duration-layout ease-out-soft hover:text-text"
@@ -91,7 +91,7 @@ export function SiteFooter() {
                 {site.phoneDisplay}
               </a>
             </li>
-            <li className="flex gap-3">
+            <li className="contents">
               <IconEnvelope className={iconClass} />
               <a
                 className="text-muted transition-colors duration-layout ease-out-soft hover:text-text"
@@ -100,7 +100,7 @@ export function SiteFooter() {
                 {site.email}
               </a>
             </li>
-            <li className="flex gap-3">
+            <li className="contents">
               <IconInstagram className={iconClass} />
               <a
                 className="text-muted transition-colors duration-layout ease-out-soft hover:text-text"
@@ -111,7 +111,7 @@ export function SiteFooter() {
                 {site.instagram.handle}
               </a>
             </li>
-            <li className="pt-2">
+            <li className="col-span-2 pt-2">
               <Link href="/contact" className={footerBookCta}>
                 Book now
               </Link>
