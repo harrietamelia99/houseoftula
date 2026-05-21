@@ -60,7 +60,7 @@ const iconClass = "mt-0.5 h-5 w-5 shrink-0 text-olive/80";
 
 export function SiteFooter() {
   return (
-    <footer className="border-border bg-almond pb-14 pt-section">
+    <footer className={`border-border bg-almond pb-[max(2.5rem,env(safe-area-inset-bottom))] pt-10 md:pt-section md:pb-14`}>
       <div className={`${siteContentFrame}`}>
         <div className="mb-10 md:mb-12">
           <Link
@@ -73,7 +73,7 @@ export function SiteFooter() {
           <span className="font-tag mt-3 block font-body uppercase text-muted">{site.taglineUpper}</span>
         </div>
 
-        <div className="grid gap-12 md:grid-cols-[minmax(0,1fr)_auto] md:items-start md:gap-x-16 lg:gap-x-24">
+        <div className="grid gap-10 md:grid-cols-[minmax(0,1fr)_auto] md:items-start md:gap-12 md:gap-x-16 lg:gap-x-24">
           <ul className="space-y-4 text-[0.9375rem] font-body font-light leading-snug text-muted">
             <li className="flex gap-3">
               <IconMapPin className={iconClass} />

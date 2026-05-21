@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { FadeIn } from "@/components/FadeIn";
 import { SectionRule } from "@/components/SectionRule";
-import { siteContentFrame } from "@/lib/siteLayout";
+import { siteContentFrame, siteSectionY } from "@/lib/siteLayout";
 
 export type ServicesGridCard = {
   title: string;
@@ -18,7 +18,7 @@ type ServicesGridProps = {
 
 export function ServicesGrid({ eyebrow = "Offering", heading, intro, services }: ServicesGridProps) {
   return (
-    <section className="bg-almond py-section">
+    <section className={`bg-almond ${siteSectionY}`}>
       <div className={siteContentFrame}>
         <FadeIn className="max-w-xl">
           <p className="font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-muted">

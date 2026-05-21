@@ -8,7 +8,7 @@ import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { homeContent } from "@/data/content";
 import { buildPageMeta } from "@/lib/metadata";
 import { siteImages } from "@/lib/siteImages";
-import { siteContentFrame } from "@/lib/siteLayout";
+import { siteContentFrame, siteSectionY } from "@/lib/siteLayout";
 
 export const metadata = buildPageMeta({
   title: "Home",
@@ -24,10 +24,10 @@ export default function HomePage() {
     <>
       <HeroSection />
 
-      <section className="bg-surface py-section" aria-label="Introducing balance">
+      <section className={`bg-surface ${siteSectionY}`} aria-label="Introducing balance">
         <div className={siteContentFrame}>
           <FadeIn className="mx-auto max-w-[48rem] text-center">
-            <div className="mx-auto mb-8 flex justify-center sm:mb-10" aria-hidden>
+            <div className="mx-auto mb-6 flex justify-center md:mb-10" aria-hidden>
               <Image
                 src={siteImages.monogramHCircle}
                 alt=""
@@ -37,7 +37,7 @@ export default function HomePage() {
                 className="h-[4.5rem] w-[4.5rem] object-contain sm:h-20 sm:w-20"
               />
             </div>
-            <p className="font-heading text-[clamp(1.55rem,2.8vw,2.35rem)] font-light leading-[1.08] text-forest">
+            <p className="font-heading text-[clamp(1.35rem,5vw,2.35rem)] font-light leading-[1.08] text-forest">
               {homeContent.pullQuoteLines.map((line, index) => (
                 <span key={line} className={index > 0 ? "block" : undefined}>
                   {line}
@@ -61,19 +61,19 @@ export default function HomePage() {
 
       <TestimonialCarousel testimonials={[...homeContent.testimonials]} />
 
-      <section className="bg-surface py-12 sm:py-14 md:py-16" aria-labelledby="pause-heading">
+      <section className={`bg-surface ${siteSectionY}`} aria-labelledby="pause-heading">
         <div className={siteContentFrame}>
           <FadeIn className="flex w-full flex-col items-center text-center">
             <h2 id="pause-heading" className="font-heading text-h2 font-light text-text">
               {homeContent.closingCta.headline}
             </h2>
-            <p className="mx-auto mt-5 max-w-measure font-body font-light leading-[1.75] text-muted sm:mt-6">
+            <p className="mx-auto mt-4 max-w-measure font-body font-light leading-[1.75] text-muted md:mt-6">
               {homeContent.closingCta.body}
             </p>
 
             <Link
               href={homeContent.closingCta.link.href}
-              className="mt-8 inline-flex rounded-full border border-forest/35 bg-transparent px-10 py-3 font-tag font-body text-[0.65rem] uppercase tracking-[0.32em] text-forest transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:border-forest hover:bg-almond active:translate-y-0 motion-reduce:hover:translate-y-0 sm:mt-10"
+              className="tap-target mt-7 inline-flex min-h-[3rem] items-center justify-center rounded-full border border-forest/35 bg-transparent px-10 py-3 font-tag font-body text-[0.65rem] uppercase tracking-[0.32em] text-forest transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:border-forest hover:bg-almond active:translate-y-0 motion-reduce:hover:translate-y-0 md:mt-10"
             >
               {homeContent.closingCta.link.label}
             </Link>

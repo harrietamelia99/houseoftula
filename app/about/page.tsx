@@ -5,7 +5,7 @@ import { SectionRule } from "@/components/SectionRule";
 import { aboutPage } from "@/data/content";
 import { buildPageMeta } from "@/lib/metadata";
 import { siteImages } from "@/lib/siteImages";
-import { siteContentFrame } from "@/lib/siteLayout";
+import { siteContentFrame, sitePageHeaderTop, siteSectionTop } from "@/lib/siteLayout";
 
 export const metadata = buildPageMeta({
   title: "About",
@@ -18,8 +18,8 @@ export default function AboutPage() {
   const remainder = aboutPage.story.slice(3);
 
   return (
-    <div className="bg-almond pb-section">
-      <header className="pt-24 sm:pt-28">
+    <div className={`bg-almond pb-10 md:pb-section`}>
+      <header className={sitePageHeaderTop}>
         <div className={siteContentFrame}>
           <FadeIn>
             <h1 className="font-heading text-h2 font-light text-text">{aboutPage.title}</h1>
@@ -28,7 +28,7 @@ export default function AboutPage() {
         </div>
       </header>
 
-      <section className="pt-section">
+      <section className={siteSectionTop}>
         <div className={siteContentFrame}>
           <FadeIn>
           <article className="gap-y-6 lg:columns-2 lg:gap-x-14">

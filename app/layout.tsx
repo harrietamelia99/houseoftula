@@ -31,7 +31,7 @@ export default function RootLayout({
     <html lang="en-GB" className={`${cormorant.variable} ${dmSans.variable} h-full`}>
       <body className="flex min-h-full flex-col bg-almond font-body text-base font-light leading-[1.7] text-text antialiased">
         <SiteHeader />
-        <main className="relative w-full min-h-0 grow">{children}</main>
+        <main className="relative w-full min-h-0 grow overflow-x-clip">{children}</main>
         <SiteFooter />
       </body>
     </html>

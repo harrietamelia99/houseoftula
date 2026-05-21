@@ -3,7 +3,7 @@ import { FadeIn } from "@/components/FadeIn";
 import { SectionRule } from "@/components/SectionRule";
 import { eventsPage } from "@/data/content";
 import { buildPageMeta } from "@/lib/metadata";
-import { siteContentFrame } from "@/lib/siteLayout";
+import { siteContentFrame, sitePageHeaderTop } from "@/lib/siteLayout";
 
 export const metadata = buildPageMeta({
   title: "Events + Pop-ups",
@@ -16,7 +16,7 @@ export default function EventsPage() {
 
   return (
     <div className="bg-almond pb-section">
-      <header className="pt-24 sm:pt-28">
+      <header className={sitePageHeaderTop}>
         <div className={siteContentFrame}>
           <FadeIn>
             <h1 className="font-heading text-h2 font-light text-text">{eventsPage.title}</h1>

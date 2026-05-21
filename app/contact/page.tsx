@@ -3,7 +3,7 @@ import { FadeIn } from "@/components/FadeIn";
 import { SectionRule } from "@/components/SectionRule";
 import { contactPage, site } from "@/data/content";
 import { buildPageMeta } from "@/lib/metadata";
-import { siteContentFrame } from "@/lib/siteLayout";
+import { siteContentFrame, sitePageHeaderTop } from "@/lib/siteLayout";
 
 export const metadata = buildPageMeta({
   title: "Contact",
@@ -14,7 +14,7 @@ export const metadata = buildPageMeta({
 export default function ContactPage() {
   return (
     <div className="bg-almond pb-section">
-      <header className="pt-24 sm:pt-28">
+      <header className={sitePageHeaderTop}>
         <div className={siteContentFrame}>
           <FadeIn>
             <h1 className="font-heading text-h2 font-light text-text">{contactPage.title}</h1>

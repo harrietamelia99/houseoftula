@@ -15,10 +15,16 @@
   --color-muted: #737264;
   --color-border: #cfccbd;
   /**
-   * Approximate sticky header row height (logo block + py-6/md:py-7).
+   * Sticky header row height — matches mobile/desktop header padding in SiteHeader.
    * Used so the hero can fill `100svh - header` and sit on one screen below the nav.
    */
-  --site-header-height: 6rem;
+  --site-header-height: 4.25rem;
+}
+
+@media (min-width: 768px) {
+  :root {
+    --site-header-height: 6rem;
+  }
 }
 
 *,
@@ -29,6 +35,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -36,6 +43,8 @@ body {
   color: var(--color-text);
   font-feature-settings: "kern" 1, "liga" 1;
   text-rendering: optimizeLegibility;
+  overflow-x: clip;
+  padding-bottom: env(safe-area-inset-bottom, 0px);
 }
 
 /**
@@ -47,14 +56,29 @@ body {
   max-width: 72rem;
   margin-left: auto;
   margin-right: auto;
-  padding-left: clamp(1.25rem, 4vw, 2.5rem);
-  padding-right: clamp(1.25rem, 4vw, 2.5rem);
+  padding-left: max(1rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1rem, env(safe-area-inset-right, 0px));
 }
+
+@media (min-width: 768px) {
+  .site-frame {
+    padding-left: clamp(1.25rem, 4vw, 2.5rem);
+    padding-right: clamp(1.25rem, 4vw, 2.5rem);
+  }
+}
+
 .site-header-frame {
   box-sizing: border-box;
   width: 100%;
-  padding-left: clamp(1.5rem, 3.5vw, 2.25rem);
-  padding-right: clamp(1.5rem, 3.5vw, 2.25rem);
+  padding-left: max(1rem, env(safe-area-inset-left, 0px));
+  padding-right: max(1rem, env(safe-area-inset-right, 0px));
+}
+
+@media (min-width: 768px) {
+  .site-header-frame {
+    padding-left: clamp(1.5rem, 3.5vw, 2.25rem);
+    padding-right: clamp(1.5rem, 3.5vw, 2.25rem);
+  }
 }
 
 header nav[aria-label="Primary"] {
@@ -75,6 +99,14 @@ footer nav[aria-label="Footer"] {
 
 ::selection {
   background-color: color-mix(in srgb, var(--color-olive) 34%, transparent);
+}
+
+@layer components {
+  .tap-target {
+    min-height: 2.75rem;
+    min-width: 2.75rem;
+    touch-action: manipulation;
+  }
 }
 
 @layer utilities {

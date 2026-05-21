@@ -3,7 +3,7 @@
 import { KeyboardEvent as ReactKeyboardEvent, useEffect, useState } from "react";
 import { FadeIn } from "@/components/FadeIn";
 import { SectionRule } from "@/components/SectionRule";
-import { siteContentFrame } from "@/lib/siteLayout";
+import { siteContentFrame, siteSectionY } from "@/lib/siteLayout";
 
 type Quote = {
   quote: string;
@@ -49,10 +49,10 @@ export function TestimonialCarousel({ testimonials }: Props) {
   return (
     <FadeIn delayMs={40}>
       <section
-        className="relative isolate overflow-hidden border-t border-sienna/22 bg-almond pb-section pt-section text-text grain-backdrop"
+        className={`relative isolate overflow-hidden border-t border-sienna/22 bg-almond text-text grain-backdrop ${siteSectionY}`}
         aria-labelledby="kind-words-heading"
       >
-        <div className={`relative z-[1] flex flex-col gap-12 lg:flex-row lg:gap-24 ${siteContentFrame}`}>
+        <div className={`relative z-[1] flex flex-col gap-8 md:gap-12 lg:flex-row lg:gap-24 ${siteContentFrame}`}>
           <div className="lg:w-[30%]">
             <SectionRule />
             <p
@@ -61,7 +61,7 @@ export function TestimonialCarousel({ testimonials }: Props) {
             >
               Kind voices
             </p>
-            <p className="font-heading mt-6 text-h3 font-medium italic text-forest">
+            <p className="font-heading mt-4 text-h3 font-medium italic text-forest md:mt-6">
               Tender reflections while final words gather.
             </p>
           </div>
@@ -82,19 +82,19 @@ export function TestimonialCarousel({ testimonials }: Props) {
               “{current.quote}”
             </blockquote>
 
-            <p className="mt-8 font-body text-sm font-light italic text-muted">{current.attribution}</p>
+            <p className="mt-6 font-body text-sm font-light italic text-muted md:mt-8">{current.attribution}</p>
 
-            <div className="mt-10 flex flex-wrap items-center gap-x-12 gap-y-4">
+            <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 md:mt-10 md:gap-x-12 md:gap-y-4">
               <button
                 type="button"
-                className="font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-muted underline decoration-transparent decoration-2 underline-offset-8 transition-[color,text-decoration-color] duration-layout ease-out-soft hover:text-forest hover:decoration-border"
+                className="tap-target -ml-2 inline-flex items-center px-2 font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-muted underline decoration-transparent decoration-2 underline-offset-8 transition-[color,text-decoration-color] duration-layout ease-out-soft hover:text-forest hover:decoration-border"
                 onClick={() => go(-1)}
               >
                 Prev
               </button>
               <button
                 type="button"
-                className="font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-muted underline decoration-transparent decoration-2 underline-offset-8 transition-[color,text-decoration-color] duration-layout ease-out-soft hover:text-forest hover:decoration-border"
+                className="tap-target inline-flex items-center px-2 font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-muted underline decoration-transparent decoration-2 underline-offset-8 transition-[color,text-decoration-color] duration-layout ease-out-soft hover:text-forest hover:decoration-border"
                 onClick={() => go(1)}
               >
                 Next

@@ -51,7 +51,7 @@ export function SiteHeader() {
 
   return (
     <header className={`sticky top-0 z-50 isolate shrink-0 transition-colors duration-layout ${surface}`}>
-      <div className={`${siteHeaderFrame} relative py-6 md:py-7`}>
+      <div className={`${siteHeaderFrame} relative py-3.5 md:py-7`}>
         <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-4 lg:gap-6">
           <nav
             aria-label="Primary"
@@ -83,10 +83,10 @@ export function SiteHeader() {
           </div>
         </div>
 
-        <div className="flex items-center justify-between md:hidden">
+        <div className="flex min-h-[2.75rem] items-center justify-between md:hidden">
           <button
             type="button"
-            className={`${tagLinks} shrink-0 font-medium text-text`}
+            className={`${tagLinks} tap-target -ml-2 inline-flex shrink-0 items-center justify-center px-2 font-medium text-text`}
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
             onClick={() => setMenuOpen(true)}
@@ -111,7 +111,10 @@ export function SiteHeader() {
             onClick={() => setMenuOpen(false)}
           />
 
-          <div id="mobile-navigation" className="relative z-10 flex h-full flex-col overflow-y-auto bg-almond px-gutter pb-14 pt-8">
+          <div
+            id="mobile-navigation"
+            className="relative z-10 flex h-full flex-col overflow-y-auto bg-almond pb-[max(1.5rem,env(safe-area-inset-bottom))] pl-[max(1rem,env(safe-area-inset-left))] pr-[max(1rem,env(safe-area-inset-right))] pt-[max(1rem,env(safe-area-inset-top))]"
+          >
             <div className="flex items-start justify-between">
               <Link
                 href="/"
@@ -125,19 +128,19 @@ export function SiteHeader() {
 
               <button
                 type="button"
-                className="font-tag font-body uppercase text-[0.65rem] tracking-[0.28em] text-muted transition-colors duration-layout ease-out-soft hover:text-text"
+                className="tap-target -mr-2 inline-flex items-center justify-center px-2 font-tag font-body uppercase text-[0.65rem] tracking-[0.28em] text-muted transition-colors duration-layout ease-out-soft hover:text-text"
                 onClick={() => setMenuOpen(false)}
               >
                 Close
               </button>
             </div>
 
-            <nav aria-label="Mobile navigation" className="mt-16 flex flex-1 flex-col gap-10">
+            <nav aria-label="Mobile navigation" className="mt-10 flex flex-1 flex-col gap-7 sm:gap-8">
               {navLinks.map((item) => (
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="font-heading text-3xl font-light text-text transition-colors duration-layout ease-out-soft hover:text-olive"
+                  className="font-heading py-1 text-[clamp(1.75rem,7vw,2.25rem)] font-light leading-tight text-text transition-colors duration-layout ease-out-soft hover:text-olive"
                   onClick={() => setMenuOpen(false)}
                 >
                   {item.label}
@@ -146,7 +149,7 @@ export function SiteHeader() {
 
               <Link
                 href="/contact"
-                className="mt-auto inline-flex max-w-fit rounded-full border border-forest bg-forest px-8 py-3 font-tag font-body uppercase text-[0.65rem] tracking-[0.32em] text-almond transition-[transform,background-color,border-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-forest-soft hover:border-forest-soft active:translate-y-0"
+                className="tap-target mt-auto inline-flex min-h-[3rem] w-full max-w-sm items-center justify-center rounded-full border border-forest bg-forest px-8 py-3 font-tag font-body uppercase text-[0.65rem] tracking-[0.32em] text-almond transition-[transform,background-color,border-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-forest-soft hover:border-forest-soft active:translate-y-0 sm:w-auto"
                 onClick={() => setMenuOpen(false)}
               >
                 Book a class

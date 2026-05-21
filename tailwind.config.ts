@@ -46,8 +46,9 @@ const config: Config = {
         content: "72rem",
       },
       spacing: {
-        section: "clamp(4rem, 10vw, 8rem)",
-        gutter: "clamp(1.25rem, 4vw, 2.5rem)",
+        /** Section vertical rhythm — tighter on phones, generous on desktop */
+        section: "clamp(2.5rem, 6vw, 8rem)",
+        gutter: "clamp(1rem, 4vw, 2.5rem)",
       },
       transitionDuration: {
         layout: "400ms",
