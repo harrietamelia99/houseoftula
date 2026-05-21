@@ -11,6 +11,23 @@ function lockBody(scrollLocked: boolean) {
   document.documentElement.style.overflow = scrollLocked ? "hidden" : "";
 }
 
+function BurgerIcon({ open }: { open: boolean }) {
+  const line =
+    "absolute left-0 block h-[1.5px] w-full rounded-full bg-current transition-all duration-layout ease-out-soft";
+
+  return (
+    <span className="relative block h-[0.875rem] w-[1.375rem]" aria-hidden>
+      <span className={`${line} top-0 ${open ? "top-1/2 -translate-y-1/2 rotate-45" : ""}`} />
+      <span
+        className={`${line} top-1/2 -translate-y-1/2 ${open ? "scale-x-0 opacity-0" : ""}`}
+      />
+      <span
+        className={`${line} ${open ? "top-1/2 -translate-y-1/2 -rotate-45" : "bottom-0 top-auto"}`}
+      />
+    </span>
+  );
+}
+
 /**
  * Light bar + dark type on every route so the sticky nav always contrasts the forest hero
  * and other colour blocks  -  no scroll-based “inverse” forest header.
@@ -36,7 +53,7 @@ export function SiteHeader() {
   const inactiveNav = "text-text/85 hover:text-text";
   const activeNav = "text-text font-medium";
 
-  const logoLink = (
+  const desktopLogoLink = (
     <Link
       href="/"
       className="group flex max-w-[min(100%,14rem)] flex-col items-center gap-1 text-center sm:max-w-[min(100%,16rem)]"
@@ -44,6 +61,19 @@ export function SiteHeader() {
     >
       <SiteLogo priority variant="header" className="mx-auto object-center" />
       <span className="font-tag font-body text-[0.63rem] tracking-[0.32em] text-olive-dark/75">
+        {site.taglineUpper}
+      </span>
+    </Link>
+  );
+
+  const mobileLogoLink = (
+    <Link
+      href="/"
+      className="group flex min-w-0 max-w-[calc(100%-3.5rem)] flex-col items-start gap-0.5 text-left"
+      aria-label={`${site.name} home`}
+    >
+      <SiteLogo priority variant="header" className="object-left" />
+      <span className="font-tag font-body text-[0.6rem] tracking-[0.32em] text-olive-dark/75">
         {site.taglineUpper}
       </span>
     </Link>
@@ -71,7 +101,7 @@ export function SiteHeader() {
             })}
           </nav>
 
-          <div className="justify-self-center px-4">{logoLink}</div>
+          <div className="justify-self-center px-4">{desktopLogoLink}</div>
 
           <div className="flex justify-end">
             <Link
@@ -83,22 +113,19 @@ export function SiteHeader() {
           </div>
         </div>
 
-        <div className="flex min-h-[2.75rem] items-center justify-between md:hidden">
+        <div className="flex min-h-[2.75rem] items-center justify-between gap-4 md:hidden">
+          {mobileLogoLink}
+
           <button
             type="button"
-            className={`${tagLinks} tap-target -ml-2 inline-flex shrink-0 items-center justify-center px-2 font-medium text-text`}
+            className="tap-target -mr-1 inline-flex shrink-0 items-center justify-center px-2 text-text"
             aria-expanded={menuOpen}
             aria-controls="mobile-navigation"
-            onClick={() => setMenuOpen(true)}
+            aria-label={menuOpen ? "Close menu" : "Open menu"}
+            onClick={() => setMenuOpen((open) => !open)}
           >
-            Menu
+            <BurgerIcon open={menuOpen} />
           </button>
-
-          <div className="pointer-events-none absolute left-1/2 top-1/2 w-max max-w-[calc(100%-8rem)] -translate-x-1/2 -translate-y-1/2">
-            <div className="pointer-events-auto">{logoLink}</div>
-          </div>
-
-          <span className="w-[3.25rem] shrink-0" aria-hidden />
         </div>
       </div>
 
