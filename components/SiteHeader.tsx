@@ -41,7 +41,7 @@ export function SiteHeader() {
       <div className={`${siteContentFrame} flex items-center justify-between gap-4 py-6 sm:gap-6 md:gap-10 md:py-7`}>
         <Link
           href="/"
-          className="group flex max-w-[min(100%,17rem)] shrink-0 flex-col gap-1.5 sm:max-w-[min(100%,19rem)]"
+          className="group flex max-w-[min(100%,14rem)] shrink-0 flex-col gap-1 sm:max-w-[min(100%,16rem)]"
           aria-label={`${site.name} home`}
         >
           <SiteLogo priority variant="header" />
