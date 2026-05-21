@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
 import { navLinks, site } from "@/data/content";
-import { siteContentFrame } from "@/lib/siteLayout";
+import { siteHeaderFrame } from "@/lib/siteLayout";
 import { SiteLogo } from "@/components/SiteLogo";
 
 function lockBody(scrollLocked: boolean) {
@@ -38,7 +38,7 @@ export function SiteHeader() {
 
   return (
     <header className={`sticky top-0 z-50 isolate shrink-0 transition-colors duration-layout ${surface}`}>
-      <div className={`${siteContentFrame} flex items-center justify-between gap-4 py-6 sm:gap-6 md:gap-10 md:py-7`}>
+      <div className={`${siteHeaderFrame} flex items-center justify-between gap-4 py-6 sm:gap-6 md:gap-10 md:py-7`}>
         <Link
           href="/"
           className="group flex max-w-[min(100%,14rem)] shrink-0 flex-col gap-1 sm:max-w-[min(100%,16rem)]"

@@ -50,8 +50,18 @@ body {
   padding-left: clamp(1.25rem, 4vw, 2.5rem);
   padding-right: clamp(1.25rem, 4vw, 2.5rem);
 }
+.site-header-frame {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: clamp(0.75rem, 2vw, 1.25rem);
+  padding-right: clamp(0.75rem, 2vw, 1.25rem);
+}
+
 /* Header row + nav: readable even when utility classes are missing */
-header > div.site-frame {
+header > div.site-header-frame {
   display: flex;
   flex-wrap: wrap;
   align-items: center;

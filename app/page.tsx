@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "@/components/FadeIn";
 import { HeroSection } from "@/components/HeroSection";
@@ -6,6 +7,7 @@ import { StudioTriptych } from "@/components/StudioTriptych";
 import { TestimonialCarousel } from "@/components/TestimonialCarousel";
 import { homeContent } from "@/data/content";
 import { buildPageMeta } from "@/lib/metadata";
+import { siteImages } from "@/lib/siteImages";
 import { siteContentFrame } from "@/lib/siteLayout";
 
 export const metadata = buildPageMeta({
@@ -22,9 +24,21 @@ export default function HomePage() {
     <>
       <HeroSection />
 
-      <section className="border-border border-y bg-almond py-section" aria-label="Introducing balance">
+      <section className="bg-surface py-section" aria-label="Introducing balance">
         <div className={siteContentFrame}>
           <FadeIn className="mx-auto max-w-[48rem] text-center">
+            <div className="mx-auto mb-8 flex justify-center sm:mb-10" aria-hidden>
+              <div className="flex h-[4.5rem] w-[4.5rem] shrink-0 items-center justify-center rounded-full border border-forest/35 sm:h-20 sm:w-20">
+                <Image
+                  src={siteImages.monogramH}
+                  alt=""
+                  width={468}
+                  height={363}
+                  sizes="48px"
+                  className="h-9 w-auto max-w-[2.65rem] object-contain sm:h-10 sm:max-w-[2.85rem]"
+                />
+              </div>
+            </div>
             <p className="font-heading text-[clamp(1.55rem,2.8vw,2.35rem)] font-light leading-[1.08] text-forest">
               {homeContent.pullQuote}
             </p>
