@@ -19,4 +19,6 @@ export const siteImages = {
   detailMatStretch: "/images/site/detail-mat-stretch.png",
   /** About “The space” band + optional reuse */
   studioDownwardDog: "/images/site/studio-downward-dog.png",
+  /** Botanical line art for home “Ready to pause?” closing band */
+  closingFloralPattern: "/images/site/closing-floral-pattern.png",
 } as const;

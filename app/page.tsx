@@ -61,8 +61,14 @@ export default function HomePage() {
 
       <TestimonialCarousel testimonials={[...homeContent.testimonials]} />
 
-      <section className={`bg-surface ${siteSectionY}`} aria-labelledby="pause-heading">
-        <div className={siteContentFrame}>
+      <section className={`relative overflow-hidden bg-surface ${siteSectionY}`} aria-labelledby="pause-heading">
+        <div
+          className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-[0.42]"
+          style={{ backgroundImage: `url(${siteImages.closingFloralPattern})` }}
+          aria-hidden
+        />
+        <div className="pointer-events-none absolute inset-0 bg-surface/35" aria-hidden />
+        <div className={`relative z-[1] ${siteContentFrame}`}>
           <FadeIn className="flex w-full flex-col items-center text-center">
             <h2 id="pause-heading" className="font-heading text-h2 font-light text-text">
               {homeContent.closingCta.headline}
