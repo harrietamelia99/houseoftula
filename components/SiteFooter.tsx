@@ -58,6 +58,9 @@ function IconInstagram(props: SVGProps<SVGSVGElement>) {
 
 const iconClass = "mt-0.5 h-5 w-5 shrink-0 text-olive/80";
 
+const footerBookCta =
+  "inline-flex items-center rounded-full border border-olive/45 px-7 py-[0.55rem] font-tag font-body text-[0.68rem] uppercase tracking-[0.28em] text-olive-dark transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:border-olive hover:bg-surface hover:text-forest hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-olive/45 focus-visible:ring-offset-4 focus-visible:ring-offset-almond";
+
 export function SiteFooter() {
   return (
     <footer className={`border-border bg-almond pb-[max(2.5rem,env(safe-area-inset-bottom))] pt-10 md:pt-section md:pb-14`}>
@@ -108,14 +111,8 @@ export function SiteFooter() {
                 {site.instagram.handle}
               </a>
             </li>
-            <li className="flex items-center gap-3 pt-1">
-              <span className={`${iconClass} invisible`} aria-hidden>
-                <span className="block h-5 w-5" />
-              </span>
-              <Link
-                href="/contact"
-                className="inline-flex min-h-[2.5rem] items-center rounded-full border border-olive/45 px-6 py-2 font-tag font-body text-[0.6875rem] uppercase tracking-[0.28em] text-olive-dark transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:border-olive hover:bg-surface hover:text-forest active:translate-y-0"
-              >
+            <li className="pt-2">
+              <Link href="/contact" className={footerBookCta}>
                 Book now
               </Link>
             </li>
