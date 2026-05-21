@@ -4,7 +4,7 @@
 export const siteImages = {
   /** Wordmark PNG (transparent); source asset may be re-exported from brand pack */
   logoWordmark: "/images/site/logo-wordmark.png",
-  /** Decorative H monogram for services band (raster); cream via CSS mask + `--color-almond` */
+  /** Decorative H monogram for services band (white on transparent PNG) */
   monogramH: "/images/site/monogram-h.png",
   heroFigure: "/images/site/hero-instructor-assist.png",
   /** Studio triptych  -  desktop flanks */
