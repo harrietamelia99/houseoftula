@@ -34,7 +34,7 @@ def main() -> None:
     )
 
     inner = size - 2 * inset - 2 * args.ring_width
-    scale = min(inner / ink.width, inner / ink.height) * 0.52
+    scale = min(inner / ink.width, inner / ink.height) * 0.62
     tw = max(1, int(round(ink.width * scale)))
     th = max(1, int(round(ink.height * scale)))
     ink_fit = ink.resize((tw, th), Image.Resampling.LANCZOS)

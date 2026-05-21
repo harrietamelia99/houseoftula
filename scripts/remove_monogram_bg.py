@@ -48,34 +48,38 @@ def smoothstep(x: float, lo: float, hi: float) -> float:
     return (x - lo) / max(hi - lo, 1e-6)
 
 
-def ink_rgb_from_bright_pixels(img: Image.Image) -> tuple[int, int, int]:
-    """Median cream/white from the brightest opaque samples."""
+def ink_stats(img: Image.Image) -> tuple[float, tuple[int, int, int]]:
+    """Median luminance + RGB of keyed ink (works for cream or forest-green)."""
     px = img.load()
     w, h = img.size
-    bright: list[tuple[int, int, int]] = []
+    samples: list[tuple[float, tuple[int, int, int]]] = []
     for j in range(h):
         for i in range(w):
             r, g, b, a = px[i, j]
-            if a > 200 and luminance(r, g, b) > 210:
-                bright.append((r, g, b))
-    if not bright:
-        return (249, 247, 234)
-    bright.sort(key=lambda c: sum(c))
-    mid = bright[len(bright) // 2]
-    return mid
+            if a > 160:
+                samples.append((luminance(r, g, b), (r, g, b)))
+    if not samples:
+        return (145.0, (249, 247, 234))
+    samples.sort(key=lambda s: s[0])
+    mid = samples[len(samples) // 2]
+    return mid[0], mid[1]
 
 
 def decontaminate_edges(
     img: Image.Image,
     *,
-    ink_cutoff: float = 145.0,
-    edge_blend_hi: float = 215.0,
+    ink_cutoff: float | None = None,
+    edge_blend_hi: float | None = None,
 ) -> Image.Image:
     """Drop dark keying halos; soften remaining fringe onto solid ink colour."""
     out = img.copy()
     px = out.load()
     w, h = out.size
-    ink = ink_rgb_from_bright_pixels(out)
+    median_l, ink = ink_stats(out)
+    if ink_cutoff is None:
+        ink_cutoff = max(32.0, median_l * 0.42)
+    if edge_blend_hi is None:
+        edge_blend_hi = min(255.0, median_l * 1.18)
 
     for j in range(h):
         for i in range(w):
