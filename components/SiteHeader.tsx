@@ -72,7 +72,11 @@ export function SiteHeader() {
       className="group flex min-w-0 max-w-[calc(100%-3.5rem)] flex-col items-start gap-0.5 text-left"
       aria-label={`${site.name} home`}
     >
-      <SiteLogo priority variant="header" className="object-left" />
+      <SiteLogo
+        priority
+        variant="header"
+        className="h-6 max-h-7 max-w-[12.5rem] object-left sm:h-7 sm:max-h-8 sm:max-w-[13.5rem]"
+      />
       <span className="font-tag font-body text-[0.6rem] tracking-[0.32em] text-olive-dark/75">
         {site.taglineUpper}
       </span>

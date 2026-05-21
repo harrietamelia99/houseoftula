@@ -108,6 +108,15 @@ export function SiteFooter() {
                 {site.instagram.handle}
               </a>
             </li>
+            <li className="flex gap-3">
+              <span className="mt-0.5 h-5 w-5 shrink-0" aria-hidden />
+              <Link
+                href="/contact"
+                className="font-tag font-body text-[0.6875rem] uppercase tracking-[0.28em] text-olive-dark transition-colors duration-layout ease-out-soft hover:text-text"
+              >
+                Book now
+              </Link>
+            </li>
           </ul>
 
           <nav
