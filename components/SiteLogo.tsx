@@ -11,7 +11,7 @@ type SiteLogoProps = {
 
 const variantClass: Record<NonNullable<SiteLogoProps["variant"]>, string> = {
   header:
-    "h-5 max-h-6 w-auto max-w-[min(92vw,11rem)] object-contain object-left sm:h-6 sm:max-w-[12.5rem] md:h-7 md:max-w-[14rem]",
+    "h-5 max-h-6 w-auto max-w-[min(92vw,11rem)] object-contain object-center sm:h-6 sm:max-w-[12.5rem] md:h-7 md:max-w-[14rem]",
   mobile:
     "h-5 max-h-6 w-auto max-w-[min(92vw,10.5rem)] object-contain object-left sm:h-6 sm:max-w-[12rem]",
   footer:

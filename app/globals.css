@@ -60,20 +60,11 @@ body {
   padding-right: clamp(0.75rem, 2vw, 1.25rem);
 }
 
-/* Header row + nav: readable even when utility classes are missing */
-header > div.site-header-frame {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 1rem;
-}
-
 header nav[aria-label="Primary"] {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: flex-end;
+  justify-content: flex-start;
   column-gap: 1.25rem;
   row-gap: 0.5rem;
 }

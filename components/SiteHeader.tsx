@@ -36,22 +36,27 @@ export function SiteHeader() {
   const inactiveNav = "text-text/85 hover:text-text";
   const activeNav = "text-text font-medium";
 
+  const logoLink = (
+    <Link
+      href="/"
+      className="group flex max-w-[min(100%,14rem)] flex-col items-center gap-1 text-center sm:max-w-[min(100%,16rem)]"
+      aria-label={`${site.name} home`}
+    >
+      <SiteLogo priority variant="header" className="mx-auto object-center" />
+      <span className="font-tag font-body text-[0.63rem] tracking-[0.32em] text-olive-dark/75">
+        {site.taglineUpper}
+      </span>
+    </Link>
+  );
+
   return (
     <header className={`sticky top-0 z-50 isolate shrink-0 transition-colors duration-layout ${surface}`}>
-      <div className={`${siteHeaderFrame} flex items-center justify-between gap-4 py-6 sm:gap-6 md:gap-10 md:py-7`}>
-        <Link
-          href="/"
-          className="group flex max-w-[min(100%,14rem)] shrink-0 flex-col gap-1 sm:max-w-[min(100%,16rem)]"
-          aria-label={`${site.name} home`}
-        >
-          <SiteLogo priority variant="header" />
-          <span className="font-tag font-body text-[0.63rem] tracking-[0.32em] text-olive-dark/75">
-            {site.taglineUpper}
-          </span>
-        </Link>
-
-        <div className="hidden min-w-0 shrink-0 items-center gap-5 sm:gap-6 md:flex md:gap-8">
-          <nav aria-label="Primary" className="flex min-w-0 flex-wrap items-center justify-end gap-x-5 gap-y-2 sm:gap-x-6 md:gap-x-7">
+      <div className={`${siteHeaderFrame} relative py-6 md:py-7`}>
+        <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-8">
+          <nav
+            aria-label="Primary"
+            className="flex min-w-0 flex-wrap items-center justify-start gap-x-5 gap-y-2 lg:gap-x-7"
+          >
             {navLinks.map((item) => {
               const active = pathname === item.href;
               return (
@@ -66,23 +71,35 @@ export function SiteHeader() {
             })}
           </nav>
 
-          <Link
-            href="/contact"
-            className={`${tagLinks} rounded-full border border-olive/45 px-7 py-[0.55rem] text-olive-dark transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:border-olive hover:bg-surface hover:text-forest hover:-translate-y-0.5 active:translate-y-0`}
-          >
-            Book a class
-          </Link>
+          <div className="justify-self-center px-4">{logoLink}</div>
+
+          <div className="flex justify-end">
+            <Link
+              href="/contact"
+              className={`${tagLinks} rounded-full border border-olive/45 px-7 py-[0.55rem] text-olive-dark transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:border-olive hover:bg-surface hover:text-forest hover:-translate-y-0.5 active:translate-y-0`}
+            >
+              Book a class
+            </Link>
+          </div>
         </div>
 
-        <button
-          type="button"
-          className={`${tagLinks} shrink-0 font-medium text-text md:hidden`}
-          aria-expanded={menuOpen}
-          aria-controls="mobile-navigation"
-          onClick={() => setMenuOpen(true)}
-        >
-          Menu
-        </button>
+        <div className="flex items-center justify-between md:hidden">
+          <button
+            type="button"
+            className={`${tagLinks} shrink-0 font-medium text-text`}
+            aria-expanded={menuOpen}
+            aria-controls="mobile-navigation"
+            onClick={() => setMenuOpen(true)}
+          >
+            Menu
+          </button>
+
+          <div className="pointer-events-none absolute left-1/2 top-1/2 w-max max-w-[calc(100%-8rem)] -translate-x-1/2 -translate-y-1/2">
+            <div className="pointer-events-auto">{logoLink}</div>
+          </div>
+
+          <span className="w-[3.25rem] shrink-0" aria-hidden />
+        </div>
       </div>
 
       {menuOpen && (

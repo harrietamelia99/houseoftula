@@ -48,6 +48,53 @@ def smoothstep(x: float, lo: float, hi: float) -> float:
     return (x - lo) / max(hi - lo, 1e-6)
 
 
+def ink_rgb_from_bright_pixels(img: Image.Image) -> tuple[int, int, int]:
+    """Median cream/white from the brightest opaque samples."""
+    px = img.load()
+    w, h = img.size
+    bright: list[tuple[int, int, int]] = []
+    for j in range(h):
+        for i in range(w):
+            r, g, b, a = px[i, j]
+            if a > 200 and luminance(r, g, b) > 210:
+                bright.append((r, g, b))
+    if not bright:
+        return (249, 247, 234)
+    bright.sort(key=lambda c: sum(c))
+    mid = bright[len(bright) // 2]
+    return mid
+
+
+def decontaminate_edges(
+    img: Image.Image,
+    *,
+    ink_cutoff: float = 145.0,
+    edge_blend_hi: float = 215.0,
+) -> Image.Image:
+    """Drop dark keying halos; soften remaining fringe onto solid ink colour."""
+    out = img.copy()
+    px = out.load()
+    w, h = out.size
+    ink = ink_rgb_from_bright_pixels(out)
+
+    for j in range(h):
+        for i in range(w):
+            r, g, b, a = px[i, j]
+            if a == 0:
+                continue
+            l = luminance(r, g, b)
+            if l < ink_cutoff:
+                px[i, j] = (0, 0, 0, 0)
+                continue
+            if l < edge_blend_hi:
+                t = smoothstep(l, ink_cutoff, edge_blend_hi)
+                px[i, j] = (ink[0], ink[1], ink[2], int(round(a * t)))
+            else:
+                px[i, j] = (ink[0], ink[1], ink[2], a)
+
+    return out
+
+
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--src", type=Path, required=True)
@@ -129,6 +176,9 @@ def main() -> None:
         nw = args.max_width
         nh = max(1, int(round(out.height * ratio)))
         out = out.resize((nw, nh), Image.Resampling.LANCZOS)
+
+    if args.preserve_color:
+        out = decontaminate_edges(out)
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     out.save(args.out, optimize=True)
