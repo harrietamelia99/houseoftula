@@ -6,6 +6,8 @@ export const siteImages = {
   logoWordmark: "/images/site/logo-wordmark.png",
   /** Decorative H monogram for services band (cream on transparent PNG) */
   monogramH: "/images/site/monogram-h.png",
+  /** Forest-green H monogram for pull-quote band under hero */
+  monogramHForest: "/images/site/monogram-h-forest.png",
   heroFigure: "/images/site/hero-instructor-assist.png",
   /** Studio triptych  -  desktop flanks */
   studioStretchSide: "/images/site/studio-side-stretch.png",

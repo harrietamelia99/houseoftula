@@ -16,6 +16,8 @@ const config: Config = {
         /** Same as Forest Seed  -  typography / links on Almond, small UI fills */
         "olive-dark": "#555439",
         forest: "#555439",
+        /** Sampled from brand H monogram — pull-quote band under hero */
+        "monogram-ink": "#55533C",
         /**
          * Deep band for hero + inverse header slabs  -  clearly separates from `almond` wash on screen
          * (the legacy `forest` hex doubles as body type; alone it can read as “more cream/mud”).
