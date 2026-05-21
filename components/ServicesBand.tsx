@@ -66,12 +66,12 @@ export function ServicesBand({
         <div className="mt-10 grid gap-5 md:mt-16 md:gap-14 lg:grid-cols-3 lg:gap-x-14 lg:gap-y-16">
           {columns.map((column, index) => (
             <FadeIn key={column.title} delayMs={40 + index * 60} className="h-full">
-              <article className="flex h-full flex-col bg-almond px-6 py-8 text-left transition-[transform,box-shadow] duration-layout ease-out-soft will-change-transform hover:-translate-y-0.5 hover:shadow-[0_20px_44px_-20px_rgba(73,74,65,0.22)] motion-reduce:hover:translate-y-0 md:min-h-[320px] md:px-8 md:py-10">
+              <article className="flex h-full flex-col items-center bg-almond px-6 py-8 text-center transition-[transform,box-shadow] duration-layout ease-out-soft will-change-transform hover:-translate-y-0.5 hover:shadow-[0_20px_44px_-20px_rgba(73,74,65,0.22)] motion-reduce:hover:translate-y-0 md:min-h-[320px] md:items-stretch md:px-8 md:py-10 md:text-left">
                 <p className="font-tag font-body text-[0.65rem] uppercase tracking-[0.36em] text-muted">{column.title}</p>
                 <p className="mt-5 flex-1 font-body font-light leading-[1.75] text-text md:mt-8 md:leading-[1.8]">{column.description}</p>
                 <Link
                   href={column.href}
-                  className="tap-target mt-auto inline-flex min-h-[2.75rem] items-center pt-6 font-tag font-body text-[0.58rem] uppercase tracking-[0.32em] text-forest transition-[color,opacity] duration-layout ease-out-soft hover:text-text hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/25 focus-visible:ring-offset-2 focus-visible:ring-offset-almond md:pt-10"
+                  className="tap-target mt-auto inline-flex min-h-[2.75rem] items-center justify-center pt-6 font-tag font-body text-[0.58rem] uppercase tracking-[0.32em] text-forest transition-[color,opacity] duration-layout ease-out-soft hover:text-text hover:opacity-90 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-forest/25 focus-visible:ring-offset-2 focus-visible:ring-offset-almond md:justify-start md:pt-10"
                 >
                   Learn gently
                 </Link>
@@ -88,7 +88,7 @@ export function ServicesBand({
             {detailsLabel}
           </Link>
 
-          <p className="max-w-xl font-body text-sm font-light text-almond/70">
+          <p className="mx-auto max-w-xl font-body text-sm font-light text-almond/70">
             Seasonal happenings also unfurl quietly  -  revisit them anytime on {""}
             <Link href="/events" className="border-b border-almond/35 pb-[1px] text-almond transition-colors duration-layout ease-out-soft hover:border-almond hover:text-almond">
               Events + pop-ups

@@ -63,7 +63,7 @@ export function HeroSection() {
 
           <FadeIn
             delayMs={150}
-            className="mt-9 flex w-full max-w-sm flex-col items-stretch gap-3 sm:mt-16 sm:max-w-none sm:flex-row sm:flex-wrap sm:items-center sm:justify-center sm:gap-6"
+            className="mx-auto mt-9 flex w-full max-w-sm flex-col items-center gap-3 sm:mt-16 sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center sm:gap-6"
           >
             <Link
               href={hero.primaryCta.href}

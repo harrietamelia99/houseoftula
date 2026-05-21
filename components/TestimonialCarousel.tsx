@@ -52,9 +52,11 @@ export function TestimonialCarousel({ testimonials }: Props) {
         className={`relative isolate overflow-hidden border-t border-sienna/22 bg-almond text-text grain-backdrop ${siteSectionY}`}
         aria-labelledby="kind-words-heading"
       >
-        <div className={`relative z-[1] flex flex-col gap-8 md:gap-12 lg:flex-row lg:gap-24 ${siteContentFrame}`}>
-          <div className="lg:w-[30%]">
-            <SectionRule />
+        <div
+          className={`relative z-[1] flex flex-col gap-8 max-lg:text-center md:gap-12 lg:flex-row lg:gap-24 lg:text-left ${siteContentFrame}`}
+        >
+          <div className="flex flex-col max-lg:items-center lg:w-[30%]">
+            <SectionRule className="max-lg:mx-auto max-lg:w-12" />
             <p
               id="kind-words-heading"
               className="font-tag mt-8 font-body uppercase tracking-[0.28em] text-muted"
@@ -67,7 +69,7 @@ export function TestimonialCarousel({ testimonials }: Props) {
           </div>
 
           <div
-            className="flex-1 outline-none"
+            className="flex flex-1 flex-col outline-none max-lg:items-center"
             role="region"
             aria-roledescription="carousel"
             aria-label="Guest reflections"
@@ -84,10 +86,10 @@ export function TestimonialCarousel({ testimonials }: Props) {
 
             <p className="mt-6 font-body text-sm font-light italic text-muted md:mt-8">{current.attribution}</p>
 
-            <div className="mt-8 flex flex-wrap items-center gap-x-8 gap-y-3 md:mt-10 md:gap-x-12 md:gap-y-4">
+            <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 max-lg:w-full md:mt-10 md:justify-start md:gap-x-12 md:gap-y-4 lg:justify-start">
               <button
                 type="button"
-                className="tap-target -ml-2 inline-flex items-center px-2 font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-muted underline decoration-transparent decoration-2 underline-offset-8 transition-[color,text-decoration-color] duration-layout ease-out-soft hover:text-forest hover:decoration-border"
+                className="tap-target inline-flex items-center px-2 font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-muted underline decoration-transparent decoration-2 underline-offset-8 transition-[color,text-decoration-color] duration-layout ease-out-soft hover:text-forest hover:decoration-border md:-ml-2"
                 onClick={() => go(-1)}
               >
                 Prev
