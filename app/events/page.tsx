@@ -1,10 +1,10 @@
 import Link from "next/link";
 import { FadeIn } from "@/components/FadeIn";
 import { SitePhoto } from "@/components/SitePhoto";
-import { VeinDivider } from "@/components/VeinDivider";
+import { PageHeader } from "@/components/PageHeader";
 import { eventFallbackImage, events, eventsPage } from "@/content/events";
 import { buildPageMeta } from "@/lib/metadata";
-import { siteContentFrame, sitePageHeaderTop, siteSectionY } from "@/lib/siteLayout";
+import { siteContentFrame, siteSectionY } from "@/lib/siteLayout";
 
 export const metadata = buildPageMeta({
   title: eventsPage.title,
@@ -15,26 +15,24 @@ export const metadata = buildPageMeta({
 export default function EventsPage() {
   return (
     <>
-      <header className={`bg-almond ${sitePageHeaderTop} pb-2`}>
-        <div className={siteContentFrame}>
-          <FadeIn className="max-w-3xl">
-            <p className="font-tag font-body uppercase tracking-[0.28em] text-muted">Events</p>
-            <h1 className="font-heading mt-4 text-h2 font-light text-forest">{eventsPage.title}</h1>
-            <p className="mt-6 max-w-measure font-body font-light leading-[1.75] text-muted">{eventsPage.intro}</p>
-          </FadeIn>
-        </div>
-      </header>
+      <PageHeader
+        eyebrow={eventsPage.title}
+        title={eventsPage.heading}
+        kicker={eventsPage.kicker}
+        intro={eventsPage.intro}
+        image={eventsPage.headerImage}
+      />
 
-      <VeinDivider />
-
-      <section className={`bg-almond ${siteSectionY} pt-0`}>
+      <section className={`bg-almond ${siteSectionY} pt-4`}>
         <div className={siteContentFrame}>
           {events.length === 0 ? (
-            <FadeIn className="max-w-measure">
-              <p className="font-body font-light leading-[1.75] text-muted">{eventsPage.empty.message}</p>
+            <FadeIn className="mx-auto max-w-[40rem] border-y border-forest/20 py-16 text-center">
+              <p className="font-heading text-[clamp(1.6rem,2.8vw,2.3rem)] font-light italic leading-[1.3] text-forest">
+                {eventsPage.empty.message}
+              </p>
               <Link
                 href={eventsPage.empty.link.href}
-                className="mt-8 inline-flex border-b border-forest/30 pb-px font-body font-light text-forest transition-colors duration-layout ease-out-soft hover:border-forest"
+                className="mt-10 inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-forest px-9 font-body text-[0.7rem] uppercase tracking-[0.28em] text-almond transition-[transform,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-forest-slab"
               >
                 {eventsPage.empty.link.label}
               </Link>
