@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
 import { usePathname } from "next/navigation";
-import { navLinks, site } from "@/data/content";
+import { contactCta, navLinks, site } from "@/content/site";
 import { siteHeaderFrame } from "@/lib/siteLayout";
 import { SiteLogo } from "@/components/SiteLogo";
 
@@ -85,8 +85,8 @@ export function SiteHeader() {
 
   return (
     <header className={`sticky top-0 z-50 isolate shrink-0 transition-colors duration-layout ${surface}`}>
-      <div className={`${siteHeaderFrame} relative py-3.5 md:py-7`}>
-        <div className="hidden md:grid md:grid-cols-[1fr_auto_1fr] md:items-center md:gap-4 lg:gap-6">
+      <div className={`${siteHeaderFrame} relative py-3.5 lg:py-7`}>
+        <div className="hidden lg:grid lg:grid-cols-[1fr_auto_1fr] lg:items-center lg:gap-6">
           <nav
             aria-label="Primary"
             className="flex min-w-0 flex-wrap items-center justify-start gap-x-5 gap-y-2 lg:gap-x-7"
@@ -109,15 +109,15 @@ export function SiteHeader() {
 
           <div className="flex justify-end">
             <Link
-              href="/contact"
+              href={contactCta.href}
               className={`${tagLinks} rounded-full border border-olive/45 px-7 py-[0.55rem] text-olive-dark transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:border-olive hover:bg-surface hover:text-forest hover:-translate-y-0.5 active:translate-y-0`}
             >
-              Book a class
+              {contactCta.label}
             </Link>
           </div>
         </div>
 
-        <div className="flex min-h-[2.75rem] items-center justify-between gap-4 md:hidden">
+        <div className="flex min-h-[2.75rem] items-center justify-between gap-4 lg:hidden">
           {mobileLogoLink}
 
           <button
@@ -134,10 +134,10 @@ export function SiteHeader() {
       </div>
 
       {menuOpen && (
-        <div className="fixed inset-0 z-[60] md:hidden">
+        <div className="fixed inset-0 z-[60] lg:hidden">
           <button
             type="button"
-            className="absolute inset-0 bg-almond/96 backdrop-blur-[1px]"
+            className="absolute inset-0 bg-almond/95 backdrop-blur-[1px]"
             aria-label="Close navigation"
             onClick={() => setMenuOpen(false)}
           />
@@ -179,11 +179,11 @@ export function SiteHeader() {
               ))}
 
               <Link
-                href="/contact"
+                href={contactCta.href}
                 className="tap-target mt-auto inline-flex min-h-[3rem] w-full max-w-sm items-center justify-center rounded-full border border-forest bg-forest px-8 py-3 font-tag font-body uppercase text-[0.65rem] tracking-[0.32em] text-almond transition-[transform,background-color,border-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-forest-soft hover:border-forest-soft active:translate-y-0 sm:w-auto"
                 onClick={() => setMenuOpen(false)}
               >
-                Book a class
+                {contactCta.label}
               </Link>
             </nav>
           </div>

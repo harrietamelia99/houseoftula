@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { seo } from "@/data/content";
+import { seo } from "@/content/site";
 import { getSiteUrl } from "@/lib/site";
 
 export function buildPageMeta({

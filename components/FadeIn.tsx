@@ -72,8 +72,8 @@ export function FadeIn({ children, className = "", delayMs = 0 }: FadeInProps) {
   return (
     <div
       ref={ref}
-      className={`ease-out-soft transform-gpu transition-[transform,opacity] duration-[820ms] will-change-[transform,opacity] ${
-        entered ? "translate-y-0 opacity-100" : "translate-y-4 opacity-[0.88]"
+      className={`ease-out-soft transition-opacity duration-[820ms] ${
+        entered ? "opacity-100" : "opacity-[0.88]"
       } ${className}`}
       style={{ transitionDelay: `${delayMs}ms` }}
     >

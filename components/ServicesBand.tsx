@@ -17,6 +17,12 @@ type ServicesBandProps = {
   columns: readonly ServicesBandCard[];
   detailsHref?: string;
   detailsLabel?: string;
+  footnote?: {
+    before: string;
+    linkLabel: string;
+    href: string;
+    after: string;
+  };
 };
 
 export function ServicesBand({
@@ -26,6 +32,7 @@ export function ServicesBand({
   columns,
   detailsHref = "/services",
   detailsLabel = "View the full wording",
+  footnote,
 }: ServicesBandProps) {
   return (
     <section
@@ -88,13 +95,15 @@ export function ServicesBand({
             {detailsLabel}
           </Link>
 
-          <p className="mx-auto max-w-xl font-body text-sm font-light text-almond/70">
-            Seasonal happenings also unfurl quietly  -  revisit them anytime on {""}
-            <Link href="/events" className="border-b border-almond/35 pb-[1px] text-almond transition-colors duration-layout ease-out-soft hover:border-almond hover:text-almond">
-              Events + pop-ups
-            </Link>
-            .
-          </p>
+          {footnote ? (
+            <p className="mx-auto max-w-xl font-body text-sm font-light text-almond/70">
+              {footnote.before}{" "}
+              <Link href={footnote.href} className="border-b border-almond/35 pb-[1px] text-almond transition-colors duration-layout ease-out-soft hover:border-almond hover:text-almond">
+                {footnote.linkLabel}
+              </Link>
+              {footnote.after}
+            </p>
+          ) : null}
         </FadeIn>
       </div>
     </section>

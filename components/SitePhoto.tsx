@@ -15,6 +15,7 @@ type SitePhotoProps = {
   imgClassName?: string;
   priority?: boolean;
   border?: boolean;
+  sizes?: string;
 };
 
 /**
@@ -28,6 +29,7 @@ export function SitePhoto({
   imgClassName = "",
   priority = false,
   border = true,
+  sizes = "(min-width: 1024px) 38vw, 100vw",
 }: SitePhotoProps) {
   const frame = border ? "border border-border bg-surface" : "";
 
@@ -38,8 +40,8 @@ export function SitePhoto({
         alt={alt}
         fill
         priority={priority}
-        sizes="(min-width: 1024px) 38vw, 100vw"
-        className={`object-cover object-center transition-transform duration-calm ease-out-soft will-change-transform group-hover:scale-[1.025] motion-reduce:transition-none motion-reduce:group-hover:scale-100 ${imgClassName}`.trim()}
+        sizes={sizes}
+        className={`photo-muted object-cover object-center ${imgClassName}`.trim()}
       />
     </div>
   );

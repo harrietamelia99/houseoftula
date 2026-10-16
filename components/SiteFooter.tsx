@@ -2,7 +2,7 @@ import Link from "next/link";
 import type { SVGProps } from "react";
 import { SectionRule } from "@/components/SectionRule";
 import { SiteLogo } from "@/components/SiteLogo";
-import { navLinks, site } from "@/data/content";
+import { contactCta, navLinks, site } from "@/content/site";
 import { siteContentFrame } from "@/lib/siteLayout";
 
 function IconMapPin(props: SVGProps<SVGSVGElement>) {
@@ -112,8 +112,8 @@ export function SiteFooter() {
               </a>
             </li>
             <li className="col-span-2 pt-2">
-              <Link href="/contact" className={footerBookCta}>
-                Book now
+              <Link href={contactCta.href} className={footerBookCta}>
+                {contactCta.label}
               </Link>
             </li>
           </ul>

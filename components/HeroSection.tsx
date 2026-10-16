@@ -1,9 +1,9 @@
-import Image from "next/image";
 import Link from "next/link";
+import { ArchImage } from "@/components/ArchImage";
 import { FadeIn } from "@/components/FadeIn";
-import { homeContent } from "@/data/content";
-import { siteImages } from "@/lib/siteImages";
+import { homeContent } from "@/content/home";
 import { siteContentFrame } from "@/lib/siteLayout";
+import { Lines } from "@/components/Lines";
 
 export function HeroSection() {
   const hero = homeContent.hero;
@@ -11,74 +11,70 @@ export function HeroSection() {
   return (
     <section
       id="hero-section"
-      className="relative isolate flex min-h-[calc(100svh_-_var(--site-header-height))] flex-col bg-forest-soft text-almond"
+      className="relative overflow-hidden bg-almond md:min-h-[calc(100svh_-_var(--site-header-height))]"
     >
-      {/* Full-bleed photography + read-through scrim (scale recesses the photo; low opacity keeps it soft) */}
-      <div className="pointer-events-none absolute inset-0 -z-20 overflow-hidden" aria-hidden>
-        <Image
-          src={siteImages.heroFigure}
-          alt=""
-          fill
-          priority
-          sizes="100vw"
-          className="scale-[1.08] object-cover object-[center_28%] opacity-[0.28] sm:scale-110 sm:object-center"
-        />
-        <div className="absolute inset-0 bg-gradient-to-b from-forest-slab/92 via-forest-soft/90 to-forest-soft/95" />
-      </div>
+      {/* Soft linen panel behind the arch */}
+      <div aria-hidden className="absolute inset-y-0 right-0 hidden w-[38%] bg-surface/55 md:block" />
 
-      <div aria-hidden className="grain-forest pointer-events-none absolute inset-0 z-0" />
+      <div
+        className={`${siteContentFrame} relative grid items-center gap-12 pb-16 pt-10 md:min-h-[calc(100svh_-_var(--site-header-height))] md:grid-cols-[1.1fr_0.9fr] md:gap-10 md:py-16 lg:gap-20`}
+      >
+        <div className="order-2 text-center md:order-1 md:text-left">
 
-      <div className="relative z-[1] flex min-h-0 flex-1 flex-col">
-        <div
-          className={`${siteContentFrame} flex flex-1 flex-col justify-center py-10 text-center md:py-[clamp(2.75rem,7vw,5.5rem)]`}
-        >
-          <FadeIn delayMs={0}>
-            <p className="font-tag font-body text-[0.65rem] uppercase tracking-[0.34em] text-almond/65">
-              {hero.secondaryEyebrow}
+          <FadeIn delayMs={60}>
+            <h1
+              id="hero-heading"
+              className="whitespace-nowrap font-heading text-[clamp(2.75rem,5.6vw,5rem)] font-light leading-[1] tracking-[-0.01em] text-forest md:mt-10"
+            >
+              House of Tula
+            </h1>
+            <p className="mt-4 font-heading text-[clamp(1.2rem,1.7vw,1.45rem)] font-light text-muted">
+              {hero.byline}, {hero.eyebrow}
             </p>
           </FadeIn>
 
-          <FadeIn delayMs={60} className="mt-7 md:mt-12">
-            <h1
-              id="hero-heading"
-              className="font-heading mx-auto max-w-[min(100%,36rem)] text-hero font-light leading-[1.06] tracking-tight text-almond"
-            >
-              {hero.titleLines.map((line, index) => (
-                <span key={line} className={index > 0 ? "block -mt-[0.12em]" : "block"}>
-                  {line}
-                </span>
-              ))}
-            </h1>
-          </FadeIn>
-
-          <FadeIn delayMs={110} className="mt-7 md:mt-12">
-            <p className="mx-auto max-w-[min(100%,42rem)] font-body text-[0.9375rem] font-light leading-[1.75] text-almond/88 md:text-base md:leading-[1.85]">
-              {hero.subheadingLines.map((line) => (
-                <span key={line} className="block">
-                  {line}
-                </span>
-              ))}
+          <FadeIn delayMs={110}>
+            <div aria-hidden className="mx-auto mt-10 h-px w-16 bg-olive md:mx-0" />
+            <p className="mt-10 font-heading text-[clamp(1.45rem,2.3vw,1.95rem)] font-light leading-[1.25] text-text">
+              <Lines text={hero.supporting} />
             </p>
           </FadeIn>
 
           <FadeIn
             delayMs={150}
-            className="mx-auto mt-9 flex w-full max-w-sm flex-col items-center gap-3 sm:mt-16 sm:max-w-none sm:flex-row sm:flex-wrap sm:justify-center sm:gap-6"
+            className="mt-10 flex flex-col items-center gap-3 sm:flex-row sm:justify-center sm:gap-5 md:justify-start"
           >
             <Link
               href={hero.primaryCta.href}
-              className="inline-flex min-h-[3rem] w-full items-center justify-center rounded-full bg-almond px-9 py-2.5 text-center font-body text-sm font-light leading-none text-forest transition-[transform,background-color,box-shadow] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-surface hover:shadow-[0_12px_32px_-18px_rgba(0,0,0,0.25)] active:translate-y-0 motion-reduce:hover:translate-y-0 sm:min-h-[52px] sm:w-auto sm:min-w-[12rem] sm:py-0"
+              className="inline-flex min-h-[3.25rem] w-full max-w-xs items-center justify-center rounded-full bg-forest px-10 font-body text-[0.7rem] uppercase tracking-[0.28em] text-almond transition-[transform,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-forest-slab sm:w-auto"
             >
               {hero.primaryCta.label}
             </Link>
             <Link
-              href={hero.reservationCta.href}
-              className="inline-flex min-h-[3rem] w-full items-center justify-center rounded-full border border-almond/60 px-9 py-2.5 text-center font-body text-sm font-light leading-none text-almond transition-[transform,border-color,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:border-almond hover:bg-almond/18 active:translate-y-0 motion-reduce:hover:translate-y-0 sm:min-h-[52px] sm:w-auto sm:min-w-[12rem] sm:py-0"
+              href={hero.secondaryCta.href}
+              className="group inline-flex min-h-[3.25rem] items-center gap-3 px-2 font-body text-[0.7rem] uppercase tracking-[0.28em] text-forest"
             >
-              {hero.reservationCta.label}
+              <span className="border-b border-forest/30 pb-1 transition-colors duration-layout group-hover:border-forest">
+                {hero.secondaryCta.label}
+              </span>
+              <span aria-hidden className="transition-transform duration-layout group-hover:translate-x-1">
+                &rarr;
+              </span>
             </Link>
           </FadeIn>
         </div>
+
+        <FadeIn delayMs={80} className="order-1 mx-auto w-full max-w-[20rem] sm:max-w-[24rem] md:order-2 md:max-w-[30rem]">
+          <ArchImage
+            src={hero.image}
+            alt={hero.imageAlt}
+            priority
+            outline
+            ratio="aspect-[4/5]"
+           
+            sizes="(min-width: 768px) 40vw, 85vw"
+          />
+        </FadeIn>
       </div>
     </section>
   );

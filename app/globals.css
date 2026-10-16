@@ -21,7 +21,7 @@
   --site-header-height: 4.25rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   :root {
     --site-header-height: 6rem;
   }
@@ -107,6 +107,20 @@ footer nav[aria-label="Footer"] {
     min-width: 2.75rem;
     touch-action: manipulation;
   }
+
+  /* Slightly faded treatment so photographs sit in the same muted register. */
+  .photo-muted {
+    filter: grayscale(0.35) saturate(0.72) contrast(0.98);
+  }
+
+  /* Gentler treatment for the still-life photography. */
+  .photo-soft {
+    filter: saturate(0.82) contrast(0.97) brightness(1.01);
+  }
+}
+
+[id] {
+  scroll-margin-top: calc(var(--site-header-height) + 1.25rem);
 }
 
 @layer utilities {
@@ -185,4 +199,40 @@ footer nav[aria-label="Footer"] {
       );
   }
 
+}
+
+/* Brand colour for native radio buttons and checkboxes */
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #555439;
+}
+
+/*
+ * Typesetting rules
+ * - Headings and display lines wrap evenly, so a line never ends with a lone word.
+ * - Body copy avoids orphans (a single word on the last line).
+ * - Button labels never break across two lines.
+ */
+h1,
+h2,
+h3,
+h4,
+blockquote,
+.text-display {
+  text-wrap: balance;
+}
+
+p,
+li,
+dd {
+  text-wrap: pretty;
+}
+
+html {
+  hanging-punctuation: first;
+}
+
+a.rounded-full,
+button.rounded-full {
+  white-space: nowrap;
 }

@@ -1,8 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getSiteUrl } from "@/lib/site";
 
-/** Inner pages are “coming soon” — only advertise the homepage until they launch. */
-const ROUTES = ["/"] as const;
+const ROUTES = ["/", "/about", "/services", "/events", "/contact"] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const base = getSiteUrl();
