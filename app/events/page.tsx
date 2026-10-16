@@ -5,6 +5,7 @@ import { PageHeader } from "@/components/PageHeader";
 import { eventFallbackImage, events, eventsPage } from "@/content/events";
 import { buildPageMeta } from "@/lib/metadata";
 import { siteContentFrame, siteSectionY } from "@/lib/siteLayout";
+import { Lines } from "@/components/Lines";
 
 export const metadata = buildPageMeta({
   title: eventsPage.title,
@@ -27,8 +28,8 @@ export default function EventsPage() {
         <div className={siteContentFrame}>
           {events.length === 0 ? (
             <FadeIn className="mx-auto max-w-[40rem] border-y border-forest/20 py-16 text-center">
-              <p className="font-heading text-[clamp(1.6rem,2.8vw,2.3rem)] font-light italic leading-[1.3] text-forest">
-                {eventsPage.empty.message}
+              <p className="font-heading text-[clamp(1.6rem,2.8vw,2.3rem)] font-light leading-[1.3] text-forest">
+                <Lines text={eventsPage.empty.message} />
               </p>
               <Link
                 href={eventsPage.empty.link.href}
