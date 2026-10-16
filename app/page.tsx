@@ -4,22 +4,22 @@ import { FadeIn } from "@/components/FadeIn";
 import { HeroSection } from "@/components/HeroSection";
 import { ServicesBand } from "@/components/ServicesBand";
 import { StudioTriptych } from "@/components/StudioTriptych";
-import { TestimonialCarousel } from "@/components/TestimonialCarousel";
-import { homeContent } from "@/data/content";
-import { buildPageMeta } from "@/lib/metadata";
+import { Testimonials } from "@/components/Testimonials";
+import { VeinDivider } from "@/components/VeinDivider";
+import { WellnessPromo } from "@/components/WellnessPromo";
+import { homeContent } from "@/content/home";
+import { testimonials } from "@/content/testimonials";
 import { siteImages } from "@/lib/siteImages";
+import { buildPageMeta } from "@/lib/metadata";
 import { siteContentFrame, siteSectionY } from "@/lib/siteLayout";
 
 export const metadata = buildPageMeta({
   title: "Home",
-  description:
-    "Sink into slower yoga, breathwork and restorative treatments nestled in Chew Magna with House of Tula.",
+  description: homeContent.seoDescription,
   path: "/",
 });
 
 export default function HomePage() {
-  const pillars = homeContent.services.slice(0, 3);
-
   return (
     <>
       <HeroSection />
@@ -48,6 +48,8 @@ export default function HomePage() {
         </div>
       </section>
 
+      <VeinDivider />
+
       <StudioTriptych
         eyebrow={homeContent.aboutTeaser.studioEyebrow}
         title={homeContent.aboutTeaser.heading}
@@ -55,16 +57,32 @@ export default function HomePage() {
         link={homeContent.aboutTeaser.link}
         imageAltWide={homeContent.aboutTeaser.imageAlt}
         imageAltNarrow={homeContent.aboutTeaser.imageAltFlank}
+        images={homeContent.aboutTeaser.images}
       />
 
-      <ServicesBand heading={homeContent.servicesHeading} lead={homeContent.servicesBandLead} columns={pillars} />
+      <VeinDivider />
 
-      <TestimonialCarousel testimonials={[...homeContent.testimonials]} />
+      <ServicesBand
+        heading={homeContent.servicesHeading}
+        lead={homeContent.servicesBandLead}
+        columns={homeContent.services}
+        footnote={homeContent.servicesFootnote}
+      />
+
+      {testimonials.length > 0 ? (
+        <>
+          <VeinDivider />
+          <Testimonials testimonials={testimonials} />
+        </>
+      ) : null}
+
+      <VeinDivider />
+      <WellnessPromo />
 
       <section className={`relative overflow-hidden bg-surface ${siteSectionY}`} aria-labelledby="pause-heading">
         <div
           className="pointer-events-none absolute inset-0 bg-cover bg-center opacity-[0.42]"
-          style={{ backgroundImage: `url(${siteImages.closingFloralPattern})` }}
+          style={{ backgroundImage: `url(${homeContent.closingCta.image})` }}
           aria-hidden
         />
         <div className="pointer-events-none absolute inset-0 bg-surface/35" aria-hidden />

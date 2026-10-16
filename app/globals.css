@@ -107,6 +107,15 @@ footer nav[aria-label="Footer"] {
     min-width: 2.75rem;
     touch-action: manipulation;
   }
+
+  /* Slightly faded treatment so photographs sit in the same muted register. */
+  .photo-muted {
+    filter: grayscale(0.35) saturate(0.72) contrast(0.98);
+  }
+}
+
+[id] {
+  scroll-margin-top: calc(var(--site-header-height) + 1.25rem);
 }
 
 @layer utilities {
@@ -185,4 +194,10 @@ footer nav[aria-label="Footer"] {
       );
   }
 
+}
+
+/* Brand colour for native radio buttons and checkboxes */
+input[type="radio"],
+input[type="checkbox"] {
+  accent-color: #555439;
 }
