@@ -1,9 +1,13 @@
+import Link from "next/link";
+import { ArchImage } from "@/components/ArchImage";
+import { Eyebrow } from "@/components/Eyebrow";
 import { FadeIn } from "@/components/FadeIn";
-import { SitePhoto } from "@/components/SitePhoto";
+import { ImageBand } from "@/components/ImageBand";
+import { PageHeader } from "@/components/PageHeader";
 import { VeinDivider } from "@/components/VeinDivider";
 import { aboutPage } from "@/content/about";
 import { buildPageMeta } from "@/lib/metadata";
-import { siteContentFrame, sitePageHeaderTop, siteSectionY } from "@/lib/siteLayout";
+import { siteContentFrame } from "@/lib/siteLayout";
 
 export const metadata = buildPageMeta({
   title: aboutPage.title,
@@ -13,81 +17,84 @@ export const metadata = buildPageMeta({
 
 export default function AboutPage() {
   const extras = aboutPage.extraPhotos;
+  const [first, ...rest] = aboutPage.paragraphs;
 
   return (
     <>
-      <header className={`bg-almond ${sitePageHeaderTop} pb-2`}>
-        <div className={siteContentFrame}>
-          <FadeIn>
-            <p className="font-tag font-body uppercase tracking-[0.28em] text-muted">About</p>
-            <h1 className="font-heading mt-4 text-h2 font-light text-forest">House of Tula</h1>
+      <PageHeader
+        eyebrow={aboutPage.title}
+        title={aboutPage.heading}
+        kicker={aboutPage.kicker}
+        intro={aboutPage.headerIntro}
+        image={aboutPage.portrait.src}
+        imageAlt={aboutPage.portrait.alt}
+      />
+
+      <section className="bg-almond pb-24 md:pb-36" aria-label="Emma's story">
+        <div className={`${siteContentFrame} grid gap-14 md:grid-cols-[0.8fr_1.2fr] md:gap-20 lg:gap-28`}>
+          <FadeIn className="md:sticky md:top-[calc(var(--site-header-height)+3rem)] md:self-start">
+            <Eyebrow>Her story</Eyebrow>
+            <p className="mt-8 font-heading text-[clamp(2rem,3.6vw,3.1rem)] font-light italic leading-[1.12] text-forest">
+              {aboutPage.sideQuote}
+            </p>
+            <div aria-hidden className="mt-10 h-px w-16 bg-olive" />
           </FadeIn>
-        </div>
-      </header>
-
-
-      <section className={`bg-almond ${siteSectionY} pt-0`}>
-        <div className={siteContentFrame}>
-          <div className="grid items-start gap-10 lg:grid-cols-[minmax(16rem,22rem)_minmax(0,1fr)] lg:gap-16">
-            <SitePhoto
-              src={aboutPage.portrait.src}
-              alt={aboutPage.portrait.alt}
-              aspect="portrait"
-              priority
-              sizes="(min-width: 1024px) 22rem, 100vw"
-              className="mx-auto w-full max-w-sm lg:max-w-none"
-              imgClassName="object-[center_30%]"
-            />
-            <FadeIn className="space-y-6 font-body font-light leading-[1.75] text-muted md:space-y-7">
-              {aboutPage.paragraphs.map((paragraph) => (
+          <FadeIn delayMs={60}>
+            <p className="font-heading text-[clamp(1.45rem,2.2vw,1.8rem)] font-light leading-[1.45] text-text">{first}</p>
+            <div className="mt-10 space-y-6 font-body text-[0.98rem] font-light leading-[1.9] text-muted">
+              {rest.map((paragraph) => (
                 <p key={paragraph}>{paragraph}</p>
               ))}
-            </FadeIn>
-          </div>
-        </div>
-      </section>
-
-      <VeinDivider />
-
-      <section className={`bg-surface ${siteSectionY}`} aria-label="Tula means balance">
-        <div className={`${siteContentFrame} text-center`}>
-          <FadeIn className="mx-auto max-w-[40rem]">
-            <p className="font-heading text-[clamp(1.5rem,3vw,2.15rem)] font-light text-forest">
-              {aboutPage.pullQuote.kicker}
-            </p>
-            <p className="mt-4 font-body font-light leading-[1.75] text-muted md:mt-6">
-              {aboutPage.pullQuote.line}
-            </p>
+            </div>
+            <p className="mt-12 font-heading text-[1.6rem] font-light italic text-olive-dark">Emma</p>
           </FadeIn>
         </div>
       </section>
 
+      <ImageBand src={aboutPage.band.image} quote={aboutPage.band.quote} attribution={aboutPage.kicker} />
+
       {extras.length > 0 ? (
-        <>
-          <VeinDivider />
-          <section className={`bg-almond ${siteSectionY}`} aria-label="Studio photographs">
-            <div className={siteContentFrame}>
-              <div
-                className={
-                  extras.length === 1
-                    ? "mx-auto max-w-xl"
-                    : "grid gap-6 sm:grid-cols-2 sm:gap-8"
-                }
-              >
-                {extras.map((photo) => (
-                  <SitePhoto
-                    key={photo.src}
-                    src={photo.src}
-                    alt={photo.alt}
-                    aspect="landscape"
-                    sizes={extras.length === 1 ? "(min-width: 768px) 36rem, 100vw" : "(min-width: 640px) 45vw, 100vw"}
-                  />
-                ))}
-              </div>
-            </div>
-          </section>
-        </>
+        <section className="bg-almond py-20 md:py-32" aria-label="Studio photographs">
+          <div
+            className={`${siteContentFrame} ${extras.length === 1 ? "mx-auto max-w-xl" : "grid gap-8 sm:grid-cols-2 md:gap-12"}`}
+          >
+            {extras.map((photo, index) => (
+              <FadeIn key={photo.src} delayMs={index * 60}>
+                <ArchImage
+                  src={photo.src}
+                  alt={photo.alt}
+                  square={index % 2 === 1}
+                  ratio="aspect-[4/5]"
+                  sizes={extras.length === 1 ? "(min-width: 768px) 36rem, 100vw" : "(min-width: 640px) 45vw, 100vw"}
+                />
+              </FadeIn>
+            ))}
+          </div>
+        </section>
       ) : null}
+
+      <section className="bg-almond py-20 text-center md:py-28">
+        <FadeIn className={siteContentFrame}>
+          <VeinDivider className="!pt-0" />
+          <p className="font-heading text-[clamp(1.9rem,3.4vw,2.8rem)] font-light text-forest">
+            Come and find a little stillness.
+          </p>
+          <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row">
+            <Link
+              href="/services"
+              className="inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-forest px-9 font-body text-[0.7rem] uppercase tracking-[0.28em] text-almond transition-[transform,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-forest-slab"
+            >
+              Explore services
+            </Link>
+            <Link
+              href="/contact"
+              className="border-b border-forest/30 pb-1 font-body text-[0.7rem] uppercase tracking-[0.28em] text-forest transition-colors duration-layout hover:border-forest"
+            >
+              Get in touch
+            </Link>
+          </div>
+        </FadeIn>
+      </section>
     </>
   );
 }
