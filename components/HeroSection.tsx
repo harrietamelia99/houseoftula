@@ -1,8 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "@/components/FadeIn";
-import { homeContent } from "@/data/content";
-import { siteImages } from "@/lib/siteImages";
+import { homeContent } from "@/content/home";
 import { siteContentFrame } from "@/lib/siteLayout";
 
 export function HeroSection() {
@@ -16,14 +15,14 @@ export function HeroSection() {
       {/* Full-bleed photography + read-through scrim (scale recesses the photo; low opacity keeps it soft) */}
       <div className="pointer-events-none absolute inset-0 -z-20 overflow-hidden" aria-hidden>
         <Image
-          src={siteImages.heroFigure}
-          alt=""
+          src={hero.image}
+          alt={hero.imageAlt}
           fill
           priority
           sizes="100vw"
-          className="scale-[1.08] object-cover object-[center_28%] opacity-[0.28] sm:scale-110 sm:object-center"
+          className="photo-muted object-cover object-[center_46%]"
         />
-        <div className="absolute inset-0 bg-gradient-to-b from-forest-slab/92 via-forest-soft/90 to-forest-soft/95" />
+        <div className="absolute inset-0 bg-gradient-to-b from-forest-slab/75 via-forest-slab/55 to-forest-slab/80" />
       </div>
 
       <div aria-hidden className="grain-forest pointer-events-none absolute inset-0 z-0" />
@@ -34,7 +33,7 @@ export function HeroSection() {
         >
           <FadeIn delayMs={0}>
             <p className="font-tag font-body text-[0.65rem] uppercase tracking-[0.34em] text-almond/65">
-              {hero.secondaryEyebrow}
+              {hero.eyebrow}
             </p>
           </FadeIn>
 
@@ -43,21 +42,14 @@ export function HeroSection() {
               id="hero-heading"
               className="font-heading mx-auto max-w-[min(100%,36rem)] text-hero font-light leading-[1.06] tracking-tight text-almond"
             >
-              {hero.titleLines.map((line, index) => (
-                <span key={line} className={index > 0 ? "block -mt-[0.12em]" : "block"}>
-                  {line}
-                </span>
-              ))}
+              {hero.title}
             </h1>
+            <p className="mt-4 font-heading text-h3 font-light italic text-almond/90">{hero.byline}</p>
           </FadeIn>
 
-          <FadeIn delayMs={110} className="mt-7 md:mt-12">
-            <p className="mx-auto max-w-[min(100%,42rem)] font-body text-[0.9375rem] font-light leading-[1.75] text-almond/88 md:text-base md:leading-[1.85]">
-              {hero.subheadingLines.map((line) => (
-                <span key={line} className="block">
-                  {line}
-                </span>
-              ))}
+          <FadeIn delayMs={110} className="mt-6 md:mt-8">
+            <p className="mx-auto max-w-[min(100%,36rem)] font-heading text-[clamp(1.35rem,3vw,2.05rem)] font-light leading-[1.2] text-almond/90">
+              {hero.supporting}
             </p>
           </FadeIn>
 
@@ -72,10 +64,10 @@ export function HeroSection() {
               {hero.primaryCta.label}
             </Link>
             <Link
-              href={hero.reservationCta.href}
-              className="inline-flex min-h-[3rem] w-full items-center justify-center rounded-full border border-almond/60 px-9 py-2.5 text-center font-body text-sm font-light leading-none text-almond transition-[transform,border-color,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:border-almond hover:bg-almond/18 active:translate-y-0 motion-reduce:hover:translate-y-0 sm:min-h-[52px] sm:w-auto sm:min-w-[12rem] sm:py-0"
+              href={hero.secondaryCta.href}
+              className="inline-flex min-h-[3rem] w-full items-center justify-center rounded-full border border-almond/60 px-9 py-2.5 text-center font-body text-sm font-light leading-none text-almond transition-[transform,border-color,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:border-almond hover:bg-almond/20 active:translate-y-0 motion-reduce:hover:translate-y-0 sm:min-h-[52px] sm:w-auto sm:min-w-[12rem] sm:py-0"
             >
-              {hero.reservationCta.label}
+              {hero.secondaryCta.label}
             </Link>
           </FadeIn>
         </div>

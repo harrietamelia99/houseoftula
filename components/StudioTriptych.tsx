@@ -1,7 +1,12 @@
 import Link from "next/link";
 import { FadeIn } from "@/components/FadeIn";
 import { SitePhoto } from "@/components/SitePhoto";
-import { siteImages } from "@/lib/siteImages";
+type StudioImages = {
+  desktopLeft: string;
+  desktopRight: string;
+  mobileLeft: string;
+  mobileRight: string;
+};
 
 type StudioTriptychProps = {
   eyebrow: string;
@@ -10,6 +15,7 @@ type StudioTriptychProps = {
   link: { label: string; href: string };
   imageAltWide: string;
   imageAltNarrow: string;
+  images: StudioImages;
 };
 
 export function StudioTriptych({
@@ -19,6 +25,7 @@ export function StudioTriptych({
   link,
   imageAltWide,
   imageAltNarrow,
+  images,
 }: StudioTriptychProps) {
   return (
     <section
@@ -28,7 +35,8 @@ export function StudioTriptych({
       <div className="flex flex-col gap-0 lg:flex-row lg:items-stretch">
         <FadeIn className="hidden min-h-0 min-w-0 shrink-0 lg:flex lg:flex-1 lg:self-stretch">
           <SitePhoto
-            src={siteImages.studioStretchSide}
+            src={images.desktopLeft}
+            sizes="(min-width: 1024px) 34vw, 100vw"
             alt={imageAltWide}
             aspect="portrait"
             border={false}
@@ -57,15 +65,16 @@ export function StudioTriptych({
             </Link>
 
             <div className="mt-8 grid w-full gap-4 sm:grid-cols-2 sm:gap-5 lg:hidden">
-              <SitePhoto src={siteImages.classThreeWarriors} alt={imageAltWide} aspect="portrait" />
-              <SitePhoto src={siteImages.detailMatStretch} alt={imageAltNarrow} aspect="portrait" />
+              <SitePhoto src={images.mobileLeft} alt={imageAltWide} aspect="portrait" sizes="(min-width: 640px) 45vw, 100vw" />
+              <SitePhoto src={images.mobileRight} alt={imageAltNarrow} aspect="portrait" sizes="(min-width: 640px) 45vw, 100vw" />
             </div>
           </FadeIn>
         </div>
 
         <FadeIn delayMs={60} className="hidden min-h-0 min-w-0 shrink-0 lg:flex lg:flex-1 lg:self-stretch">
           <SitePhoto
-            src={siteImages.studioGroupMermaid}
+            src={images.desktopRight}
+            sizes="(min-width: 1024px) 34vw, 100vw"
             alt={imageAltNarrow}
             aspect="portrait"
             border={false}
