@@ -1,12 +1,12 @@
 import { ArchImage } from "@/components/ArchImage";
-import { Eyebrow } from "@/components/Eyebrow";
 import { FadeIn } from "@/components/FadeIn";
 import { siteContentFrame } from "@/lib/siteLayout";
 
 type PageHeaderProps = {
-  eyebrow: string;
+  /** Kept for reference; not shown. */
+  eyebrow?: string;
   title: string;
-  /** Optional italic line under the title. */
+  /** Optional line under the title. */
   kicker?: string;
   intro?: string;
   image: string;
@@ -14,17 +14,16 @@ type PageHeaderProps = {
 };
 
 /** Inner page opener: editorial title on the left, arched photograph on the right. */
-export function PageHeader({ eyebrow, title, kicker, intro, image, imageAlt = "" }: PageHeaderProps) {
+export function PageHeader({ title, kicker, intro, image, imageAlt = "" }: PageHeaderProps) {
   return (
     <header className="relative overflow-hidden bg-almond pb-16 pt-14 md:pb-24 md:pt-20 lg:pb-28">
       <div className={`${siteContentFrame} grid items-end gap-12 md:grid-cols-[1.15fr_0.85fr] md:gap-16 lg:gap-24`}>
         <FadeIn className="order-2 md:order-1 md:pb-6">
-          <Eyebrow>{eyebrow}</Eyebrow>
-          <h1 className="mt-8 font-heading text-[clamp(3rem,7vw,6rem)] font-light leading-[0.95] tracking-[-0.01em] text-forest">
+          <h1 className="font-heading text-[clamp(2.75rem,6vw,5rem)] font-light leading-[0.95] tracking-[-0.01em] text-forest">
             {title}
           </h1>
           {kicker ? (
-            <p className="mt-5 font-heading text-[clamp(1.35rem,2.4vw,1.9rem)] font-light italic text-olive-dark/80">
+            <p className="mt-5 font-heading text-[clamp(1.35rem,2.4vw,1.9rem)] font-light text-olive-dark/80">
               {kicker}
             </p>
           ) : null}

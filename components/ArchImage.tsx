@@ -36,7 +36,7 @@ export function ArchImage({
       {outline ? (
         <div
           aria-hidden
-          className={`pointer-events-none absolute inset-0 translate-x-3 translate-y-3 border border-olive/60 md:translate-x-5 md:translate-y-5 ${shape}`}
+          className={`pointer-events-none absolute inset-0 translate-x-3 translate-y-3 border border-sienna/50 md:translate-x-5 md:translate-y-5 ${shape}`}
         />
       ) : null}
       <div className={`relative w-full overflow-hidden bg-surface ${ratio} ${shape}`}>

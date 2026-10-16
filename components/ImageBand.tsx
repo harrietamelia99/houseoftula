@@ -1,9 +1,10 @@
 import Image from "next/image";
 import { FadeIn } from "@/components/FadeIn";
+import { Lines, type LineText } from "@/components/Lines";
 
 type ImageBandProps = {
   src: string;
-  quote: string;
+  quote: LineText;
   attribution?: string;
 };
 
@@ -15,7 +16,7 @@ export function ImageBand({ src, quote, attribution }: ImageBandProps) {
       <div aria-hidden className="absolute inset-0 -z-10 bg-forest-slab/45" />
       <FadeIn className="site-frame mx-auto max-w-[56rem] text-center">
         <p className="font-heading text-[clamp(2rem,4.6vw,3.9rem)] font-light italic leading-[1.12] text-almond">
-          {quote}
+          <Lines text={quote} />
         </p>
         {attribution ? (
           <p className="mt-8 font-body text-[0.68rem] uppercase tracking-[0.32em] text-almond/75">{attribution}</p>

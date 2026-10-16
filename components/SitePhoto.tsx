@@ -41,7 +41,7 @@ export function SitePhoto({
         fill
         priority={priority}
         sizes={sizes}
-        className={`photo-muted object-cover object-center transition-transform duration-calm ease-out-soft will-change-transform group-hover:scale-[1.025] motion-reduce:transition-none motion-reduce:group-hover:scale-100 ${imgClassName}`.trim()}
+        className={`photo-muted object-cover object-center ${imgClassName}`.trim()}
       />
     </div>
   );
