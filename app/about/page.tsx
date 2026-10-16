@@ -1,6 +1,5 @@
 import Link from "next/link";
 import { ArchImage } from "@/components/ArchImage";
-import { Eyebrow } from "@/components/Eyebrow";
 import { FadeIn } from "@/components/FadeIn";
 import { ImageBand } from "@/components/ImageBand";
 import { PageHeader } from "@/components/PageHeader";
@@ -8,6 +7,7 @@ import { VeinDivider } from "@/components/VeinDivider";
 import { aboutPage } from "@/content/about";
 import { buildPageMeta } from "@/lib/metadata";
 import { siteContentFrame } from "@/lib/siteLayout";
+import { Lines } from "@/components/Lines";
 
 export const metadata = buildPageMeta({
   title: aboutPage.title,
@@ -33,9 +33,8 @@ export default function AboutPage() {
       <section className="bg-almond pb-24 md:pb-36" aria-label="Emma's story">
         <div className={`${siteContentFrame} grid gap-14 md:grid-cols-[0.8fr_1.2fr] md:gap-20 lg:gap-28`}>
           <FadeIn className="md:sticky md:top-[calc(var(--site-header-height)+3rem)] md:self-start">
-            <Eyebrow>Her story</Eyebrow>
-            <p className="mt-8 font-heading text-[clamp(2rem,3.6vw,3.1rem)] font-light italic leading-[1.12] text-forest">
-              {aboutPage.sideQuote}
+            <p className="font-heading text-[clamp(2rem,3.6vw,3.1rem)] font-light italic leading-[1.12] text-forest">
+              <Lines text={aboutPage.sideQuote} />
             </p>
             <div aria-hidden className="mt-10 h-px w-16 bg-olive" />
           </FadeIn>
@@ -77,7 +76,7 @@ export default function AboutPage() {
         <FadeIn className={siteContentFrame}>
           <VeinDivider className="!pt-0" />
           <p className="font-heading text-[clamp(1.9rem,3.4vw,2.8rem)] font-light text-forest">
-            Come and find a little stillness.
+            <Lines text={["Come and find", "a little stillness."]} />
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row">
             <Link
