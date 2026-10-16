@@ -1,7 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ArchImage } from "@/components/ArchImage";
-import { Eyebrow } from "@/components/Eyebrow";
 import { FadeIn } from "@/components/FadeIn";
 import { HeroSection } from "@/components/HeroSection";
 import { ImageBand } from "@/components/ImageBand";
@@ -13,6 +12,7 @@ import { testimonials } from "@/content/testimonials";
 import { siteImages } from "@/lib/siteImages";
 import { buildPageMeta } from "@/lib/metadata";
 import { siteContentFrame } from "@/lib/siteLayout";
+import { Lines } from "@/components/Lines";
 
 export const metadata = buildPageMeta({
   title: "Home",
@@ -21,7 +21,7 @@ export const metadata = buildPageMeta({
 });
 
 const textLink =
-  "group inline-flex items-center gap-3 font-body text-[0.7rem] uppercase tracking-[0.28em] text-forest";
+  "group inline-flex items-center gap-3 whitespace-nowrap font-body text-[0.7rem] uppercase tracking-[0.28em] text-forest";
 
 export default function HomePage() {
   const { statement, aboutTeaser, offerings, band, wellness, closingCta } = homeContent;
@@ -31,7 +31,7 @@ export default function HomePage() {
       <HeroSection />
 
       {/* Statement */}
-      <section className="bg-almond pb-20 pt-6 md:pb-32 md:pt-10" aria-label={statement.kicker}>
+      <section className="bg-almond pb-20 pt-6 md:pb-32 md:pt-10" aria-label="Tula means balance">
         <FadeIn className={`${siteContentFrame} mx-auto max-w-[54rem] text-center`}>
           <Image
             src={siteImages.monogramHCircle}
@@ -41,16 +41,15 @@ export default function HomePage() {
             sizes="72px"
             className="mx-auto h-[4.5rem] w-[4.5rem] object-contain"
           />
-          <p className="mt-10 font-body text-[0.68rem] uppercase tracking-[0.32em] text-muted">{statement.kicker}</p>
-          <p className="mt-6 font-heading text-[clamp(1.75rem,3.6vw,3rem)] font-light leading-[1.22] text-forest">
-            {statement.line}
+          <p className="mt-10 text-balance font-heading text-[clamp(1.75rem,3.6vw,3rem)] font-light leading-[1.22] text-forest">
+            <Lines text={statement.line} from="md" />
           </p>
           <VeinDivider className="!pb-0 !pt-12" />
         </FadeIn>
       </section>
 
       {/* The studio */}
-      <section className="relative overflow-hidden bg-almond pb-24 md:pb-36">
+      <section className="relative overflow-hidden bg-almond pb-20 md:pb-28">
         <div className={`${siteContentFrame} grid items-center gap-16 md:grid-cols-2 md:gap-12 lg:gap-24`}>
           <FadeIn className="relative mx-auto w-full max-w-[26rem] pb-16 pr-10 md:max-w-none md:pb-24 md:pr-16">
             <ArchImage
@@ -70,9 +69,8 @@ export default function HomePage() {
             </div>
           </FadeIn>
           <FadeIn delayMs={80} className="max-md:text-center">
-            <Eyebrow className="max-md:justify-center">{aboutTeaser.eyebrow}</Eyebrow>
-            <h2 className="mt-7 font-heading text-[clamp(2.4rem,4.6vw,4rem)] font-light leading-[1.02] text-forest">
-              {aboutTeaser.heading}
+            <h2 className="font-heading text-[clamp(2.4rem,4.6vw,4rem)] font-light leading-[1.02] text-forest">
+              <Lines text={aboutTeaser.heading} />
             </h2>
             <div className="mt-8 space-y-5 font-body text-[0.98rem] font-light leading-[1.85] text-muted md:max-w-[28rem]">
               {aboutTeaser.body.map((paragraph) => (
@@ -91,46 +89,45 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* Offerings: numbered editorial list */}
-      <section className="bg-surface/60 py-24 md:py-36" aria-labelledby="offerings-heading">
-        <div className={siteContentFrame}>
+      {/* Offerings */}
+      <section
+        className="relative isolate overflow-hidden bg-sienna pb-16 pt-20 text-almond md:pb-24 md:pt-32"
+        aria-labelledby="offerings-heading"
+      >
+        <div className={`${siteContentFrame} relative`}>
           <FadeIn className="grid gap-8 md:grid-cols-[1fr_1fr] md:items-end md:gap-16">
             <div>
-              <Eyebrow>{offerings.eyebrow}</Eyebrow>
               <h2
                 id="offerings-heading"
-                className="mt-7 font-heading text-[clamp(2.4rem,4.6vw,4rem)] font-light leading-[1.02] text-forest"
+                className="font-heading text-[clamp(2.4rem,4.6vw,4rem)] font-light leading-[1.02] text-almond"
               >
-                {offerings.heading}
+                <Lines text={offerings.heading} />
               </h2>
             </div>
-            <p className="font-body text-[0.98rem] font-light leading-[1.85] text-muted md:pb-2">{offerings.lead}</p>
+            <p className="font-body text-[0.98rem] font-normal leading-[1.85] text-almond md:pb-2">{offerings.lead}</p>
           </FadeIn>
 
-          <ol className="mt-16 border-t border-forest/20 md:mt-24">
+          <ol className="mt-16 border-t border-almond/25 md:mt-24">
             {offerings.items.map((item, index) => (
-              <li key={item.title} className="border-b border-forest/20">
+              <li key={item.title} className="border-b border-almond/25">
                 <FadeIn delayMs={index * 40}>
                   <Link
                     href={item.href}
-                    className="group grid grid-cols-[3rem_1fr] items-center gap-x-4 gap-y-4 py-8 md:grid-cols-[5rem_1.1fr_1.4fr_7rem] md:gap-x-10 md:py-10"
+                    className="group grid items-center gap-y-3 py-8 md:py-10 lg:grid-cols-[1fr_1.3fr_7rem] lg:gap-x-12"
                   >
-                    <span className="self-start pt-2 font-heading text-[1.35rem] font-light italic text-olive md:self-center md:pt-0">
-                      {item.number}
-                    </span>
-                    <h3 className="font-heading text-[clamp(1.9rem,3.2vw,2.75rem)] font-light leading-[1.05] text-forest transition-transform duration-calm ease-out-soft group-hover:translate-x-1">
+                    <h3 className="font-heading text-[clamp(1.9rem,3.2vw,2.75rem)] font-light leading-[1.05] text-almond">
                       {item.title}
                     </h3>
-                    <p className="col-start-2 font-body text-[0.95rem] font-light leading-[1.8] text-muted md:col-start-auto">
+                    <p className="font-body text-[0.95rem] font-normal leading-[1.8] text-almond">
                       {item.description}
                     </p>
-                    <div className="relative col-start-2 hidden aspect-[4/5] w-28 overflow-hidden rounded-t-[999px] md:col-start-auto md:block">
+                    <div className="relative hidden aspect-[4/5] w-28 overflow-hidden rounded-t-[999px] lg:block">
                       <Image
                         src={item.image}
                         alt=""
                         fill
                         sizes="112px"
-                        className="photo-soft object-cover transition-transform duration-calm ease-out-soft group-hover:scale-105"
+                        className="photo-soft object-cover"
                       />
                     </div>
                   </Link>
@@ -140,8 +137,8 @@ export default function HomePage() {
           </ol>
 
           <FadeIn className="mt-12 text-center md:text-right">
-            <Link href="/services" className={textLink}>
-              <span className="border-b border-forest/30 pb-1 transition-colors duration-layout group-hover:border-forest">
+            <Link href="/services" className={`${textLink} !text-almond`}>
+              <span className="border-b border-almond/40 pb-1 transition-colors duration-layout group-hover:border-almond">
                 Explore all services
               </span>
               <span aria-hidden className="transition-transform duration-layout group-hover:translate-x-1">
@@ -155,7 +152,7 @@ export default function HomePage() {
       <ImageBand src={band.image} quote={band.quote} attribution={band.attribution} />
 
       {/* Wellness at Work feature */}
-      <section className="bg-almond py-24 md:py-36" aria-labelledby="wellness-heading">
+      <section className="bg-almond py-20 md:py-28" aria-labelledby="wellness-heading">
         <div className={`${siteContentFrame} grid items-center gap-14 md:grid-cols-[1.2fr_1fr] md:gap-16 lg:gap-24`}>
           <FadeIn>
             <ArchImage
@@ -167,12 +164,11 @@ export default function HomePage() {
             />
           </FadeIn>
           <FadeIn delayMs={80} className="max-md:text-center">
-            <Eyebrow className="max-md:justify-center">{wellness.eyebrow}</Eyebrow>
             <h2
               id="wellness-heading"
-              className="mt-7 font-heading text-[clamp(2.2rem,4vw,3.5rem)] font-light leading-[1.05] text-forest"
+              className="font-heading text-[clamp(2.2rem,4vw,3.5rem)] font-light leading-[1.05] text-forest"
             >
-              {wellness.heading}
+              <Lines text={wellness.heading} />
             </h2>
             <p className="mt-7 font-body text-[0.98rem] font-light leading-[1.85] text-muted">{wellness.body}</p>
             <div className="mt-10 flex flex-col items-center gap-5 sm:flex-row md:items-center">
@@ -198,7 +194,6 @@ export default function HomePage() {
 
       {/* Closing */}
       <section className="relative overflow-hidden bg-forest-slab py-24 text-almond md:py-36" aria-labelledby="pause-heading">
-        <div aria-hidden className="grain-forest pointer-events-none absolute inset-0" />
         <FadeIn className={`${siteContentFrame} relative text-center`}>
           <Image
             src={siteImages.monogramH}
@@ -208,7 +203,7 @@ export default function HomePage() {
             sizes="64px"
             className="mx-auto h-auto w-14 opacity-80"
           />
-          <h2 id="pause-heading" className="mt-10 font-heading text-[clamp(2.75rem,6vw,5rem)] font-light italic leading-none">
+          <h2 id="pause-heading" className="mt-10 font-heading text-[clamp(2.75rem,6vw,5rem)] font-light leading-none">
             {closingCta.headline}
           </h2>
           <p className="mx-auto mt-7 max-w-[30rem] font-body text-[0.98rem] font-light leading-[1.85] text-almond/75">

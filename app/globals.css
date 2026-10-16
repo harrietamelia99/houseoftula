@@ -21,7 +21,7 @@
   --site-header-height: 4.25rem;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   :root {
     --site-header-height: 6rem;
   }
@@ -205,4 +205,34 @@ footer nav[aria-label="Footer"] {
 input[type="radio"],
 input[type="checkbox"] {
   accent-color: #555439;
+}
+
+/*
+ * Typesetting rules
+ * - Headings and display lines wrap evenly, so a line never ends with a lone word.
+ * - Body copy avoids orphans (a single word on the last line).
+ * - Button labels never break across two lines.
+ */
+h1,
+h2,
+h3,
+h4,
+blockquote,
+.text-display {
+  text-wrap: balance;
+}
+
+p,
+li,
+dd {
+  text-wrap: pretty;
+}
+
+html {
+  hanging-punctuation: first;
+}
+
+a.rounded-full,
+button.rounded-full {
+  white-space: nowrap;
 }
