@@ -33,14 +33,14 @@ export const eventFallbackImage = images.eventFallback;
 export const eventsPage = {
   title: "Events",
   heading: "Gatherings",
-  kicker: "small, calm, limited places",
+  kicker: "Small groups, calm settings, limited places.",
   headerImage: images.workplace,
   seoDescription:
     "Wellness at Work gatherings and seasonal events with House of Tula. Small groups, calm settings, limited places.",
   intro:
     "Occasional gatherings for teams and small groups. Places are limited, and the setting changes with each event.",
   empty: {
-    message: "No events just now. Get in touch to hear about the next one.",
+    message: ["No events just now.", "Get in touch to hear about the next one."],
     link: { label: "Get in touch", href: "/contact" },
   },
   bookLabel: "Book tickets",

@@ -8,11 +8,11 @@ import { images } from "@/content/images";
 export const homeContent = {
   hero: {
     /** Small line above the title. */
-    eyebrow: "Chew Magna, Somerset",
+    eyebrow: "Chew Magna",
     title: "House of Tula",
     byline: "by Emma Hasell",
     /** Supporting line under the byline. */
-    supporting: "A space to be. Not to perform.",
+    supporting: ["A space to be.", "Not to perform."],
     image: images.heroDoor,
     imageAlt: "The weathered wooden doors of the House of Tula studio",
     primaryCta: { label: "Discover Tula", href: "/about" },
@@ -21,11 +21,16 @@ export const homeContent = {
   /** Large statement under the hero. */
   statement: {
     kicker: "Tula means balance",
-    line: "In busy, overstimulated seasons, House of Tula is a place to pause, where breath, movement and stillness meet.",
+    line: [
+      "Tula means balance.",
+      "In busy, overstimulated seasons,",
+      "this is a place to pause,",
+      "where breath, movement and stillness meet.",
+    ],
   },
   aboutTeaser: {
     eyebrow: "The studio",
-    heading: "A studio that asks very little",
+    heading: ["A studio that", "asks very little"],
     body: [
       "House of Tula is run by Emma Hasell from an intimate studio in Chew Magna: relaxed, inviting, with nature nearby. Sessions suit people who want honest attention without the noise of huge drop-in rooms.",
       "This is yoga and wellness slowed right down: companionable guidance, with no pressure to strive or perform.",
@@ -38,8 +43,8 @@ export const homeContent = {
   },
   offerings: {
     eyebrow: "Ways we hold your attention",
-    heading: "Gently paced, shaped around you",
-    lead: "Every session is shaped around you. Small groups and one-to-one time, with space to notice how you feel rather than how you look.",
+    heading: ["Ways we hold", "your attention"],
+    lead: "Small groups and one-to-one time, gently paced, with space to notice how you feel rather than how you look.",
     items: [
       {
         number: "01",
@@ -51,7 +56,7 @@ export const homeContent = {
       },
       {
         number: "02",
-        title: "Breathwork + meditation",
+        title: "Breathwork\u00a0+ meditation",
         description:
           "Guided sits and conscious breath practices to soften the nervous system and bring you back to yourself.",
         href: "/services#breath-and-stillness",
@@ -78,16 +83,16 @@ export const homeContent = {
   /** Full-width photograph with a quote. */
   band: {
     image: images.valley,
-    quote: "Somewhere you can find a little time, stillness, and just be.",
+    quote: ["Somewhere you can find a little time,", "stillness, and just be."],
     attribution: "Emma Hasell",
   },
   wellness: {
     eyebrow: "Wellness at Work",
-    heading: "A calmer hour for your team",
+    heading: ["A calmer hour", "for your team"],
     body: "Yoga and breathwork that comes to your workplace or a chosen venue, for groups of up to around 25. No experience needed, just a little time set aside to pause, reset and return to work lighter.",
     image: images.workplace,
     imageAlt: "A bright, quiet room with linen mats laid out",
-    cta: { label: "Enquire about Wellness at Work", href: "/contact?type=wellness-at-work" },
+    cta: { label: "Enquire for your team", href: "/contact?type=wellness-at-work" },
     secondary: { label: "See upcoming events", href: "/events" },
   },
   /**

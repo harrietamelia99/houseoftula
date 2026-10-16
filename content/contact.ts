@@ -26,7 +26,7 @@ export const enquiryTypeFromQuery: Record<string, EnquiryType> = {
 export const contactPage = {
   title: "Contact",
   heading: "Get in touch",
-  kicker: "we'd love to hear from you",
+  kicker: "We'd love to hear from you.",
   headerImage: images.doorLock,
   seoDescription:
     "Get in touch with Emma at House of Tula about yoga, facials, massage or Wellness at Work.",

@@ -8,7 +8,7 @@ import { images } from "@/content/images";
 export const servicesPage = {
   title: "Services",
   heading: "What we offer",
-  kicker: "a place to pause, to be still, and be",
+  kicker: "A place to pause, to be still, and be.",
   seoDescription:
     "Small group and one-to-one yoga, breathwork, meditation, facials, massage and Wellness at Work with House of Tula.",
   intro:
@@ -31,7 +31,7 @@ export const servicesPage = {
     {
       id: "breath-and-stillness",
       number: "02",
-      title: "Breathwork + meditation",
+      title: ["Breathwork\u00a0+", "meditation"],
       body: [
         "Guided sits and conscious breath practices to soften the nervous system and bring you gently back to yourself. Meditations carry longer silences, with quiet reassurance. Nothing rushes.",
       ],
@@ -75,7 +75,7 @@ export const servicesPage = {
       notes: ["Up to around 25 people", "Your workplace or a chosen venue"],
       image: images.workplace,
       imageAlt: "A bright room with linen mats laid out",
-      cta: { label: "Enquire about Wellness at Work", href: "/contact?type=wellness-at-work" },
+      cta: { label: "Enquire for your team", href: "/contact?type=wellness-at-work" },
     },
   ],
 } as const;
