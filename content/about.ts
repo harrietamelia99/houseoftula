@@ -7,6 +7,18 @@ import { images } from "@/content/images";
 
 export const aboutPage = {
   title: "About",
+  heading: "Meet Emma",
+  kicker: "Tula means balance",
+  /** Short line in the page header. */
+  headerIntro:
+    "Emma Hasell has practised yoga for over 15 years. House of Tula is her studio in the Chew Valley countryside: a place to move, pause, breathe and reconnect.",
+  /** Large line beside the story. */
+  sideQuote: "Yoga isn't about changing who we are.",
+  /** Full-width photograph with a quote, under the story. */
+  band: {
+    image: images.valley,
+    quote: "A place to pause, where breath, movement and stillness meet.",
+  },
   seoDescription:
     "Emma Hasell on House of Tula: a place to pause in the Chew Valley, with yoga, facials and massage.",
   portrait: {

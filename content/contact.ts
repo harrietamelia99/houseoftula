@@ -3,6 +3,7 @@
  * The form sends to hello@houseoftula.co.uk once the email keys in Vercel are set.
  */
 
+import { images } from "@/content/images";
 import { site } from "@/content/site";
 
 export const enquiryTypes = ["General", "Yoga", "Facials", "Massage", "Wellness at Work"] as const;
@@ -24,6 +25,9 @@ export const enquiryTypeFromQuery: Record<string, EnquiryType> = {
 
 export const contactPage = {
   title: "Contact",
+  heading: "Get in touch",
+  kicker: "we'd love to hear from you",
+  headerImage: images.doorLock,
   seoDescription:
     "Get in touch with Emma at House of Tula about yoga, facials, massage or Wellness at Work.",
   intro:
