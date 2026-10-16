@@ -1,11 +1,11 @@
 import { Suspense } from "react";
 import { FadeIn } from "@/components/FadeIn";
 import { ContactForm } from "@/components/ContactForm";
-import { VeinDivider } from "@/components/VeinDivider";
+import { PageHeader } from "@/components/PageHeader";
 import { contactPage } from "@/content/contact";
 import { site } from "@/content/site";
 import { buildPageMeta } from "@/lib/metadata";
-import { siteContentFrame, sitePageHeaderTop, siteSectionY } from "@/lib/siteLayout";
+import { siteContentFrame, siteSectionY } from "@/lib/siteLayout";
 
 export const metadata = buildPageMeta({
   title: contactPage.title,
@@ -16,19 +16,16 @@ export const metadata = buildPageMeta({
 export default function ContactPage() {
   return (
     <>
-      <header className={`bg-almond ${sitePageHeaderTop} pb-2`}>
-        <div className={siteContentFrame}>
-          <FadeIn className="max-w-3xl">
-            <p className="font-tag font-body uppercase tracking-[0.28em] text-muted">Contact</p>
-            <h1 className="font-heading mt-4 text-h2 font-light text-forest">Get in touch</h1>
-            <p className="mt-6 max-w-measure font-body font-light leading-[1.75] text-muted">{contactPage.intro}</p>
-          </FadeIn>
-        </div>
-      </header>
+      <PageHeader
+        eyebrow={contactPage.title}
+        title={contactPage.heading}
+        kicker={contactPage.kicker}
+        intro={contactPage.intro}
+        image={contactPage.headerImage}
+        imageAlt="The brass lock on the House of Tula studio doors"
+      />
 
-      <VeinDivider />
-
-      <section className={`bg-almond ${siteSectionY} pt-0`}>
+      <section className={`border-t border-forest/15 bg-almond ${siteSectionY}`}>
         <div className={`${siteContentFrame} grid items-start gap-14 lg:grid-cols-[minmax(0,1.15fr)_minmax(16rem,0.75fr)] lg:gap-20`}>
           <Suspense fallback={null}>
             <ContactForm />
