@@ -112,6 +112,11 @@ footer nav[aria-label="Footer"] {
   .photo-muted {
     filter: grayscale(0.35) saturate(0.72) contrast(0.98);
   }
+
+  /* Gentler treatment for the still-life photography. */
+  .photo-soft {
+    filter: saturate(0.82) contrast(0.97) brightness(1.01);
+  }
 }
 
 [id] {
