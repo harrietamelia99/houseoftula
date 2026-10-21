@@ -8,10 +8,10 @@ export const site = {
   name: "House of Tula",
   taglineUpper: "yoga + wellness",
   ownerName: "Emma Hasell",
-  locality: "Chew Magna, Somerset",
+  locality: "Chew Magna, Bristol",
   shortLocation: "Chew Magna, BS40",
   /** Registered business address. */
-  registeredAddress: "2 Brook Cottages, Chew Magna, BS40 8RJ",
+  registeredAddress: "2 Brook Cottages, Chew Magna, Bristol BS40 8RJ",
   email: "hello@houseoftula.co.uk",
   phoneDisplay: "07817 467424",
   phoneTel: "+447817467424",

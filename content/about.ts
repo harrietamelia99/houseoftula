@@ -11,7 +11,7 @@ export const aboutPage = {
   kicker: "Tula means balance",
   /** Short line in the page header. */
   headerIntro:
-    "Emma Hasell has practised yoga for over 15\u00a0years. House of Tula is her studio in the Chew Valley countryside: a place to move, pause, breathe and reconnect.",
+    "I've practised yoga for over 15\u00a0years. House of Tula is my studio in the Chew Valley countryside: a place to move, pause, breathe and reconnect.",
   /** Large line beside the story. */
   sideQuote: ["Yoga isn't about", "changing who we are."],
   /** Full-width photograph with a quote, under the story. */
@@ -29,7 +29,9 @@ export const aboutPage = {
    * Optional extra photos (teaching, a child's pose, the room).
    * Leave this array empty, or add one or two items: { src: "/images/your-photo.jpg", alt: "..." }
    */
-  extraPhotos: [] as { src: string; alt: string }[],
+  extraPhotos: [
+    { src: images.emmaCamelPose, alt: "Emma in camel pose on an outdoor deck, surrounded by trees" },
+  ] as { src: string; alt: string }[],
   pullQuote: {
     kicker: "Tula means balance",
     line: "A place to pause, where breath, movement and stillness meet.",
