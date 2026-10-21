@@ -121,7 +121,7 @@ export default function HomePage() {
                     <p className="font-body text-[0.95rem] font-normal leading-[1.8] text-almond">
                       {item.description}
                     </p>
-                    <div className="relative hidden aspect-[4/5] w-28 overflow-hidden rounded-t-[999px] lg:block">
+                    <div className="relative hidden aspect-[4/5] w-28 overflow-hidden rounded-[2px] lg:block">
                       <Image
                         src={item.image}
                         alt=""
@@ -193,25 +193,25 @@ export default function HomePage() {
       <WellnessPromo />
 
       {/* Closing */}
-      <section className="relative overflow-hidden bg-forest-slab py-24 text-almond md:py-36" aria-labelledby="pause-heading">
+      <section className="relative overflow-hidden bg-surface py-24 text-forest md:py-32" aria-labelledby="pause-heading">
         <FadeIn className={`${siteContentFrame} relative text-center`}>
           <Image
-            src={siteImages.monogramH}
+            src={siteImages.monogramHForest}
             alt=""
-            width={467}
-            height={364}
+            width={465}
+            height={362}
             sizes="64px"
             className="mx-auto h-auto w-14 opacity-80"
           />
           <h2 id="pause-heading" className="mt-10 font-heading text-[clamp(2.75rem,6vw,5rem)] font-light leading-none">
             {closingCta.headline}
           </h2>
-          <p className="mx-auto mt-7 max-w-[30rem] font-body text-[0.98rem] font-light leading-[1.85] text-almond/75">
+          <p className="mx-auto mt-7 max-w-[30rem] font-body text-[0.98rem] font-light leading-[1.85] text-muted">
             {closingCta.body}
           </p>
           <Link
             href={closingCta.link.href}
-            className="mt-11 inline-flex min-h-[3.25rem] items-center justify-center rounded-full border border-almond/50 px-10 font-body text-[0.7rem] uppercase tracking-[0.28em] text-almond transition-[transform,background-color,border-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:border-almond hover:bg-almond hover:text-forest"
+            className="mt-11 inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-forest px-10 font-body text-[0.7rem] uppercase tracking-[0.28em] text-almond transition-[transform,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-forest-slab"
           >
             {closingCta.link.label}
           </Link>
