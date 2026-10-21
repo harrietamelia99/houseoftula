@@ -73,9 +73,16 @@ export default function HomePage() {
               <Lines text={aboutTeaser.heading} />
             </h2>
             <div className="mt-8 space-y-5 font-body text-[0.98rem] font-light leading-[1.85] text-muted md:max-w-[28rem]">
-              {aboutTeaser.body.map((paragraph) => (
-                <p key={paragraph}>{paragraph}</p>
-              ))}
+              {aboutTeaser.body.map((paragraph) =>
+                // Short one-line paragraphs read as a quiet pull line.
+                paragraph.length < 60 ? (
+                  <p key={paragraph} className="font-heading text-[1.45rem] font-light italic leading-[1.35] text-forest">
+                    {paragraph}
+                  </p>
+                ) : (
+                  <p key={paragraph}>{paragraph}</p>
+                ),
+              )}
             </div>
             <Link href={aboutTeaser.link.href} className={`${textLink} mt-10`}>
               <span className="border-b border-forest/30 pb-1 transition-colors duration-layout group-hover:border-forest">
@@ -95,7 +102,7 @@ export default function HomePage() {
         aria-labelledby="offerings-heading"
       >
         <div className={`${siteContentFrame} relative`}>
-          <FadeIn className="grid gap-8 md:grid-cols-[1fr_1fr] md:items-end md:gap-16">
+          <FadeIn className="grid gap-8 md:grid-cols-[1fr_1fr] md:items-start md:gap-16">
             <div>
               <h2
                 id="offerings-heading"
@@ -104,7 +111,16 @@ export default function HomePage() {
                 <Lines text={offerings.heading} />
               </h2>
             </div>
-            <p className="font-body text-[0.98rem] font-normal leading-[1.85] text-almond md:pb-2">{offerings.lead}</p>
+            <div className="md:pb-2">
+              <p className="font-heading text-[clamp(1.35rem,2vw,1.6rem)] font-light italic leading-[1.3] text-almond">
+                {offerings.kicker}
+              </p>
+              <div className="mt-6 space-y-4 font-body text-[0.98rem] font-normal leading-[1.85] text-almond">
+                {offerings.lead.map((paragraph) => (
+                  <p key={paragraph}>{paragraph}</p>
+                ))}
+              </div>
+            </div>
           </FadeIn>
 
           <ol className="mt-16 border-t border-almond/25 md:mt-24">
