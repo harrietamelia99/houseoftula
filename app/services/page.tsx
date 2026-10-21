@@ -55,7 +55,12 @@ export default function ServicesPage() {
                   <Lines text={section.title} />
                 </h2>
                 <div aria-hidden className={`mt-8 h-px w-16 ${warm ? "bg-almond/50" : "bg-sienna"}`} />
-                <div className={`mt-8 space-y-5 font-body text-[0.98rem] leading-[1.85] ${warm ? "font-normal text-almond" : "font-light text-muted"}`}>
+                {section.kicker ? (
+                  <p className={`mt-8 font-heading text-[clamp(1.35rem,2vw,1.6rem)] font-light italic leading-[1.3] ${warm ? "text-almond" : "text-forest"}`}>
+                    {section.kicker}
+                  </p>
+                ) : null}
+                <div className={`${section.kicker ? "mt-5" : "mt-8"} space-y-5 font-body text-[0.98rem] leading-[1.85] ${warm ? "font-normal text-almond" : "font-light text-muted"}`}>
                   {section.body.map((paragraph) => (
                     <p key={paragraph}>{paragraph}</p>
                   ))}

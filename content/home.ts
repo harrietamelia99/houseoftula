@@ -23,18 +23,20 @@ export const homeContent = {
   statement: {
     kicker: "Tula means balance",
     line: [
-      "Tula means balance.",
-      "In busy, overstimulated seasons,",
-      "this is a place to pause,",
-      "where breath, movement and stillness meet.",
+      "Tula\u00a0(\u0924\u0941\u0932\u093e) means\u00a0balance.",
+      "In the busyness of everyday life,",
+      "House of Tula offers a little space",
+      "to pause, to breathe and simply be.",
     ],
   },
   aboutTeaser: {
     eyebrow: "The studio",
     heading: ["A studio that", "asks very little"],
     body: [
-      "I run House of Tula from my intimate studio in Chew Magna: relaxed, inviting, with nature nearby. My sessions suit people who want honest attention without the noise of huge drop-in rooms.",
-      "This is yoga and wellness slowed right down: companionable guidance, with no pressure to strive or perform.",
+      "Tucked away in Chew Magna, House of Tula is a small, welcoming yoga and wellbeing studio surrounded by nature.",
+      "A space to pause, to breathe, to be.",
+      "Through yoga, breathwork and meditation, I offer a gentle invitation to slow down, reconnect with yourself and find a little more balance.",
+      "There is no expectation here. Just space to arrive exactly as you are.",
     ],
     mainImage: images.wireArt,
     mainImageAlt: "The black wire artwork on the wall of Emma's yoga shed",
@@ -45,7 +47,14 @@ export const homeContent = {
   offerings: {
     eyebrow: "Ways to find a little more balance",
     heading: ["Ways to find", "a little more balance"],
-    lead: "Small groups and one-to-one time, gently paced, with space to notice how you feel rather than how you look.",
+    /** Short line under the heading. */
+    kicker: "A space to pause, to breathe, to be.",
+    /** Paragraphs beside the heading. */
+    lead: [
+      "At House of Tula, I offer yoga, breathwork and mindful practices through small, intimate gatherings, one-to-one sessions and thoughtfully created experiences.",
+      "Whether you're looking for a moment of stillness, space to reconnect or simply some time for yourself, there's a place for you here.",
+      "I also bring wellbeing into the workplace, offering corporate yoga, breathwork and mindfulness sessions, as well as creating bespoke wellbeing events for groups, businesses and special occasions.",
+    ],
     items: [
       {
         number: "01",
@@ -57,14 +66,6 @@ export const homeContent = {
       },
       {
         number: "02",
-        title: "Breathwork\u00a0+ meditation",
-        description:
-          "Guided sits and conscious breath practices to soften the nervous system and bring you back to yourself.",
-        href: "/services#breath-and-stillness",
-        image: images.breathStill,
-      },
-      {
-        number: "03",
         title: "Facials + massage",
         description:
           "Nurturing facials and massage, each designed to help you slow down, soften and restore a little balance.",
@@ -72,7 +73,7 @@ export const homeContent = {
         image: images.facialStill,
       },
       {
-        number: "04",
+        number: "03",
         title: "Wellness at Work",
         description:
           "Calm, accessible sessions for teams of up to around 25, at your workplace or a chosen venue.",

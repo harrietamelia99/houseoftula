@@ -39,7 +39,6 @@ export const contactPage = {
   fallback: `You can also email ${site.email} or send a WhatsApp message to ${site.phoneDisplay}.`,
   submitLabel: "Send",
   studioNote: `Studio address: ${site.registeredAddress}. I can send directions once you have been in touch.`,
-  instagramNote: site.instagram.handlePendingConfirmation
-    ? ""
-    : `Follow along on Instagram (${site.instagram.handle}).`,
+  /** Optional line under the Instagram link. Leave as "" to hide it. */
+  instagramNote: "",
 } as const;
