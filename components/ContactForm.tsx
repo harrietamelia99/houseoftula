@@ -137,7 +137,7 @@ export function ContactForm() {
       </div>
 
       <fieldset>
-        <legend className={labelClass}>How would you prefer we reply?</legend>
+        <legend className={labelClass}>How would you prefer I reply?</legend>
         <div className="mt-4 flex flex-col gap-3">
           {(["WhatsApp", "Email"] as const).map((method) => (
             <label key={method} className="flex items-center gap-3 font-body font-light text-text">

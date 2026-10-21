@@ -59,7 +59,7 @@ function IconInstagram(props: SVGProps<SVGSVGElement>) {
 const iconClass = "mt-0.5 h-5 w-5 shrink-0 text-olive/80";
 
 const footerBookCta =
-  "inline-flex items-center rounded-full border border-olive/45 px-7 py-[0.55rem] font-tag font-body text-[0.68rem] uppercase tracking-[0.28em] text-olive-dark transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:border-olive hover:bg-surface hover:text-forest hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-olive/45 focus-visible:ring-offset-4 focus-visible:ring-offset-almond";
+  "inline-flex items-center rounded-full border border-forest bg-forest px-7 py-[0.55rem] font-tag font-body text-[0.68rem] uppercase tracking-[0.28em] text-almond transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:border-forest-slab hover:bg-forest-slab hover:text-almond hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-olive/45 focus-visible:ring-offset-4 focus-visible:ring-offset-almond";
 
 export function SiteFooter() {
   return (
