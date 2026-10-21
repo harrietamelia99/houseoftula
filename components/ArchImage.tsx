@@ -29,7 +29,8 @@ export function ArchImage({
   outline = false,
   square = false,
 }: ArchImageProps) {
-  const shape = square ? "rounded-[2px]" : "rounded-t-[999px]";
+  // Emma asked for rectangular images rather than arches.
+  const shape = square ? "rounded-[2px]" : "rounded-[2px]";
 
   return (
     <div className={`relative ${className}`.trim()}>

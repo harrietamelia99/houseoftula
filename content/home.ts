@@ -8,13 +8,14 @@ import { images } from "@/content/images";
 export const homeContent = {
   hero: {
     /** Small line above the title. */
-    eyebrow: "Chew Magna",
+    eyebrow: "Chew Magna, Bristol",
     title: "House of Tula",
     byline: "by Emma Hasell",
     /** Supporting line under the byline. */
-    supporting: ["A space to be.", "Not to perform."],
-    image: images.heroDoor,
-    imageAlt: "The weathered wooden doors of the House of Tula studio",
+    supporting: ["A space to pause,", "to be, to breathe."],
+    /** Emma's "Welcome to House of Tula" banner of the studio doors. */
+    image: images.welcomeBanner,
+    imageAlt: "Welcome to House of Tula, written over the weathered wooden studio doors",
     primaryCta: { label: "Discover Tula", href: "/about" },
     secondaryCta: { label: "Get in touch", href: "/contact" },
   },
@@ -32,18 +33,18 @@ export const homeContent = {
     eyebrow: "The studio",
     heading: ["A studio that", "asks very little"],
     body: [
-      "House of Tula is run by Emma Hasell from an intimate studio in Chew Magna: relaxed, inviting, with nature nearby. Sessions suit people who want honest attention without the noise of huge drop-in rooms.",
+      "I run House of Tula from my intimate studio in Chew Magna: relaxed, inviting, with nature nearby. My sessions suit people who want honest attention without the noise of huge drop-in rooms.",
       "This is yoga and wellness slowed right down: companionable guidance, with no pressure to strive or perform.",
     ],
-    mainImage: images.studioStill,
-    mainImageAlt: "A rolled linen mat and bolster in soft window light",
+    mainImage: images.wireArt,
+    mainImageAlt: "The black wire artwork on the wall of Emma's yoga shed",
     detailImage: images.doorLock,
     detailImageAlt: "The brass lock on the studio doors",
     link: { label: "More about Emma", href: "/about" },
   },
   offerings: {
-    eyebrow: "Ways we hold your attention",
-    heading: ["Ways we hold", "your attention"],
+    eyebrow: "Ways to find a little more balance",
+    heading: ["Ways to find", "a little more balance"],
     lead: "Small groups and one-to-one time, gently paced, with space to notice how you feel rather than how you look.",
     items: [
       {
@@ -107,9 +108,9 @@ export const homeContent = {
   },
   closingCta: {
     headline: "Ready to pause?",
-    body: "If something here lands gently, we'd love to hear from you.",
+    body: "If something here lands gently, I'd love to hear from you.",
     link: { label: "Get in touch", href: "/contact" },
   },
   seoDescription:
-    "Yoga, breathwork, facials and massage with Emma Hasell at House of Tula in Chew Magna, Somerset.",
+    "Yoga, breathwork, facials and massage with Emma Hasell at House of Tula in Chew Magna, Bristol.",
 } as const;

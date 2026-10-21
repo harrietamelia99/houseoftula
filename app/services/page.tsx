@@ -67,7 +67,7 @@ export default function ServicesPage() {
                 ) : null}
                 <Link
                   href={section.cta.href}
-                  className={`mt-10 inline-flex min-h-[3.25rem] items-center justify-center rounded-full px-8 font-body text-[0.66rem] uppercase tracking-[0.26em] transition-[transform,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 ${warm ? "bg-almond text-forest hover:bg-surface" : "bg-forest text-almond hover:bg-forest-slab"}`}
+                  className={`mt-10 inline-flex min-h-[3.25rem] items-center justify-center rounded-full px-8 font-body text-[0.66rem] uppercase tracking-[0.26em] transition-[transform,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 bg-forest text-almond hover:bg-forest-slab`}
                 >
                   {section.cta.label}
                 </Link>

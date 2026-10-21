@@ -110,7 +110,7 @@ export function SiteHeader() {
           <div className="flex justify-end">
             <Link
               href={contactCta.href}
-              className={`${tagLinks} rounded-full border border-olive/45 px-7 py-[0.55rem] text-olive-dark transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:border-olive hover:bg-surface hover:text-forest hover:-translate-y-0.5 active:translate-y-0`}
+              className={`${tagLinks} rounded-full border border-forest bg-forest px-7 py-[0.55rem] text-almond transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:border-forest-slab hover:bg-forest-slab hover:text-almond hover:-translate-y-0.5 active:translate-y-0`}
             >
               {contactCta.label}
             </Link>

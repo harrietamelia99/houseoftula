@@ -7,12 +7,12 @@ import { images } from "@/content/images";
 
 export const servicesPage = {
   title: "Services",
-  heading: "What we offer",
+  heading: "What I offer",
   kicker: "A place to pause, to be still, and be.",
   seoDescription:
     "Small group and one-to-one yoga, breathwork, meditation, facials, massage and Wellness at Work with House of Tula.",
   intro:
-    "Nothing here is a timetable. Emma works with small groups and one-to-one, so if something feels right, get in touch and we will find a way that suits you.",
+    "Nothing here is a timetable. I work with small groups and one-to-one, so if something feels right, get in touch and I'll find a way that suits you.",
   headerImage: images.valley,
   sections: [
     {
@@ -21,7 +21,7 @@ export const servicesPage = {
       title: "Yoga",
       body: [
         "Small group and one-to-one yoga that meets you where you are. Unhurried, attentive, and focused on how a pose feels, not how it looks.",
-        "There is no public timetable. Tell Emma what you are hoping for, and she will suggest a time.",
+        "There is no public timetable. Tell me what you're hoping for, and I'll suggest a time.",
       ],
       notes: ["One-to-one sessions", "Small groups"],
       image: images.studioStill,

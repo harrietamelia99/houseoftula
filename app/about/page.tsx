@@ -55,7 +55,7 @@ export default function AboutPage() {
       {extras.length > 0 ? (
         <section className="bg-almond py-20 md:py-32" aria-label="Studio photographs">
           <div
-            className={`${siteContentFrame} ${extras.length === 1 ? "mx-auto max-w-xl" : "grid gap-8 sm:grid-cols-2 md:gap-12"}`}
+            className={`${siteContentFrame} ${extras.length === 1 ? "mx-auto max-w-md" : "grid gap-8 sm:grid-cols-2 md:gap-12"}`}
           >
             {extras.map((photo, index) => (
               <FadeIn key={photo.src} delayMs={index * 60}>
