@@ -10,7 +10,7 @@ export const servicesPage = {
   heading: "What I offer",
   kicker: "A place to pause, to be still, and be.",
   seoDescription:
-    "Small group and one-to-one yoga, breathwork, meditation, facials, massage and Wellness at Work with House of Tula.",
+    "Small group and one-to-one yoga, facials, massage and Wellness at Work with House of Tula.",
   intro:
     "Nothing here is a timetable. I work with small groups and one-to-one, so if something feels right, get in touch and I'll find a way that suits you.",
   headerImage: images.valley,
@@ -19,6 +19,8 @@ export const servicesPage = {
       id: "yoga",
       number: "01",
       title: "Yoga",
+      /** Optional short line under the title. Leave as "" to hide it. */
+      kicker: "",
       body: [
         "Small group and one-to-one yoga that meets you where you are. Unhurried, attentive, and focused on how a pose feels, not how it looks.",
         "There is no public timetable. Tell me what you're hoping for, and I'll suggest a time.",
@@ -29,23 +31,13 @@ export const servicesPage = {
       cta: { label: "Get in touch", href: "/contact?type=yoga" },
     },
     {
-      id: "breath-and-stillness",
-      number: "02",
-      title: ["Breathwork\u00a0+", "meditation"],
-      body: [
-        "Guided sits and conscious breath practices to soften the nervous system and bring you gently back to yourself. Meditations carry longer silences, with quiet reassurance. Nothing rushes.",
-      ],
-      notes: ["Guided meditation", "Conscious breathwork"],
-      image: images.breathStill,
-      imageAlt: "A candle and singing bowl on a wooden stool",
-      cta: { label: "Get in touch", href: "/contact" },
-    },
-    {
       id: "holistic-treatments",
-      number: "03",
+      number: "02",
       title: "Facials",
+      kicker: "A little time just for you.",
       body: [
-        "A slow, nurturing facial that gives your skin, and your mind, a moment to rest. Gentle, attentive and deeply calming, using touch and stillness to help you leave feeling restored, softer and more like yourself.",
+        "Each facial is thoughtfully tailored to your skin and how you're feeling, using beautiful Comfort Zone skincare products and a gentle, intuitive approach.",
+        "More than simply caring for your skin, it's an opportunity to slow down, switch off and enjoy a moment of stillness. Through nurturing touch and unhurried care, my intention is for you to leave feeling restored and radiant.",
       ],
       notes: [],
       image: images.facialStill,
@@ -54,10 +46,11 @@ export const servicesPage = {
     },
     {
       id: "massage",
-      number: "04",
+      number: "03",
       title: "Massage",
+      kicker: "A little time to pause, unwind and be cared for.",
       body: [
-        "A grounding massage to release the tension we carry without noticing. Unhurried and intuitive, it's time set aside simply to be cared for, letting the body soften and the breath settle.",
+        "Using the beautiful Tranquillity\u2122 range by Comfort Zone, I offer bespoke massage treatments thoughtfully tailored to how you're feeling and what your body needs.",
       ],
       notes: [],
       image: images.massageStill,
@@ -66,8 +59,9 @@ export const servicesPage = {
     },
     {
       id: "wellness-at-work",
-      number: "05",
+      number: "04",
       title: "Wellness at Work",
+      kicker: "",
       body: [
         "Calm, accessible yoga and breathwork for teams. Sessions come to your workplace or a chosen venue, for groups of up to around 25, with no experience needed.",
         "A simple way to help people pause, reset and return to work a little lighter.",

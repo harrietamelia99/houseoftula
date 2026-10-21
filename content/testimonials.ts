@@ -16,4 +16,10 @@ export type Testimonial = {
   name: string;
 };
 
-export const testimonials: Testimonial[] = [];
+export const testimonials: Testimonial[] = [
+  {
+    quote:
+      "I've been attending Emma's yoga evenings for many years now and always find them so enjoyable. I always come away feeling calmer, more relaxed and somehow better able to cope with the mental load that comes with juggling mum life, work and everything in between! Emma creates such a lovely, welcoming atmosphere and I genuinely look forward to every session.",
+    name: "Yoga evenings guest",
+  },
+];

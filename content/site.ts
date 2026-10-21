@@ -15,11 +15,10 @@ export const site = {
   email: "hello@houseoftula.co.uk",
   phoneDisplay: "07817 467424",
   phoneTel: "+447817467424",
-  /** Confirm the live handle and URL with Emma before launch. */
   instagram: {
-    handle: "@houseoftula",
-    url: "https://www.instagram.com/",
-    handlePendingConfirmation: true,
+    handle: "@house_of_tula_",
+    url: "https://www.instagram.com/house_of_tula_/",
+    handlePendingConfirmation: false,
   },
 } as const;
 
