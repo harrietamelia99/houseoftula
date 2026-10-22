@@ -1,6 +1,6 @@
 /**
  * Contact page copy and form options.
- * The form sends to hello@houseoftula.co.uk once the email keys in Vercel are set.
+ * The form sends to hellohouseoftula@icloud.com once the email keys in Vercel are set.
  */
 
 import { images } from "@/content/images";

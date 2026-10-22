@@ -12,7 +12,7 @@ export const site = {
   shortLocation: "Chew Magna, BS40",
   /** Registered business address. */
   registeredAddress: "2 Brook Cottages, Chew Magna, Bristol BS40 8RJ",
-  email: "hello@houseoftula.co.uk",
+  email: "hellohouseoftula@icloud.com",
   phoneDisplay: "07817 467424",
   phoneTel: "+447817467424",
   instagram: {
