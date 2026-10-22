@@ -71,15 +71,31 @@ export function Testimonials({ testimonials }: Props) {
             tabIndex={length > 1 ? 0 : undefined}
             onKeyDown={handleKey}
           >
-            <blockquote
-              key={current.quote}
-              className="font-heading text-[clamp(1.5rem,2.6vw,1.925rem)] font-light italic leading-[1.1] text-forest"
-              lang="en-GB"
-            >
-              “{current.quote}”
-            </blockquote>
-
-            <p className="mt-6 font-body text-sm font-light text-muted md:mt-8">{current.name}</p>
+            {/* All quotes share one grid cell so the section keeps the height of the longest
+                and the page doesn't jump when moving between them. */}
+            <div className="grid">
+              {testimonials.map((item, i) => {
+                const active = i === Math.min(index, lastIndex);
+                const long = item.quote.length > 260;
+                return (
+                  <figure
+                    key={item.quote}
+                    aria-hidden={!active}
+                    className={`[grid-area:1/1] transition-opacity duration-layout ease-out-soft ${active ? "opacity-100" : "pointer-events-none invisible opacity-0"}`}
+                  >
+                    <blockquote
+                      className={`font-heading font-light italic text-forest ${long ? "text-[clamp(1.25rem,1.9vw,1.5rem)] leading-[1.4]" : "text-[clamp(1.5rem,2.6vw,1.925rem)] leading-[1.2]"}`}
+                      lang="en-GB"
+                    >
+                      &ldquo;{item.quote}&rdquo;
+                    </blockquote>
+                    <figcaption className="mt-6 font-body text-[0.7rem] uppercase tracking-[0.28em] text-muted md:mt-8">
+                      {item.name}
+                    </figcaption>
+                  </figure>
+                );
+              })}
+            </div>
 
             {length >= 2 ? (
               <div className="mt-8 flex flex-wrap items-center justify-center gap-x-8 gap-y-3 max-lg:w-full md:mt-10 md:justify-start md:gap-x-12 md:gap-y-4 lg:justify-start">
@@ -99,7 +115,7 @@ export function Testimonials({ testimonials }: Props) {
                 </button>
 
                 <p className="font-body text-sm font-light text-muted" aria-live="polite">
-                  {Math.min(index, lastIndex) + 1} · {length}
+                  {Math.min(index, lastIndex) + 1} / {length}
                 </p>
               </div>
             ) : null}
