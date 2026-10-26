@@ -61,7 +61,7 @@ export const servicesPage = {
       id: "wellness-at-work",
       number: "04",
       title: "Wellness at Work",
-      kicker: "",
+      kicker: "A calmer hour for your team",
       body: [
         "Calm, accessible yoga and breathwork for teams. Sessions come to your workplace or a chosen venue, for groups of up to around 25, with no experience needed.",
         "A simple way to help people pause, reset and return to work a little lighter.",

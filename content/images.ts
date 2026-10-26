@@ -22,6 +22,8 @@ export const images = {
   /** Emma's portrait, already black and white. */
   emmaPortrait: "/images/emma-portrait.jpg",
   /** Misty Chew Valley morning. Full-width quote band. */
+  /** Emma's own photo: the carved Buddha head in the lattice window (shoot, Oct 2026). */
+  buddhaWindow: "/images/studio/buddha-window.jpg",
   valley: "/images/ai/valley-mist.jpg",
   /** Rolled linen mat, bolster and dried grasses. Yoga. */
   studioStill: "/images/ai/studio-still.jpg",
