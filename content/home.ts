@@ -34,7 +34,6 @@ export const homeContent = {
     heading: ["A studio that", "asks very little"],
     body: [
       "Tucked away in Chew Magna, House of Tula is a small, welcoming yoga and wellbeing studio surrounded by nature.",
-      "A space to pause, to breathe, to be.",
       "Through yoga, breathwork and meditation, I offer a gentle invitation to slow down, reconnect with yourself and find a little more balance.",
       "There is no expectation here. Just space to arrive exactly as you are.",
     ],
