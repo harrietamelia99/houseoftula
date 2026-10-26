@@ -24,6 +24,8 @@ const config: Config = {
         /** Hero wash / bridging tone */
         "forest-soft": "#6D7056",
         sienna: "#9A7844",
+        /** Button hover for the sienna buttons */
+        "sienna-deep": "#7E6136",
         /** Closing CTA band – warm burnt orange */
         "burnt-orange": "#B9552E",
         text: "#494A41",
