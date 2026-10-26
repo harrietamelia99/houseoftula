@@ -18,14 +18,15 @@ export function HeroSection() {
         {hero.title}
       </h1>
 
-      <div className="relative aspect-[1179/500] w-full overflow-hidden bg-surface">
+      {/* Fills the screen below the header on tablet and desktop; keeps the banner's own shape on phones so the lettering isn't cropped. */}
+      <div className="relative aspect-[1179/500] w-full overflow-hidden bg-surface md:aspect-auto md:h-[calc(100svh-var(--site-header-height))] md:min-h-[28rem]">
         <Image
           src={hero.image}
           alt={hero.imageAlt}
           fill
           priority
           sizes="100vw"
-          className="photo-soft object-cover"
+          className="photo-soft object-cover object-[30%_50%]"
         />
       </div>
 

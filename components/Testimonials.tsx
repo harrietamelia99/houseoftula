@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import { FadeIn } from "@/components/FadeIn";
 import type { Testimonial } from "@/content/testimonials";
 import { siteContentFrame } from "@/lib/siteLayout";
@@ -15,6 +18,32 @@ function Stars() {
         </svg>
       ))}
     </div>
+  );
+}
+
+/** A quote that shows the first few lines, with "Read more" for longer ones. */
+function Quote({ text }: { text: string }) {
+  const [open, setOpen] = useState(false);
+  const long = text.length > 170;
+  return (
+    <>
+      <blockquote
+        className={`mt-6 font-heading text-[1.2rem] font-light italic leading-[1.55] text-forest md:text-[1.3rem] ${long && !open ? "line-clamp-5" : ""}`}
+        lang="en-GB"
+      >
+        &ldquo;{text}&rdquo;
+      </blockquote>
+      {long ? (
+        <button
+          type="button"
+          onClick={() => setOpen((v) => !v)}
+          aria-expanded={open}
+          className="mt-4 self-start border-b border-sienna/40 pb-0.5 font-body text-[0.65rem] uppercase tracking-[0.28em] text-sienna-deep transition-colors duration-layout hover:border-sienna-deep"
+        >
+          {open ? "Read less" : "Read more"}
+        </button>
+      ) : null}
+    </>
   );
 }
 
@@ -44,12 +73,7 @@ export function Testimonials({ testimonials }: Props) {
               <FadeIn delayMs={index * 60} className="flex w-full">
                 <figure className="flex w-full flex-col rounded-[2px] border border-sienna/20 bg-white/60 p-8 md:p-10">
                   <Stars />
-                  <blockquote
-                    className="mt-6 font-heading text-[1.2rem] font-light italic leading-[1.55] text-forest md:text-[1.3rem]"
-                    lang="en-GB"
-                  >
-                    &ldquo;{item.quote}&rdquo;
-                  </blockquote>
+                  <Quote text={item.quote} />
                   <figcaption className="mt-auto pt-8 font-body text-[0.7rem] uppercase tracking-[0.28em] text-muted">
                     {item.name}
                   </figcaption>
