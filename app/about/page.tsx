@@ -50,7 +50,7 @@ export default function AboutPage() {
         </div>
       </section>
 
-      <ImageBand src={aboutPage.band.image} quote={aboutPage.band.quote} attribution={aboutPage.kicker} />
+      <ImageBand src={aboutPage.band.image} quote={aboutPage.band.quote} attribution="Emma Hasell" />
 
       {extras.length > 0 ? (
         <section className="bg-almond py-20 md:py-32" aria-label="Studio photographs">
@@ -81,7 +81,7 @@ export default function AboutPage() {
           <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row">
             <Link
               href="/services"
-              className="inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-forest px-9 font-body text-[0.7rem] uppercase tracking-[0.28em] text-almond transition-[transform,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-forest-slab"
+              className="inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-sienna px-9 font-body text-[0.7rem] uppercase tracking-[0.28em] text-almond transition-[transform,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-sienna-deep"
             >
               Explore services
             </Link>
