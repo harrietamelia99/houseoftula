@@ -11,7 +11,7 @@ export const images = {
   /** Cleaned-up landscape version of Emma's studio doors (Canva AI). Hero. */
   heroDoor: "/images/ai/door-hero.jpg",
   /** Emma's "Welcome to House of Tula" banner (full doors with script lettering). Homepage hero. */
-  welcomeBanner: "/images/welcome-banner-hd.jpg",
+  welcomeBanner: "/images/welcome-banner-v3.jpg",
   /** Wire artwork from Emma's yoga shed. */
   wireArt: "/images/wire-art.jpg",
   /** Emma in camel pose, outdoors. */
