@@ -18,14 +18,15 @@ export function HeroSection() {
         {hero.title}
       </h1>
 
-      <div className="relative aspect-[1179/500] w-full overflow-hidden bg-surface">
+      {/* Fills the screen below the header on tablet and desktop; keeps the banner's own shape on phones so the lettering isn't cropped. */}
+      <div className="relative aspect-[1179/500] w-full overflow-hidden bg-surface md:aspect-auto md:h-[calc(100svh-var(--site-header-height))] md:min-h-[28rem]">
         <Image
           src={hero.image}
           alt={hero.imageAlt}
           fill
           priority
           sizes="100vw"
-          className="photo-soft object-cover"
+          className="photo-soft object-cover object-[30%_50%]"
         />
       </div>
 
@@ -46,7 +47,7 @@ export function HeroSection() {
         >
           <Link
             href={hero.primaryCta.href}
-            className="inline-flex min-h-[3.25rem] w-full max-w-xs items-center justify-center rounded-full bg-forest px-10 font-body text-[0.7rem] uppercase tracking-[0.28em] text-almond transition-[transform,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-forest-slab sm:w-auto"
+            className="inline-flex min-h-[3.25rem] w-full max-w-xs items-center justify-center rounded-full bg-sienna px-10 font-body text-[0.7rem] uppercase tracking-[0.28em] text-almond transition-[transform,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-sienna-deep sm:w-auto"
           >
             {hero.primaryCta.label}
           </Link>

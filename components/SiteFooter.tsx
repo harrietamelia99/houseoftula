@@ -59,7 +59,7 @@ function IconInstagram(props: SVGProps<SVGSVGElement>) {
 const iconClass = "mt-0.5 h-5 w-5 shrink-0 text-olive/80";
 
 const footerBookCta =
-  "inline-flex items-center rounded-full border border-forest bg-forest px-7 py-[0.55rem] font-tag font-body text-[0.68rem] uppercase tracking-[0.28em] text-almond transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:border-forest-slab hover:bg-forest-slab hover:text-almond hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-olive/45 focus-visible:ring-offset-4 focus-visible:ring-offset-almond";
+  "inline-flex items-center rounded-full border border-sienna bg-sienna px-7 py-[0.55rem] font-tag font-body text-[0.68rem] uppercase tracking-[0.28em] text-almond transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:border-sienna-deep hover:bg-sienna-deep hover:text-almond hover:-translate-y-0.5 active:translate-y-0 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-olive/45 focus-visible:ring-offset-4 focus-visible:ring-offset-almond";
 
 export function SiteFooter() {
   return (
@@ -80,7 +80,7 @@ export function SiteFooter() {
           <ul className="grid grid-cols-[1.25rem_minmax(0,1fr)] items-start gap-x-3 gap-y-4 text-[0.9375rem] font-body font-light leading-snug text-muted">
             <li className="contents">
               <IconMapPin className={iconClass} />
-              <span>{site.registeredAddress}</span>
+              <span>{site.directionsNote}</span>
             </li>
             <li className="contents">
               <IconPhone className={iconClass} />

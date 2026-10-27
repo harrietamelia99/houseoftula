@@ -185,7 +185,7 @@ export function ContactForm() {
       <button
         type="submit"
         disabled={status === "sending"}
-        className="border border-olive px-10 py-3 font-tag font-body uppercase text-[0.6875rem] tracking-[0.28em] text-olive transition-[background-color,border-color,color,transform] duration-layout ease-out-soft hover:border-olive-dark hover:bg-olive hover:text-almond hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 motion-reduce:hover:translate-y-0"
+        className="inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-sienna px-10 font-body text-[0.7rem] uppercase tracking-[0.28em] text-almond transition-[background-color,transform] duration-layout ease-out-soft hover:bg-sienna-deep hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-60 motion-reduce:hover:translate-y-0"
       >
         {status === "sending" ? "Sending" : contactPage.submitLabel}
       </button>

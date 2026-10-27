@@ -12,7 +12,7 @@ export const homeContent = {
     title: "House of Tula",
     byline: "by Emma Hasell",
     /** Supporting line under the byline. */
-    supporting: ["A space to pause,", "to be, to breathe."],
+    supporting: ["A space to pause,", "to breathe, to be."],
     /** Emma's "Welcome to House of Tula" banner of the studio doors. */
     image: images.welcomeBanner,
     imageAlt: "Welcome to House of Tula, written over the weathered wooden studio doors",
@@ -23,7 +23,7 @@ export const homeContent = {
   statement: {
     kicker: "Tula means balance",
     line: [
-      "Tula\u00a0(\u0924\u0941\u0932\u093e) means\u00a0balance.",
+      "Tula means balance in\u00a0Sanskrit.",
       "In the busyness of everyday life,",
       "House of Tula offers a little space",
       "to pause, to breathe and simply be.",
@@ -34,7 +34,6 @@ export const homeContent = {
     heading: ["A studio that", "asks very little"],
     body: [
       "Tucked away in Chew Magna, House of Tula is a small, welcoming yoga and wellbeing studio surrounded by nature.",
-      "A space to pause, to breathe, to be.",
       "Through yoga, breathwork and meditation, I offer a gentle invitation to slow down, reconnect with yourself and find a little more balance.",
       "There is no expectation here. Just space to arrive exactly as you are.",
     ],
@@ -47,8 +46,6 @@ export const homeContent = {
   offerings: {
     eyebrow: "Ways to find a little more balance",
     heading: ["Ways to find", "a little more balance"],
-    /** Short line under the heading. */
-    kicker: "A space to pause, to breathe, to be.",
     /** Paragraphs beside the heading. */
     lead: [
       "At House of Tula, I offer yoga, breathwork and mindful practices through small, intimate gatherings, one-to-one sessions and thoughtfully created experiences.",
@@ -66,14 +63,22 @@ export const homeContent = {
       },
       {
         number: "02",
-        title: "Facials + massage",
+        title: "Facials",
         description:
-          "Nurturing facials and massage, each designed to help you slow down, soften and restore a little balance.",
+          "A little time just for you. Each facial is thoughtfully tailored to your skin and how you're feeling, using the beautiful Comfort Zone skincare products.",
         href: "/services#holistic-treatments",
         image: images.facialStill,
       },
       {
         number: "03",
+        title: "Massage",
+        description:
+          "A little time to pause, unwind and be cared for, with bespoke treatments using the Tranquillity\u2122 range by Comfort Zone.",
+        href: "/services#massage",
+        image: images.massageStill,
+      },
+      {
+        number: "04",
         title: "Wellness at Work",
         description:
           "Calm, accessible sessions for teams of up to around 25, at your workplace or a chosen venue.",
@@ -84,16 +89,18 @@ export const homeContent = {
   },
   /** Full-width photograph with a quote. */
   band: {
-    image: images.valley,
+    image: images.buddhaWindow,
     quote: ["Somewhere you can find a little time,", "stillness, and just be."],
     attribution: "Emma Hasell",
   },
   wellness: {
     eyebrow: "Wellness at Work",
-    heading: ["A calmer hour", "for your team"],
+    heading: "Wellness at Work",
+    /** Line under the heading. */
+    subheading: "A calmer hour for your team",
     body: "Yoga and breathwork that comes to your workplace or a chosen venue, for groups of up to around 25. No experience needed, just a little time set aside to pause, reset and return to work lighter.",
-    image: images.workplace,
-    imageAlt: "A bright, quiet room with linen mats laid out",
+    image: images.matsInARow,
+    imageAlt: "Mats, bolsters and cork blocks laid out in a row in the studio",
     cta: { label: "Enquire for your team", href: "/contact?type=wellness-at-work" },
     secondary: { label: "See upcoming events", href: "/events" },
   },

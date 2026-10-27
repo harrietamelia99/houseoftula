@@ -112,10 +112,7 @@ export default function HomePage() {
               </h2>
             </div>
             <div className="md:pb-2">
-              <p className="font-heading text-[clamp(1.35rem,2vw,1.6rem)] font-light italic leading-[1.3] text-almond">
-                {offerings.kicker}
-              </p>
-              <div className="mt-6 space-y-4 font-body text-[0.98rem] font-normal leading-[1.85] text-almond">
+              <div className="space-y-4 font-body text-[0.98rem] font-normal leading-[1.85] text-almond">
                 {offerings.lead.map((paragraph) => (
                   <p key={paragraph}>{paragraph}</p>
                 ))}
@@ -184,13 +181,16 @@ export default function HomePage() {
               id="wellness-heading"
               className="font-heading text-[clamp(2.2rem,4vw,3.5rem)] font-light leading-[1.05] text-forest"
             >
-              <Lines text={wellness.heading} />
+              {wellness.heading}
             </h2>
+            <p className="mt-4 font-heading text-[clamp(1.35rem,2vw,1.6rem)] font-light italic leading-[1.3] text-olive-dark">
+              {wellness.subheading}
+            </p>
             <p className="mt-7 font-body text-[0.98rem] font-light leading-[1.85] text-muted">{wellness.body}</p>
             <div className="mt-10 flex flex-col items-center gap-5 sm:flex-row md:items-center">
               <Link
                 href={wellness.cta.href}
-                className="inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-forest px-8 font-body text-[0.66rem] uppercase tracking-[0.26em] text-almond transition-[transform,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-forest-slab"
+                className="inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-sienna px-8 font-body text-[0.66rem] uppercase tracking-[0.26em] text-almond transition-[transform,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-sienna-deep"
               >
                 {wellness.cta.label}
               </Link>
@@ -227,7 +227,7 @@ export default function HomePage() {
           </p>
           <Link
             href={closingCta.link.href}
-            className="mt-11 inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-forest px-10 font-body text-[0.7rem] uppercase tracking-[0.28em] text-almond transition-[transform,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-forest-slab"
+            className="mt-11 inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-sienna px-10 font-body text-[0.7rem] uppercase tracking-[0.28em] text-almond transition-[transform,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-sienna-deep"
           >
             {closingCta.link.label}
           </Link>

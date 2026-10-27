@@ -59,7 +59,7 @@ export function StudioTriptych({
 
             <Link
               href={link.href}
-              className="tap-target mt-8 inline-flex min-h-[3rem] w-full max-w-[min(100%,18rem)] items-center justify-center rounded-full border border-forest/30 bg-forest px-8 py-3 font-tag font-body text-[0.65rem] uppercase tracking-[0.32em] text-almond transition-[transform,background-color,border-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:border-sienna hover:bg-sienna hover:text-almond focus-visible:border-sienna focus-visible:bg-sienna motion-reduce:hover:translate-y-0 md:mt-10 lg:mb-2 lg:w-auto"
+              className="tap-target mt-8 inline-flex min-h-[3rem] w-full max-w-[min(100%,18rem)] items-center justify-center rounded-full border border-sienna bg-sienna px-8 py-3 font-tag font-body text-[0.65rem] uppercase tracking-[0.32em] text-almond transition-[transform,background-color,border-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:border-sienna hover:bg-sienna hover:text-almond focus-visible:border-sienna focus-visible:bg-sienna motion-reduce:hover:translate-y-0 md:mt-10 lg:mb-2 lg:w-auto"
             >
               {link.label}
             </Link>

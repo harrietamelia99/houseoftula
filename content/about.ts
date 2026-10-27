@@ -11,7 +11,7 @@ export const aboutPage = {
   kicker: "Tula means balance",
   /** Short line in the page header. */
   headerIntro:
-    "I've practised yoga for over 15\u00a0years. House of Tula is my studio in the Chew Valley countryside: a place to move, pause, breathe and reconnect.",
+    "House of Tula is my studio in the Chew Valley countryside: a place to move, pause, breathe and reconnect.",
   /** Large line beside the story. */
   sideQuote: ["Yoga isn't about", "changing who we are."],
   /** Full-width photograph with a quote, under the story. */
@@ -43,7 +43,7 @@ export const aboutPage = {
     "It has taught me that beneath the noise of the mind, what yogic philosophy calls chitta vritti, the fluctuations of the mind, there is always a steadiness. A stillness. A quiet awareness that sees it all.",
     "I've learnt that balance isn't about having everything perfectly aligned. It's about finding moments of calm amongst the busyness of everyday life, meeting ourselves exactly where we are, and remembering to look up and see the beauty all around us.",
     // TODO: facials and massage sentence pending Emma's approval
-    "Tula means balance. At the heart of House of Tula, I hope to have created a beautiful space, nestled in the Chew Valley countryside, where you can move, pause, breathe and reconnect with yourself. Alongside yoga, you'll find nurturing facials and massage, each designed to help you slow down and restore a little balance.",
+    "At the heart of House of Tula, I hope to have created a beautiful space, nestled in the Chew Valley countryside, where you can move, pause, breathe and reconnect with yourself. Alongside yoga, you'll find nurturing facials and massage, each designed to help you slow down and restore a little balance.",
     "Somewhere you can find a little time, stillness, and just be.",
     "Yoga isn't about changing who we are. It's a practice we get to do, to embrace who we already are beneath our never-ending to\u2011do lists.",
   ],

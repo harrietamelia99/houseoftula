@@ -33,7 +33,7 @@ export default function EventsPage() {
               </p>
               <Link
                 href={eventsPage.empty.link.href}
-                className="mt-10 inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-forest px-9 font-body text-[0.7rem] uppercase tracking-[0.28em] text-almond transition-[transform,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-forest-slab"
+                className="mt-10 inline-flex min-h-[3.25rem] items-center justify-center rounded-full bg-sienna px-9 font-body text-[0.7rem] uppercase tracking-[0.28em] text-almond transition-[transform,background-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-sienna-deep"
               >
                 {eventsPage.empty.link.label}
               </Link>
@@ -64,7 +64,7 @@ export default function EventsPage() {
                         href={event.ticketUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="tap-target mt-8 inline-flex min-h-[3rem] w-full items-center justify-center rounded-full border border-forest/30 bg-forest px-8 py-3 font-tag font-body text-[0.65rem] uppercase tracking-[0.32em] text-almond transition-[transform,background-color,border-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:border-sienna hover:bg-sienna sm:w-auto sm:self-start"
+                        className="tap-target mt-8 inline-flex min-h-[3rem] w-full items-center justify-center rounded-full border border-sienna bg-sienna px-8 py-3 font-tag font-body text-[0.65rem] uppercase tracking-[0.32em] text-almond transition-[transform,background-color,border-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:border-sienna hover:bg-sienna sm:w-auto sm:self-start"
                       >
                         {eventsPage.bookLabel}
                       </a>

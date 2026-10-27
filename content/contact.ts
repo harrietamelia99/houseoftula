@@ -26,19 +26,18 @@ export const enquiryTypeFromQuery: Record<string, EnquiryType> = {
 export const contactPage = {
   title: "Contact",
   heading: "Get in touch",
-  kicker: "I'd love to hear from you.",
+  kicker: "",
   headerImage: images.doorLock,
   seoDescription:
     "Get in touch with Emma at House of Tula about yoga, facials, massage or Wellness at Work.",
   intro:
-    "Send me a note and I'll reply. If you would rather call or write directly, my details are here too.",
+    "I'd love to hear from you. Whether you have a question, would like to book a session or simply want to find out more, feel free to get in touch.",
   wellnessReplyNote: "I'll reply by email for Wellness at Work enquiries.",
   updatesLabel: "I'd like occasional updates about events (no spam, unsubscribe any time).",
   success: "Thank you. I'll be in touch soon.",
   /** Shown under the error message if the form cannot send. */
   fallback: `You can also email ${site.email} or send a WhatsApp message to ${site.phoneDisplay}.`,
   submitLabel: "Send",
-  studioNote: `Studio address: ${site.registeredAddress}. I can send directions once you have been in touch.`,
   /** Optional line under the Instagram link. Leave as "" to hide it. */
   instagramNote: "",
 } as const;

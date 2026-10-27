@@ -110,7 +110,7 @@ export function SiteHeader() {
           <div className="flex justify-end">
             <Link
               href={contactCta.href}
-              className={`${tagLinks} rounded-full border border-forest bg-forest px-7 py-[0.55rem] text-almond transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:border-forest-slab hover:bg-forest-slab hover:text-almond hover:-translate-y-0.5 active:translate-y-0`}
+              className={`${tagLinks} rounded-full border border-sienna bg-sienna px-7 py-[0.55rem] text-almond transition-[transform,background-color,border-color,color] duration-layout ease-out-soft hover:border-sienna-deep hover:bg-sienna-deep hover:text-almond hover:-translate-y-0.5 active:translate-y-0`}
             >
               {contactCta.label}
             </Link>
@@ -180,7 +180,7 @@ export function SiteHeader() {
 
               <Link
                 href={contactCta.href}
-                className="tap-target mt-auto inline-flex min-h-[3rem] w-full max-w-sm items-center justify-center rounded-full border border-forest bg-forest px-8 py-3 font-tag font-body uppercase text-[0.65rem] tracking-[0.32em] text-almond transition-[transform,background-color,border-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-forest-soft hover:border-forest-soft active:translate-y-0 sm:w-auto"
+                className="tap-target mt-auto inline-flex min-h-[3rem] w-full max-w-sm items-center justify-center rounded-full border border-sienna bg-sienna px-8 py-3 font-tag font-body uppercase text-[0.65rem] tracking-[0.32em] text-almond transition-[transform,background-color,border-color] duration-layout ease-out-soft hover:-translate-y-0.5 hover:bg-sienna-soft hover:border-forest-soft active:translate-y-0 sm:w-auto"
                 onClick={() => setMenuOpen(false)}
               >
                 {contactCta.label}

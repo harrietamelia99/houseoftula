@@ -10,8 +10,8 @@ export const site = {
   ownerName: "Emma Hasell",
   locality: "Chew Magna, Bristol",
   shortLocation: "Chew Magna, BS40",
-  /** Registered business address. */
-  registeredAddress: "2 Brook Cottages, Chew Magna, Bristol BS40 8RJ",
+  /** Shown instead of the studio address (Emma prefers not to publish it). */
+  directionsNote: "Full studio directions provided on booking",
   email: "hellohouseoftula@icloud.com",
   phoneDisplay: "07817 467424",
   phoneTel: "+447817467424",
