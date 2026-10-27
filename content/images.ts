@@ -35,6 +35,8 @@ export const images = {
   massageStill: "/images/studio/tranquillity-oils.jpg",
   /** Emma's studio: mats, bolsters and blocks laid out in a row. */
   matsInARow: "/images/studio/mats-in-a-row.jpg",
+  /** Emma's woven pendant light, glowing in the studio. Gatherings. */
+  pendantLight: "/images/studio/woven-pendant-light.jpg",
   /** Emma's studio with mats laid out. Wellness at Work and events. */
   workplace: "/images/studio/studio-mats.jpg",
   /** Used when an event has no image of its own. */

@@ -34,7 +34,7 @@ export const eventsPage = {
   title: "Events",
   heading: "Gatherings",
   kicker: "Small groups, calm settings, limited places.",
-  headerImage: images.workplace,
+  headerImage: images.pendantLight,
   seoDescription:
     "Wellness at Work gatherings and seasonal events with House of Tula. Small groups, calm settings, limited places.",
   intro:
