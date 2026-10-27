@@ -27,7 +27,7 @@ export const servicesPage = {
       ],
       notes: ["One-to-one sessions", "Small groups"],
       image: images.studioStill,
-      imageAlt: "A rolled linen mat and bolster in the studio",
+      imageAlt: "A mat with bolsters and cork blocks in the studio",
       cta: { label: "Get in touch", href: "/contact?type=yoga" },
     },
     {
@@ -41,7 +41,7 @@ export const servicesPage = {
       ],
       notes: [],
       image: images.facialStill,
-      imageAlt: "Ceramic bowls, botanical oil and folded linen",
+      imageAlt: "Comfort Zone skincare on a wooden shelf in the studio",
       cta: { label: "Enquire about a facial", href: "/contact?type=facials" },
     },
     {
@@ -54,7 +54,7 @@ export const servicesPage = {
       ],
       notes: [],
       image: images.massageStill,
-      imageAlt: "Warm stones and eucalyptus on linen",
+      imageAlt: "Comfort Zone Tranquillity oils with eucalyptus",
       cta: { label: "Enquire about a massage", href: "/contact?type=massage" },
     },
     {
@@ -67,8 +67,8 @@ export const servicesPage = {
         "A simple way to help people pause, reset and return to work a little lighter.",
       ],
       notes: ["Up to around 25 people", "Your workplace or a chosen venue"],
-      image: images.workplace,
-      imageAlt: "A bright room with linen mats laid out",
+      image: images.matsInARow,
+      imageAlt: "Mats, bolsters and cork blocks laid out in the studio",
       cta: { label: "Enquire for your team", href: "/contact?type=wellness-at-work" },
     },
   ],
