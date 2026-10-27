@@ -33,6 +33,8 @@ export const images = {
   facialStill: "/images/ai/facial-still.jpg",
   /** Warm stones and eucalyptus. Massage. */
   massageStill: "/images/ai/massage-still.jpg",
+  /** Emma's studio: mats, bolsters and blocks laid out in a row. */
+  matsInARow: "/images/studio/mats-in-a-row.jpg",
   /** Calm room with mats laid out. Wellness at Work and events. */
   workplace: "/images/ai/workplace-room.jpg",
   /** Used when an event has no image of its own. */

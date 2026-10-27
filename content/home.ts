@@ -99,8 +99,8 @@ export const homeContent = {
     /** Line under the heading. */
     subheading: "A calmer hour for your team",
     body: "Yoga and breathwork that comes to your workplace or a chosen venue, for groups of up to around 25. No experience needed, just a little time set aside to pause, reset and return to work lighter.",
-    image: images.workplace,
-    imageAlt: "A bright, quiet room with linen mats laid out",
+    image: images.matsInARow,
+    imageAlt: "Mats, bolsters and cork blocks laid out in a row in the studio",
     cta: { label: "Enquire for your team", href: "/contact?type=wellness-at-work" },
     secondary: { label: "See upcoming events", href: "/events" },
   },
