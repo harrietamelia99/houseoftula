@@ -36,7 +36,7 @@ export const servicesPage = {
       title: "Facials",
       kicker: "A little time just for you.",
       body: [
-        "Each facial is thoughtfully tailored to your skin and how you're feeling, using beautiful Comfort Zone skincare products and a gentle, intuitive approach.",
+        "Each facial is thoughtfully tailored to your skin and how you're feeling, using the beautiful Comfort Zone skincare products.",
         "More than simply caring for your skin, it's an opportunity to slow down, switch off and enjoy a moment of stillness. Through nurturing touch and unhurried care, my intention is for you to leave feeling restored and radiant.",
       ],
       notes: [],

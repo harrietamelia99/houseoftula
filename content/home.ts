@@ -65,7 +65,7 @@ export const homeContent = {
         number: "02",
         title: "Facials",
         description:
-          "A little time just for you. Each facial is thoughtfully tailored to your skin and how you're feeling, using beautiful Comfort Zone skincare.",
+          "A little time just for you. Each facial is thoughtfully tailored to your skin and how you're feeling, using the beautiful Comfort Zone skincare products.",
         href: "/services#holistic-treatments",
         image: images.facialStill,
       },
