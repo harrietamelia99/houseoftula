@@ -8,11 +8,13 @@ import { images } from "@/content/images";
 export const servicesPage = {
   title: "Services",
   heading: "What I offer",
-  kicker: "A place to pause, to be still, and be.",
+  kicker: "",
   seoDescription:
-    "Small group and one-to-one yoga, facials, massage and Wellness at Work with House of Tula.",
-  intro:
-    "Nothing here is a timetable. I work with small groups and one-to-one, so if something feels right, get in touch and I'll find a way that suits you.",
+    "Small group and one-to-one yoga, facials, massage and Wellbeing at Work with House of Tula.",
+  intro: [
+    "From yoga and meditation to restorative treatments and thoughtfully created events, everything I offer is an invitation to slow down and reconnect with yourself.",
+    "Whether you join me in a small group or one-to-one, there's always room to find what feels right for you.",
+  ],
   headerImage: images.valley,
   sections: [
     {
@@ -22,8 +24,9 @@ export const servicesPage = {
       /** Optional short line under the title. Leave as "" to hide it. */
       kicker: "",
       body: [
-        "Small group and one-to-one yoga that meets you where you are. Unhurried, attentive, and focused on how a pose feels, not how it looks.",
-        "There is no public timetable. Tell me what you're hoping for, and I'll suggest a time.",
+        "Yoga is an opportunity to slow down, reconnect with yourself through your body and breath and create a little space in your day.",
+        "Through small group classes and one-to-one sessions, I encourage you to explore how movement feels in your body, rather than how it looks.",
+        "Every time we step onto our mat, there\u2019s a familiarity to the practice yet each day brings something new.",
       ],
       notes: ["One-to-one sessions", "Small groups"],
       image: images.studioStill,
@@ -36,8 +39,8 @@ export const servicesPage = {
       title: "Facials",
       kicker: "A little time just for you.",
       body: [
-        "Each facial is thoughtfully tailored to your skin and how you're feeling, using the beautiful Comfort Zone skincare products.",
-        "More than simply caring for your skin, it's an opportunity to slow down, switch off and enjoy a moment of stillness. Through nurturing touch and unhurried care, my intention is for you to leave feeling restored and radiant.",
+        "Each facial is thoughtfully tailored to your skin's needs, using the beautiful Italian skincare range from Comfort Zone.",
+        "A truly relaxing experience.",
       ],
       notes: [],
       image: images.facialStill,
@@ -48,9 +51,9 @@ export const servicesPage = {
       id: "massage",
       number: "03",
       title: "Massage",
-      kicker: "A little time to pause, unwind and be cared for.",
+      kicker: "Time to slow down, unwind and experience the power of touch.",
       body: [
-        "Using the beautiful Tranquillity\u2122 range by Comfort Zone, I offer bespoke massage treatments thoughtfully tailored to how you're feeling and what your body needs.",
+        "A bespoke massage designed to ease tension, nurture the body and calm the nervous system, using Comfort Zone's beautiful Tranquillity range.",
       ],
       notes: [],
       image: images.massageStill,
@@ -60,15 +63,17 @@ export const servicesPage = {
     {
       id: "wellness-at-work",
       number: "04",
-      title: "Wellness at Work",
-      kicker: "A calmer hour for your team",
+      title: "Wellbeing at Work",
+      kicker: "Bringing a little more balance to the working day.",
       body: [
-        "Calm, accessible yoga and breathwork for teams. Sessions come to your workplace or a chosen venue, for groups of up to around 25, with no experience needed.",
-        "A simple way to help people pause, reset and return to work a little lighter.",
+        "Thoughtfully tailored wellbeing sessions offering your team time to slow down, reconnect and recharge.",
+        "Through gentle yoga, breathwork, mindfulness and meditation, I create a welcoming space for everyone, with no previous experience needed.",
+        "Whether it's a one-off session, a regular practice or a bespoke wellbeing event, I can bring House of Tula to your workplace or a venue of your choice.",
+        "For groups of up to 25 people.",
       ],
-      notes: ["Up to around 25 people", "Your workplace or a chosen venue"],
-      image: images.matsInARow,
-      imageAlt: "Mats, bolsters and cork blocks laid out in the studio",
+      notes: [],
+      image: images.workplace,
+      imageAlt: "A candle glowing on a round tray in the studio",
       cta: { label: "Enquire for your team", href: "/contact?type=wellness-at-work" },
     },
   ],

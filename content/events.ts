@@ -32,13 +32,16 @@ export const eventFallbackImage = images.eventFallback;
 
 export const eventsPage = {
   title: "Events",
-  heading: "Gatherings",
-  kicker: "Small groups, calm settings, limited places.",
+  heading: "Events",
+  kicker: "A little time to come together.",
   headerImage: images.pendantLight,
   seoDescription:
-    "Wellness at Work gatherings and seasonal events with House of Tula. Small groups, calm settings, limited places.",
-  intro:
-    "Occasional gatherings for teams and small groups. Places are limited, and the setting changes with each event.",
+    "Events with House of Tula: restorative yoga, sound baths, seasonal workshops and retreats in Chew Magna.",
+  intro: [
+    "Throughout the year, I host a variety of thoughtfully planned events, bringing people together through yoga, relaxation and shared experiences.",
+    "From cosy evenings of restorative yoga and sound baths to seasonal workshops and retreats, each event offers something a little different.",
+    "I\u2019d love for you to join me.",
+  ],
   empty: {
     message: ["No events just now.", "Get in touch to hear about the next one."],
     link: { label: "Get in touch", href: "/contact" },

@@ -6,7 +6,7 @@
 import { images } from "@/content/images";
 import { site } from "@/content/site";
 
-export const enquiryTypes = ["General", "Yoga", "Facials", "Massage", "Wellness at Work"] as const;
+export const enquiryTypes = ["General", "Yoga", "Facials", "Massage", "Wellbeing at Work"] as const;
 
 export type EnquiryType = (typeof enquiryTypes)[number];
 
@@ -20,19 +20,20 @@ export const enquiryTypeFromQuery: Record<string, EnquiryType> = {
   yoga: "Yoga",
   facials: "Facials",
   massage: "Massage",
-  "wellness-at-work": "Wellness at Work",
+  "wellness-at-work": "Wellbeing at Work",
+  "wellbeing-at-work": "Wellbeing at Work",
 };
 
 export const contactPage = {
   title: "Contact",
   heading: "Get in touch",
   kicker: "",
-  headerImage: images.doorLock,
+  headerImage: images.plantWindow,
   seoDescription:
-    "Get in touch with Emma at House of Tula about yoga, facials, massage or Wellness at Work.",
+    "Get in touch with Emma at House of Tula about yoga, facials, massage or Wellbeing at Work.",
   intro:
-    "I'd love to hear from you. Whether you have a question, would like to book a session or simply want to find out more, feel free to get in touch.",
-  wellnessReplyNote: "I'll reply by email for Wellness at Work enquiries.",
+    "I'd love to hear from you. Whether you have a question, would like to book a session or would like to find out more, feel free to get in touch.",
+  wellnessReplyNote: "I'll reply by email for Wellbeing at Work enquiries.",
   updatesLabel: "I'd like occasional updates about events (no spam, unsubscribe any time).",
   success: "Thank you. I'll be in touch soon.",
   /** Shown under the error message if the form cannot send. */

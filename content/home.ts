@@ -31,16 +31,15 @@ export const homeContent = {
   },
   aboutTeaser: {
     eyebrow: "The studio",
-    heading: ["A studio that", "asks very little"],
+    heading: ["A peaceful place", "in the countryside"],
     body: [
       "Tucked away in Chew Magna, House of Tula is a small, welcoming yoga and wellbeing studio surrounded by nature.",
       "Through yoga, breathwork and meditation, I offer a gentle invitation to slow down, reconnect with yourself and find a little more balance.",
-      "There is no expectation here. Just space to arrive exactly as you are.",
     ],
     mainImage: images.wireArt,
     mainImageAlt: "The black wire artwork on the wall of Emma's yoga shed",
-    detailImage: images.doorLock,
-    detailImageAlt: "The brass lock on the studio doors",
+    detailImage: images.altarStool,
+    detailImageAlt: "A wooden stool with a rose and fairy lights in the studio corner",
     link: { label: "More about Emma", href: "/about" },
   },
   offerings: {
@@ -57,7 +56,7 @@ export const homeContent = {
         number: "01",
         title: "Yoga",
         description:
-          "Small group and one-to-one yoga that meets you where you are. Unhurried, attentive, and focused on how a pose feels, not how it looks.",
+          "Yoga is an opportunity to slow down, reconnect with yourself through your body and breath and create a little space in your day.",
         href: "/services#yoga",
         image: images.studioStill,
       },
@@ -65,7 +64,7 @@ export const homeContent = {
         number: "02",
         title: "Facials",
         description:
-          "A little time just for you. Each facial is thoughtfully tailored to your skin and how you're feeling, using the beautiful Comfort Zone skincare products.",
+          "A little time just for you. Each facial is thoughtfully tailored to your skin's needs, using the beautiful Italian skincare range from Comfort Zone.",
         href: "/services#holistic-treatments",
         image: images.facialStill,
       },
@@ -73,15 +72,15 @@ export const homeContent = {
         number: "03",
         title: "Massage",
         description:
-          "A little time to pause, unwind and be cared for, with bespoke treatments using the Tranquillity\u2122 range by Comfort Zone.",
+          "Time to slow down, unwind and experience the power of touch, using Comfort Zone's beautiful Tranquillity range.",
         href: "/services#massage",
         image: images.massageStill,
       },
       {
         number: "04",
-        title: "Wellness at Work",
+        title: "Wellbeing at Work",
         description:
-          "Calm, accessible sessions for teams of up to around 25, at your workplace or a chosen venue.",
+          "Thoughtfully tailored wellbeing sessions offering your team time to slow down, reconnect and recharge.",
         href: "/services#wellness-at-work",
         image: images.workplace,
       },
@@ -90,17 +89,20 @@ export const homeContent = {
   /** Full-width photograph with a quote. */
   band: {
     image: images.buddhaWindow,
-    quote: ["Somewhere you can find a little time,", "stillness, and just be."],
+    quote: ["Be where your feet are", "Return to the breath", "Again and again and again"],
     attribution: "Emma Hasell",
   },
   wellness: {
-    eyebrow: "Wellness at Work",
-    heading: "Wellness at Work",
+    eyebrow: "Wellbeing at Work",
+    heading: "Wellbeing at Work",
     /** Line under the heading. */
-    subheading: "A calmer hour for your team",
-    body: "Yoga and breathwork that comes to your workplace or a chosen venue, for groups of up to around 25. No experience needed, just a little time set aside to pause, reset and return to work lighter.",
-    image: images.matsInARow,
-    imageAlt: "Mats, bolsters and cork blocks laid out in a row in the studio",
+    subheading: "Bringing a little more balance to the working day.",
+    body: [
+      "Thoughtfully tailored wellbeing sessions offering your team time to slow down, reconnect and recharge.",
+      "Through gentle yoga, breathwork, mindfulness and meditation, I create a welcoming space for everyone, with no previous experience needed.",
+    ],
+    image: images.candleLandscape,
+    imageAlt: "A candle glowing on a round tray in the studio",
     cta: { label: "Enquire for your team", href: "/contact?type=wellness-at-work" },
     secondary: { label: "See upcoming events", href: "/events" },
   },
@@ -110,7 +112,7 @@ export const homeContent = {
    */
   showWellnessPromo: false,
   wellnessPromo: {
-    lead: "Wellness at Work: calm, accessible sessions for teams of up to 25.",
+    lead: "Wellbeing at Work: thoughtfully tailored sessions for teams of up to 25.",
     linkLabel: "Find out more",
     href: "/services#wellness-at-work",
   },
