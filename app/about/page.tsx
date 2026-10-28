@@ -28,17 +28,13 @@ export default function AboutPage() {
         intro={aboutPage.headerIntro}
         image={aboutPage.portrait.src}
         imageAlt={aboutPage.portrait.alt}
+        frame="thin"
+        mobileImageWidth="max-w-[14rem]"
       />
 
       <section className="bg-almond pb-24 md:pb-36" aria-label="Emma's story">
-        <div className={`${siteContentFrame} grid gap-14 md:grid-cols-[0.8fr_1.2fr] md:gap-20 lg:gap-28`}>
-          <FadeIn className="md:sticky md:top-[calc(var(--site-header-height)+3rem)] md:self-start">
-            <p className="font-heading text-[clamp(2rem,3.6vw,3.1rem)] font-light italic leading-[1.12] text-forest">
-              <Lines text={aboutPage.sideQuote} />
-            </p>
-            <div aria-hidden className="mt-10 h-px w-16 bg-olive" />
-          </FadeIn>
-          <FadeIn delayMs={60}>
+        <div className={`${siteContentFrame} mx-auto max-w-[46rem]`}>
+          <FadeIn>
             <p className="font-heading text-[clamp(1.45rem,2.2vw,1.8rem)] font-light leading-[1.45] text-text">{first}</p>
             <div className="mt-10 space-y-6 font-body text-[0.98rem] font-light leading-[1.9] text-muted">
               {rest.map((paragraph) => (
