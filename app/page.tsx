@@ -186,7 +186,11 @@ export default function HomePage() {
             <p className="mt-4 font-heading text-[clamp(1.35rem,2vw,1.6rem)] font-light italic leading-[1.3] text-olive-dark">
               {wellness.subheading}
             </p>
-            <p className="mt-7 font-body text-[0.98rem] font-light leading-[1.85] text-muted">{wellness.body}</p>
+            <div className="mt-7 space-y-4 font-body text-[0.98rem] font-light leading-[1.85] text-muted">
+              {wellness.body.map((p) => (
+                <p key={p}>{p}</p>
+              ))}
+            </div>
             <div className="mt-10 flex flex-col items-center gap-5 sm:flex-row md:items-center">
               <Link
                 href={wellness.cta.href}
