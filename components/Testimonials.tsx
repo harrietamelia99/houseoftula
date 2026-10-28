@@ -62,7 +62,7 @@ export function Testimonials({ testimonials }: Props) {
             id="testimonials-heading"
             className="font-heading text-[clamp(2.2rem,4vw,3.5rem)] font-light leading-[1.05] text-forest"
           >
-            Kind words
+            Testimonials
           </h2>
           <div aria-hidden className="mx-auto mt-7 h-px w-16 bg-sienna" />
         </FadeIn>
