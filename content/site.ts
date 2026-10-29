@@ -27,7 +27,7 @@ export const navLinks = [
   { href: "/about", label: "About" },
   { href: "/services", label: "Services" },
   { href: "/events", label: "Events" },
-  { href: "/contact", label: "Contact" },
+  { href: "/contact", label: "Connect" },
 ] as const;
 
 /** Header and footer buttons. Both go to the contact page. */

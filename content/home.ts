@@ -38,8 +38,8 @@ export const homeContent = {
     ],
     mainImage: images.wireArt,
     mainImageAlt: "The black wire artwork on the wall of Emma's yoga shed",
-    detailImage: images.altarStool,
-    detailImageAlt: "A wooden stool with a rose and fairy lights in the studio corner",
+    detailImage: images.peonies,
+    detailImageAlt: "Pink peonies in a stoneware vase beside a Comfort Zone Tranquillity blend",
     link: { label: "More about Emma", href: "/about" },
   },
   offerings: {
@@ -64,7 +64,7 @@ export const homeContent = {
         number: "02",
         title: "Facials",
         description:
-          "A little time just for you. Each facial is thoughtfully tailored to your skin's needs, using the beautiful Italian skincare range from Comfort Zone.",
+          "A little time just for you. Each facial is tailored to your skin's needs, using the beautiful Italian skincare range from Comfort Zone.",
         href: "/services#holistic-treatments",
         image: images.facialStill,
       },
@@ -80,7 +80,7 @@ export const homeContent = {
         number: "04",
         title: "Wellbeing at Work",
         description:
-          "Thoughtfully tailored wellbeing sessions offering your team time to slow down, reconnect and recharge.",
+          "Bespoke wellbeing sessions offering your team time to slow down, reconnect and recharge.",
         href: "/services#wellness-at-work",
         image: images.workplace,
       },
@@ -98,8 +98,8 @@ export const homeContent = {
     /** Line under the heading. */
     subheading: "Bringing a little more balance to the working day.",
     body: [
-      "Thoughtfully tailored wellbeing sessions offering your team time to slow down, reconnect and recharge.",
-      "Through gentle yoga, breathwork, mindfulness and meditation, I create a welcoming space for everyone, with no previous experience needed.",
+      "Bespoke wellbeing sessions offering your team time to slow down, reconnect and recharge.",
+      "Gentle yoga, breathwork, mindfulness and meditation can help to reduce stress, ease physical and emotional tension and sharpen focus, with no previous experience needed.",
     ],
     image: images.candleLandscape,
     imageAlt: "A candle glowing on a round tray in the studio",
@@ -112,13 +112,13 @@ export const homeContent = {
    */
   showWellnessPromo: false,
   wellnessPromo: {
-    lead: "Wellbeing at Work: thoughtfully tailored sessions for teams of up to 25.",
+    lead: "Wellbeing at Work: bespoke sessions for teams of up to 25.",
     linkLabel: "Find out more",
     href: "/services#wellness-at-work",
   },
   closingCta: {
     headline: "Ready to pause?",
-    body: "If something here lands gently, I'd love to hear from you.",
+    body: "I'd love to hear from you.",
     link: { label: "Get in touch", href: "/contact" },
   },
   seoDescription:

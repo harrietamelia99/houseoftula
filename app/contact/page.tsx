@@ -21,7 +21,10 @@ export default function ContactPage() {
         kicker={contactPage.kicker}
         intro={contactPage.intro}
         image={contactPage.headerImage}
-        imageAlt="The brass lock on the House of Tula studio doors"
+        imageAlt="A hand-painted sun and spiral illustration"
+        imageRatio="aspect-square"
+        centerAlign
+        imageStroke
       />
 
       <section className={`border-t border-forest/15 bg-almond ${siteSectionY}`}>

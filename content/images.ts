@@ -43,7 +43,11 @@ export const images = {
   candleLandscape: "/images/studio/candle-landscape.jpg",
   /** Emma's altar stool with a rose and fairy lights. Small inset by the wire art. */
   altarStool: "/images/studio/altar-stool.jpg",
-  /** Emma's trailing plant on the studio windowsill. Contact page. */
+  /** Emma's peonies with Comfort Zone Tranquillity blend. Small inset by the wire art. */
+  peonies: "/images/studio/peonies-comfort-zone.jpg",
+  /** Sun and spiral illustration in the site colours (square). Connect page. */
+  connectSun: "/images/studio/connect-sun-v2.jpg",
+  /** Emma's trailing plant on the studio windowsill. */
   plantWindow: "/images/studio/plant-window.jpg",
   /** Used when an event has no image of its own. */
   eventFallback: "/images/ai/workplace-room.jpg",

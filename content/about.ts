@@ -10,8 +10,7 @@ export const aboutPage = {
   heading: "Meet Emma",
   kicker: "",
   /** Short line in the page header. */
-  headerIntro:
-    "House of Tula is my studio in the Chew Valley countryside: a place to move, pause, breathe and reconnect.",
+  headerIntro: "",
   /** Full-width photograph with a quote, under the story. */
   band: {
     image: images.valley,

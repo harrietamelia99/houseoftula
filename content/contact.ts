@@ -25,14 +25,14 @@ export const enquiryTypeFromQuery: Record<string, EnquiryType> = {
 };
 
 export const contactPage = {
-  title: "Contact",
+  title: "Connect",
   heading: "Get in touch",
   kicker: "",
-  headerImage: images.plantWindow,
+  headerImage: images.connectSun,
   seoDescription:
     "Get in touch with Emma at House of Tula about yoga, facials, massage or Wellbeing at Work.",
   intro:
-    "I'd love to hear from you. Whether you have a question, would like to book a session or would like to find out more, feel free to get in touch.",
+    "I'd love to hear from you. Whether you have a question, would like to book a session or find out more, feel free to get in touch.",
   wellnessReplyNote: "I'll reply by email for Wellbeing at Work enquiries.",
   updatesLabel: "I'd like occasional updates about events (no spam, unsubscribe any time).",
   success: "Thank you. I'll be in touch soon.",

@@ -13,6 +13,8 @@ type ArchImageProps = {
   outline?: boolean;
   /** Full-strength burnt orange outline instead of the faint one. */
   outlineStrong?: boolean;
+  /** Thin line around the photo itself, for light images that blend into the page. */
+  stroke?: boolean;
   /** Plain rectangle instead of an arch. */
   square?: boolean;
 };
@@ -30,6 +32,7 @@ export function ArchImage({
   imgClassName = "",
   outline = false,
   outlineStrong = false,
+  stroke = false,
   square = false,
 }: ArchImageProps) {
   // Emma asked for rectangular images rather than arches.
@@ -43,7 +46,9 @@ export function ArchImage({
           className={`pointer-events-none absolute inset-0 translate-x-3 translate-y-3 border ${outlineStrong ? "border-sienna" : "border-sienna/50"} md:translate-x-5 md:translate-y-5 ${shape}`}
         />
       ) : null}
-      <div className={`relative w-full overflow-hidden bg-surface ${ratio} ${shape}`}>
+      <div
+        className={`relative w-full overflow-hidden bg-surface ${ratio} ${shape} ${stroke ? `border ${outlineStrong ? "border-sienna" : "border-sienna/50"}` : ""}`}
+      >
         <Image
           src={src}
           alt={alt}
