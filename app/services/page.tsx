@@ -22,7 +22,7 @@ export default function ServicesPage() {
         kicker={servicesPage.kicker}
         intro={servicesPage.intro}
         image={servicesPage.headerImage}
-        frame="thick"
+        strongOutline
       />
 
       {servicesPage.sections.map((section, index) => {
