@@ -28,7 +28,7 @@ export default function AboutPage() {
         intro={aboutPage.headerIntro}
         image={aboutPage.portrait.src}
         imageAlt={aboutPage.portrait.alt}
-        frame="thin"
+        strongOutline
         mobileImageWidth="max-w-[14rem]"
       />
 
