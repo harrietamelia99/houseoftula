@@ -11,8 +11,8 @@ type PageHeaderProps = {
   intro?: string | readonly string[];
   image: string;
   imageAlt?: string;
-  /** Solid Toasted Sienna border around the photo: "thin" or "thick". */
-  frame?: "thin" | "thick";
+  /** Use the offset outline in full-strength burnt orange. */
+  strongOutline?: boolean;
   /** Max width of the photo on phones (Tailwind class). */
   mobileImageWidth?: string;
 };
@@ -24,11 +24,10 @@ export function PageHeader({
   intro,
   image,
   imageAlt = "",
-  frame,
+  strongOutline = false,
   mobileImageWidth = "max-w-[19rem]",
 }: PageHeaderProps) {
   const paragraphs = intro ? (typeof intro === "string" ? [intro] : intro) : [];
-  const framePad = frame === "thick" ? "p-3 md:p-5" : frame === "thin" ? "p-2 md:p-3" : "";
   return (
     <header className="relative overflow-hidden bg-almond pb-16 pt-14 md:pb-24 md:pt-20 lg:pb-28">
       <div className={`${siteContentFrame} grid items-end gap-12 md:grid-cols-[1.15fr_0.85fr] md:gap-16 lg:gap-24`}>
@@ -50,13 +49,14 @@ export function PageHeader({
           ) : null}
         </FadeIn>
         <FadeIn delayMs={80} className={`order-1 mx-auto w-full ${mobileImageWidth} md:order-2 md:max-w-none`}>
-          {frame ? (
-            <div className={`rounded-[2px] bg-sienna ${framePad}`}>
-              <ArchImage src={image} alt={imageAlt} priority sizes="(min-width: 768px) 36vw, 80vw" />
-            </div>
-          ) : (
-            <ArchImage src={image} alt={imageAlt} priority outline sizes="(min-width: 768px) 36vw, 80vw" />
-          )}
+          <ArchImage
+            src={image}
+            alt={imageAlt}
+            priority
+            outline
+            outlineStrong={strongOutline}
+            sizes="(min-width: 768px) 36vw, 80vw"
+          />
         </FadeIn>
       </div>
     </header>
