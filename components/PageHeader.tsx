@@ -19,6 +19,8 @@ type PageHeaderProps = {
   imageRatio?: string;
   /** Line the title and photo up by their centres instead of their bottoms. */
   centerAlign?: boolean;
+  /** Thin line around the photo itself, matching the offset outline. */
+  imageStroke?: boolean;
 };
 
 /** Inner page opener: editorial title on the left, arched photograph on the right. */
@@ -32,6 +34,7 @@ export function PageHeader({
   mobileImageWidth = "max-w-[19rem]",
   imageRatio,
   centerAlign = false,
+  imageStroke = false,
 }: PageHeaderProps) {
   const paragraphs = intro ? (typeof intro === "string" ? [intro] : intro) : [];
   return (
@@ -62,6 +65,7 @@ export function PageHeader({
             outline
             outlineStrong={strongOutline}
             ratio={imageRatio}
+            stroke={imageStroke}
             sizes="(min-width: 768px) 36vw, 80vw"
           />
         </FadeIn>
