@@ -24,6 +24,7 @@ export default function ContactPage() {
         imageAlt="A hand-painted sun and spiral illustration"
         imageRatio="aspect-square"
         centerAlign
+        imageStroke
       />
 
       <section className={`border-t border-forest/15 bg-almond ${siteSectionY}`}>
