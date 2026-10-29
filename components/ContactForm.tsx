@@ -24,21 +24,21 @@ export function ContactForm() {
   }, [params]);
 
   const [enquiry, setEnquiry] = useState<EnquiryType>(initialEnquiry);
-  const [reply, setReply] = useState<ReplyMethod>(initialEnquiry === "Wellness at Work" ? "Email" : "WhatsApp");
+  const [reply, setReply] = useState<ReplyMethod>(initialEnquiry === "Wellbeing at Work" ? "Email" : "WhatsApp");
   const [status, setStatus] = useState<"idle" | "sending" | "sent" | "error">("idle");
   const [error, setError] = useState("");
 
   useEffect(() => {
     setEnquiry(initialEnquiry);
-    setReply(initialEnquiry === "Wellness at Work" ? "Email" : "WhatsApp");
+    setReply(initialEnquiry === "Wellbeing at Work" ? "Email" : "WhatsApp");
   }, [initialEnquiry]);
 
-  const wellness = enquiry === "Wellness at Work";
+  const wellness = enquiry === "Wellbeing at Work";
   const phoneRequired = reply === "WhatsApp" && !wellness;
 
   function onEnquiryChange(next: EnquiryType) {
     setEnquiry(next);
-    setReply(next === "Wellness at Work" ? "Email" : "WhatsApp");
+    setReply(next === "Wellbeing at Work" ? "Email" : "WhatsApp");
   }
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {

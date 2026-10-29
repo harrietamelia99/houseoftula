@@ -37,8 +37,14 @@ export const images = {
   matsInARow: "/images/studio/mats-in-a-row.jpg",
   /** Emma's woven pendant light, glowing in the studio. Gatherings. */
   pendantLight: "/images/studio/woven-pendant-light.jpg",
-  /** Emma's studio with mats laid out. Wellness at Work and events. */
-  workplace: "/images/studio/studio-mats.jpg",
+  /** Emma's studio candle on its tray, portrait. Wellbeing at Work card. */
+  workplace: "/images/studio/candle-portrait.jpg",
+  /** Emma's studio candle, landscape. Wellbeing at Work sections. */
+  candleLandscape: "/images/studio/candle-landscape.jpg",
+  /** Emma's altar stool with a rose and fairy lights. Small inset by the wire art. */
+  altarStool: "/images/studio/altar-stool.jpg",
+  /** Emma's trailing plant on the studio windowsill. Contact page. */
+  plantWindow: "/images/studio/plant-window.jpg",
   /** Used when an event has no image of its own. */
   eventFallback: "/images/ai/workplace-room.jpg",
   /** Faded pattern behind the closing "Ready to pause?" band. */

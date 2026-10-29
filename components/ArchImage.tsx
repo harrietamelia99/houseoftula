@@ -11,6 +11,8 @@ type ArchImageProps = {
   imgClassName?: string;
   /** Thin offset arch outline behind the photo, echoing the studio door. */
   outline?: boolean;
+  /** Full-strength burnt orange outline instead of the faint one. */
+  outlineStrong?: boolean;
   /** Plain rectangle instead of an arch. */
   square?: boolean;
 };
@@ -27,6 +29,7 @@ export function ArchImage({
   className = "",
   imgClassName = "",
   outline = false,
+  outlineStrong = false,
   square = false,
 }: ArchImageProps) {
   // Emma asked for rectangular images rather than arches.
@@ -37,7 +40,7 @@ export function ArchImage({
       {outline ? (
         <div
           aria-hidden
-          className={`pointer-events-none absolute inset-0 translate-x-3 translate-y-3 border border-sienna/50 md:translate-x-5 md:translate-y-5 ${shape}`}
+          className={`pointer-events-none absolute inset-0 translate-x-3 translate-y-3 border ${outlineStrong ? "border-sienna" : "border-sienna/50"} md:translate-x-5 md:translate-y-5 ${shape}`}
         />
       ) : null}
       <div className={`relative w-full overflow-hidden bg-surface ${ratio} ${shape}`}>
