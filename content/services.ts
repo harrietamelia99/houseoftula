@@ -12,8 +12,8 @@ export const servicesPage = {
   seoDescription:
     "Small group and one-to-one yoga, facials, massage and Wellbeing at Work with House of Tula.",
   intro: [
-    "From yoga and meditation to restorative treatments and thoughtfully created events, everything I offer is an invitation to slow down and reconnect with yourself.",
-    "Whether you join me in a small group or one-to-one, there's always room to find what feels right for you.",
+    "From yoga and meditation to restorative treatments and carefully created events, everything I offer is an invitation to slow down.",
+    "My approach is personal and intuitive, shaped and guided by you.",
   ],
   headerImage: images.valley,
   sections: [
@@ -39,8 +39,8 @@ export const servicesPage = {
       title: "Facials",
       kicker: "A little time just for you.",
       body: [
-        "Each facial is thoughtfully tailored to your skin's needs, using the beautiful Italian skincare range from Comfort Zone.",
-        "A truly relaxing experience.",
+        "Each facial is tailored to your skin's needs, using the beautiful Italian skincare range from Comfort Zone.",
+        "A truly relaxing experience that leaves your skin feeling nourished and radiant.",
       ],
       notes: [],
       image: images.facialStill,
@@ -66,8 +66,9 @@ export const servicesPage = {
       title: "Wellbeing at Work",
       kicker: "Bringing a little more balance to the working day.",
       body: [
-        "Thoughtfully tailored wellbeing sessions offering your team time to slow down, reconnect and recharge.",
-        "Through gentle yoga, breathwork, mindfulness and meditation, I create a welcoming space for everyone, with no previous experience needed.",
+        "Bespoke wellbeing sessions offering your team time to slow down, reconnect and recharge.",
+        "Through gentle yoga, breathwork, mindfulness and meditation, I create a welcoming and nourishing space for everyone, with no previous experience needed.",
+        "These practices can help to reduce stress, ease physical and emotional tension and sharpen focus, offering a little breathing space away from the demands of the working day.",
         "Whether it's a one-off session, a regular practice or a bespoke wellbeing event, I can bring House of Tula to your workplace or a venue of your choice.",
         "For groups of up to 25 people.",
       ],
