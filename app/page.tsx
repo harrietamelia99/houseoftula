@@ -98,7 +98,7 @@ export default function HomePage() {
 
       {/* Offerings */}
       <section
-        className="relative isolate overflow-hidden bg-sienna pb-16 pt-20 text-almond md:pb-24 md:pt-32"
+        className="relative isolate overflow-hidden bg-sienna pb-16 pt-20 text-almond md:pb-24 md:pt-28"
         aria-labelledby="offerings-heading"
       >
         <div className={`${siteContentFrame} relative`}>
@@ -179,11 +179,11 @@ export default function HomePage() {
           <FadeIn delayMs={80} className="max-md:text-center">
             <h2
               id="wellness-heading"
-              className="font-heading text-[clamp(2.2rem,4vw,3.5rem)] font-light leading-[1.05] text-forest"
+              className="font-heading text-[clamp(2.4rem,4.6vw,4rem)] font-light leading-[1.05] text-forest"
             >
               {wellness.heading}
             </h2>
-            <p className="mt-4 font-heading text-[clamp(1.35rem,2vw,1.6rem)] font-light italic leading-[1.3] text-olive-dark">
+            <p className="mt-4 font-heading text-[clamp(1.35rem,2vw,1.6rem)] font-light italic leading-[1.3] text-forest">
               {wellness.subheading}
             </p>
             <div className="mt-7 space-y-4 font-body text-[0.98rem] font-light leading-[1.85] text-muted">
