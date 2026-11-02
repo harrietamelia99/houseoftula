@@ -45,7 +45,7 @@ export function PageHeader({
             {title}
           </h1>
           {kicker ? (
-            <p className="mt-5 font-heading text-[clamp(1.35rem,2.4vw,1.9rem)] font-light text-olive-dark/80">
+            <p className="mt-5 font-heading text-[clamp(1.35rem,2vw,1.6rem)] font-light italic leading-[1.3] text-forest">
               {kicker}
             </p>
           ) : null}

@@ -60,7 +60,7 @@ export function Testimonials({ testimonials }: Props) {
         <FadeIn className="text-center">
           <h2
             id="testimonials-heading"
-            className="font-heading text-[clamp(2.2rem,4vw,3.5rem)] font-light leading-[1.05] text-forest"
+            className="font-heading text-[clamp(2.4rem,4.6vw,4rem)] font-light leading-[1.05] text-forest"
           >
             Testimonials
           </h2>

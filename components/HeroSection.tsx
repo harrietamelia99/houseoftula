@@ -51,17 +51,6 @@ export function HeroSection() {
           >
             {hero.primaryCta.label}
           </Link>
-          <Link
-            href={hero.secondaryCta.href}
-            className="group inline-flex min-h-[3.25rem] items-center gap-3 whitespace-nowrap px-2 font-body text-[0.7rem] uppercase tracking-[0.28em] text-forest"
-          >
-            <span className="border-b border-forest/30 pb-1 transition-colors duration-layout group-hover:border-forest">
-              {hero.secondaryCta.label}
-            </span>
-            <span aria-hidden className="transition-transform duration-layout group-hover:translate-x-1">
-              &rarr;
-            </span>
-          </Link>
         </FadeIn>
       </div>
     </section>
