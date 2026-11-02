@@ -17,7 +17,6 @@ export const homeContent = {
     image: images.welcomeBanner,
     imageAlt: "Welcome to House of Tula, written over the weathered wooden studio doors",
     primaryCta: { label: "Discover Tula", href: "/about" },
-    secondaryCta: { label: "Get in touch", href: "/contact" },
   },
   /** Large statement under the hero. */
   statement: {
