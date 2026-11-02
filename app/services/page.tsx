@@ -35,7 +35,7 @@ export default function ServicesPage() {
           <section
             key={section.id}
             id={section.id}
-            className={`relative isolate overflow-hidden ${warm ? "bg-sienna text-almond" : tinted ? "bg-surface/60" : "bg-almond"} py-20 md:py-32`}
+            className={`relative isolate overflow-hidden ${warm ? "bg-sienna text-almond" : tinted ? "bg-surface/60" : "bg-almond"} py-20 md:py-28`}
             aria-labelledby={`${section.id}-heading`}
           >
             <div className={`${siteContentFrame} grid items-center gap-12 md:grid-cols-2 md:gap-16 lg:gap-28`}>
@@ -51,7 +51,7 @@ export default function ServicesPage() {
               <FadeIn delayMs={80} className={flip ? "md:order-1" : ""}>
                 <h2
                   id={`${section.id}-heading`}
-                  className={`font-heading text-[clamp(2.5rem,4.8vw,4.25rem)] font-light leading-[1] ${warm ? "text-almond" : "text-forest"}`}
+                  className={`font-heading text-[clamp(2.4rem,4.6vw,4rem)] font-light leading-[1] ${warm ? "text-almond" : "text-forest"}`}
                 >
                   <Lines text={section.title} />
                 </h2>
