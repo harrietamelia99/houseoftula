@@ -36,9 +36,9 @@ export const aboutPage = {
   paragraphs: [
     "Yoga has been part of my life for over 15\u00a0years, and in that time it has changed not only how I move, but how I live.",
     "What began as a purely physical practice has gradually become something much deeper. A way to slow down, reconnect with myself and find a little more stillness amongst the busyness of everyday life.",
-    "Over the years, yoga has taught me that balance isn\u2019t about having everything perfectly aligned. It\u2019s about learning to meet ourselves where we are, noticing the little things and finding moments of calm, even when life feels anything but calm.",
-    "Beneath the busyness of the thinking and the doing to sit in the stillness of being.",
-    "And perhaps every time we step onto our mat, it\u2019s a familiar practice, but a new day. A chance to begin again, exactly as we are.",
+    "Over the years, yoga has taught me that balance isn\u2019t about having everything perfectly aligned. It\u2019s about learning to meet ourselves where we are, noticing the little things and finding moments of calm, even when life feels anything but.",
+    "Beneath the busyness of the thinking and the doing, to sit in the stillness of being.",
+    "Perhaps every time we step onto our mat, it\u2019s a familiar practice, but a new day. A chance to begin again, exactly as we are.",
     "House of Tula is a reflection of everything I love about this practice. A peaceful space nestled in the Chew Valley countryside, where you can move, pause, breathe and just be.",
     "Alongside yoga, I offer nurturing facials and massage, each thoughtfully designed to give you a little time just for yourself.",
     "A place to slow down and create both physical and mental stillness.",
