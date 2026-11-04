@@ -46,7 +46,7 @@ export const eventsPage = {
     message: ["No events just now.", "Get in touch to hear about the next one."],
     link: { label: "Get in touch", href: "/contact" },
   },
-  bookLabel: "Book tickets",
+  bookLabel: "Book on WhatsApp",
 } as const;
 
 /**
