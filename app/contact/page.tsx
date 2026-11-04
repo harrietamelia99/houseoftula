@@ -2,17 +2,19 @@ import { Suspense } from "react";
 import { FadeIn } from "@/components/FadeIn";
 import { ContactForm } from "@/components/ContactForm";
 import { PageHeader } from "@/components/PageHeader";
-import { contactPage } from "@/content/contact";
+import { contactPage as contactDefaults } from "@/content/contact";
+import { getSiteContent } from "@/lib/cms/content";
 import { buildPageMeta } from "@/lib/metadata";
 import { siteContentFrame, siteSectionY } from "@/lib/siteLayout";
 
 export const metadata = buildPageMeta({
-  title: contactPage.title,
-  description: contactPage.seoDescription,
+  title: contactDefaults.title,
+  description: contactDefaults.seoDescription,
   path: "/contact",
 });
 
-export default function ContactPage() {
+export default async function ContactPage() {
+  const { contact: contactPage } = await getSiteContent();
   return (
     <>
       <PageHeader
@@ -30,7 +32,7 @@ export default function ContactPage() {
       <section className={`border-t border-forest/15 bg-almond ${siteSectionY}`}>
         <div className={`${siteContentFrame} max-w-[46rem]`}>
           <Suspense fallback={null}>
-            <ContactForm />
+            <ContactForm successMessage={contactPage.success} />
           </Suspense>
 
         </div>
