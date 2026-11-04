@@ -51,7 +51,7 @@ export default async function WordingPage({
           Open this page on the website
         </a>
       </p>
-      <form action={saveWording} className="space-y-8">
+      <form key={cms.updatedAt ?? "original"} action={saveWording} className="space-y-8">
         <input type="hidden" name="page" value={page.slug} />
         {page.groups.map((group) => (
           <fieldset key={group.title} className="rounded-xl border border-border bg-[#FCFBF3] p-6 md:p-7">
