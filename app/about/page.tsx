@@ -3,18 +3,20 @@ import { ArchImage } from "@/components/ArchImage";
 import { FadeIn } from "@/components/FadeIn";
 import { ImageBand } from "@/components/ImageBand";
 import { VeinDivider } from "@/components/VeinDivider";
-import { aboutPage } from "@/content/about";
+import { aboutPage as aboutDefaults } from "@/content/about";
+import { getSiteContent } from "@/lib/cms/content";
 import { buildPageMeta } from "@/lib/metadata";
 import { siteContentFrame } from "@/lib/siteLayout";
 import { Lines } from "@/components/Lines";
 
 export const metadata = buildPageMeta({
-  title: aboutPage.title,
-  description: aboutPage.seoDescription,
+  title: aboutDefaults.title,
+  description: aboutDefaults.seoDescription,
   path: "/about",
 });
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const { about: aboutPage } = await getSiteContent();
   const extras = aboutPage.extraPhotos;
   const [first, ...rest] = aboutPage.paragraphs;
 
@@ -81,7 +83,7 @@ export default function AboutPage() {
         <FadeIn className={siteContentFrame}>
           <VeinDivider className="!pt-0" />
           <p className="font-heading text-[clamp(1.9rem,3.4vw,2.8rem)] font-light text-forest">
-            <Lines text={["A return to your body,", "your breath, yourself."]} />
+            <Lines text={aboutPage.closing} />
           </p>
           <div className="mt-10 flex flex-col items-center justify-center gap-5 sm:flex-row">
             <Link
