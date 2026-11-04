@@ -2,18 +2,20 @@ import Link from "next/link";
 import { ArchImage } from "@/components/ArchImage";
 import { FadeIn } from "@/components/FadeIn";
 import { PageHeader } from "@/components/PageHeader";
-import { servicesPage } from "@/content/services";
+import { servicesPage as servicesDefaults } from "@/content/services";
+import { getSiteContent } from "@/lib/cms/content";
 import { buildPageMeta } from "@/lib/metadata";
 import { siteContentFrame } from "@/lib/siteLayout";
 import { Lines } from "@/components/Lines";
 
 export const metadata = buildPageMeta({
-  title: servicesPage.title,
-  description: servicesPage.seoDescription,
+  title: servicesDefaults.title,
+  description: servicesDefaults.seoDescription,
   path: "/services",
 });
 
-export default function ServicesPage() {
+export default async function ServicesPage() {
+  const { services: servicesPage } = await getSiteContent();
   return (
     <>
       <PageHeader
