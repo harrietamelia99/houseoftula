@@ -45,7 +45,9 @@ export async function readCmsFresh(): Promise<CmsData> {
     const { blobs } = await list({ prefix: contentPrefix, limit: 1000 });
     if (blobs.length === 0) return emptyCms();
     const newest = blobs.sort((a, b) => +new Date(b.uploadedAt) - +new Date(a.uploadedAt))[0];
-    const res = await fetch(newest.url, { cache: "no-store" });
+    // Each save has its own unique address and never changes, so a normal (cacheable) fetch is safe.
+    // A "no-store" fetch here would stop the public pages from refreshing after a save.
+    const res = await fetch(newest.url);
     if (!res.ok) return emptyCms();
     return normalise(await res.json());
   } catch (error) {
