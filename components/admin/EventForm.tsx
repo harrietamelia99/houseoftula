@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useFormState } from "react-dom";
 import { saveEvent } from "@/lib/cms/actions";
 import type { CmsEvent } from "@/lib/cms/types";
+import { eventPhotoRatio } from "@/lib/cms/fields";
 import { PhotoPicker } from "./PhotoPicker";
 import { SubmitButton } from "./SubmitButton";
 import { inputClass, labelClass, quietButtonClass } from "./styles";
@@ -58,7 +59,7 @@ export function EventForm({ event }: { event?: CmsEvent }) {
           Photo <span className="text-muted">(optional)</span>
         </p>
         <div className="mt-3">
-          <PhotoPicker mode="field" name="image" initial={event?.image} label="Choose a photo" />
+          <PhotoPicker mode="field" name="image" initial={event?.image} label="Choose a photo" ratio={eventPhotoRatio} />
         </div>
       </div>
       <p className="rounded-lg bg-surface/40 px-4 py-3 text-[0.95rem] text-forest">
