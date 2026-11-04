@@ -33,6 +33,8 @@ export const aboutPage = {
     kicker: "",
     line: "A place to pause, where breath, movement and stillness meet.",
   },
+  /** Closing line above the Explore services button. */
+  closing: ["A return to your body,", "your breath, yourself."],
   paragraphs: [
     "Yoga has been part of my life for over 15\u00a0years, and in that time it has changed not only how I move, but how I live.",
     "What began as a purely physical practice has gradually become something much deeper. A way to slow down, reconnect with myself and find a little more stillness amongst the busyness of everyday life.",

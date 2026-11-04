@@ -7,8 +7,8 @@ import { ImageBand } from "@/components/ImageBand";
 import { Testimonials } from "@/components/Testimonials";
 import { VeinDivider } from "@/components/VeinDivider";
 import { WellnessPromo } from "@/components/WellnessPromo";
-import { homeContent } from "@/content/home";
-import { testimonials } from "@/content/testimonials";
+import { homeContent as homeDefaults } from "@/content/home";
+import { getSiteContent } from "@/lib/cms/content";
 import { siteImages } from "@/lib/siteImages";
 import { buildPageMeta } from "@/lib/metadata";
 import { siteContentFrame } from "@/lib/siteLayout";
@@ -16,19 +16,20 @@ import { Lines } from "@/components/Lines";
 
 export const metadata = buildPageMeta({
   title: "Home",
-  description: homeContent.seoDescription,
+  description: homeDefaults.seoDescription,
   path: "/",
 });
 
 const textLink =
   "group inline-flex items-center gap-3 whitespace-nowrap font-body text-[0.7rem] uppercase tracking-[0.28em] text-forest";
 
-export default function HomePage() {
+export default async function HomePage() {
+  const { home: homeContent, testimonials } = await getSiteContent();
   const { statement, aboutTeaser, offerings, band, wellness, closingCta } = homeContent;
 
   return (
     <>
-      <HeroSection />
+      <HeroSection hero={homeContent.hero} />
 
       {/* Statement */}
       <section className="bg-almond pb-20 pt-6 md:pb-32 md:pt-10" aria-label="Tula means balance">
