@@ -15,7 +15,7 @@ const inputClass =
 
 const labelClass = "font-tag block font-body text-[0.6875rem] uppercase tracking-[0.28em] text-muted";
 
-export function ContactForm() {
+export function ContactForm({ successMessage }: { successMessage?: string }) {
   const params = useSearchParams();
   const initialEnquiry = useMemo<EnquiryType>(() => {
     const fromUrl = params.get("type");
@@ -80,7 +80,7 @@ export function ContactForm() {
   if (status === "sent") {
     return (
       <p className="font-heading text-h3 font-light text-forest" role="status">
-        {contactPage.success}
+        {successMessage || contactPage.success}
       </p>
     );
   }

@@ -2,15 +2,14 @@ import Image from "next/image";
 import Link from "next/link";
 import { FadeIn } from "@/components/FadeIn";
 import { Lines } from "@/components/Lines";
-import { homeContent } from "@/content/home";
+import type { homeContent } from "@/content/home";
 import { siteContentFrame } from "@/lib/siteLayout";
 
 /**
  * Homepage opener: Emma's "Welcome to House of Tula" banner of the studio doors,
  * full width, with the tagline and buttons underneath.
  */
-export function HeroSection() {
-  const hero = homeContent.hero;
+export function HeroSection({ hero }: { hero: (typeof homeContent)["hero"] }) {
 
   return (
     <section id="hero-section" className="bg-almond" aria-labelledby="hero-heading">
