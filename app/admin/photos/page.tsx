@@ -6,12 +6,6 @@ import { editablePhotos } from "@/lib/cms/fields";
 import { readCmsFresh } from "@/lib/cms/store";
 import { images } from "@/content/images";
 
-const shapeClass = { wide: "aspect-[16/10]", tall: "aspect-[4/5]", square: "aspect-square" } as const;
-const shapeTip = {
-  wide: "Works best with a landscape (wide) photo.",
-  tall: "Works best with a portrait (tall) photo.",
-  square: "Works best with a square image.",
-} as const;
 
 export default async function PhotosPage({ searchParams }: { searchParams: { saved?: string } }) {
   requireSignIn();
@@ -27,7 +21,7 @@ export default async function PhotosPage({ searchParams }: { searchParams: { sav
     <AdminShell crumbs={[{ label: "Photos" }]}>
       <PageTitle
         title="Photos"
-        intro="Find the photo you want to change and press Choose a new photo. It goes on the website straight away."
+        intro="Find the photo you want to change and press Choose a new photo. You can then drag and zoom it so it sits nicely, and it goes on the website as soon as you save."
       />
       <SavedNotice message={saved} />
       <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
@@ -37,12 +31,16 @@ export default async function PhotosPage({ searchParams }: { searchParams: { sav
           return (
             <div key={photo.key} className="flex flex-col rounded-xl border border-border bg-[#FCFBF3] p-4">
               {/* eslint-disable-next-line @next/next/no-img-element */}
-              <img src={src} alt="" className={`${shapeClass[photo.shape]} w-full rounded-lg object-cover`} />
+              <img
+                src={src}
+                alt=""
+                style={{ aspectRatio: `${photo.ratio.w} / ${photo.ratio.h}` }}
+                className="w-full rounded-lg object-cover"
+              />
               <h2 className="mt-4 font-heading text-[1.4rem] font-light leading-tight text-forest">{photo.label}</h2>
               <p className="mt-1 text-sm text-muted">{photo.where}</p>
-              <p className="mt-1 text-sm text-muted">{shapeTip[photo.shape]}</p>
               <div className="mt-auto pt-4">
-                <PhotoPicker mode="site" photoKey={photo.key} />
+                <PhotoPicker mode="site" photoKey={photo.key} ratio={photo.ratio} />
                 {replaced ? (
                   <form action={resetSitePhoto} className="mt-2">
                     <input type="hidden" name="key" value={photo.key} />
