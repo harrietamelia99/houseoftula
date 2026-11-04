@@ -8,7 +8,7 @@ const sections = [
     title: "Adding an event",
     steps: [
       "From Start, press Events, then + Add an event.",
-      "Fill in the name, date, time, where it is and a few words about it. Price and photo are optional.",
+      "Fill in the name, date, time, where it is and a few words about it. Price and photo are optional. If you add a photo, you can drag and zoom it to fit, just like on the Photos page.",
       "Press Add event. It appears on the Events page straight away.",
       `Each event has a Book on WhatsApp button. When someone presses it, WhatsApp opens a message to you (${site.phoneDisplay}) with the event name and date filled in.`,
       "You don’t need to remove old events. They disappear from the website by themselves the day after the event.",
@@ -27,8 +27,9 @@ const sections = [
     steps: [
       "From Start, press Photos.",
       "Find the photo you want to swap. Each one says where it appears on the website.",
-      "Press Choose a new photo and pick one from your phone or computer. That’s it, it goes live straight away.",
-      "Each photo says whether a wide, tall or square photo works best, so it fits nicely.",
+      "Press Choose a new photo and pick one from your phone or computer.",
+      "A box appears in the same shape as that spot on the website. Drag the photo to move it and use the slider (or pinch on a phone) to zoom, until it looks right.",
+      "Press Save photo. It goes on the website straight away.",
       "Changed your mind? Press Put back the original photo.",
     ],
   },
