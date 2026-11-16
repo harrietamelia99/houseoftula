@@ -6,6 +6,14 @@
 import { images } from "@/content/images";
 import { site } from "@/content/site";
 
+/**
+ * Contact form delivery (Web3Forms). Enquiries are emailed to the address the key belongs to.
+ * This key is public by design, so it is fine to keep here.
+ */
+export const contactForm = {
+  web3formsKey: "WEB3FORMS_KEY_PENDING",
+} as const;
+
 export const enquiryTypes = ["General", "Yoga", "Facials", "Massage", "Wellbeing at Work"] as const;
 
 export type EnquiryType = (typeof enquiryTypes)[number];
