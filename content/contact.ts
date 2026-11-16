@@ -11,7 +11,7 @@ import { site } from "@/content/site";
  * This key is public by design, so it is fine to keep here.
  */
 export const contactForm = {
-  web3formsKey: "WEB3FORMS_KEY_PENDING",
+  web3formsKey: "3e832b48-3fba-4a92-a536-aa761fed2dff",
 } as const;
 
 export const enquiryTypes = ["General", "Yoga", "Facials", "Massage", "Wellbeing at Work"] as const;
