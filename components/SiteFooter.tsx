@@ -147,7 +147,13 @@ export function SiteFooter() {
             >
               Collectiv. Studio
             </a>
-            .
+            .{" "}
+            <Link
+              href="/privacy"
+              className="text-olive transition-colors duration-layout ease-out-soft hover:text-text"
+            >
+              Privacy policy
+            </Link>
           </small>
         </div>
       </div>
