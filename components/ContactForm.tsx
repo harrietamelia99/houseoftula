@@ -3,6 +3,7 @@
 import { FormEvent, useEffect, useMemo, useState } from "react";
 import { useSearchParams } from "next/navigation";
 import {
+  contactForm,
   contactPage,
   enquiryTypeFromQuery,
   enquiryTypes,
@@ -58,15 +59,35 @@ export function ContactForm({ successMessage }: { successMessage?: string }) {
       updates: fd.get("updates") === "yes",
     };
 
+    // Spam bots fill in the hidden "botcheck" box; real people never see it.
+    if (fd.get("botcheck")) {
+      setStatus("sent");
+      return;
+    }
+
     try {
-      const response = await fetch("/api/contact", {
+      // Web3Forms emails each enquiry straight to Emma's inbox.
+      const response = await fetch("https://api.web3forms.com/submit", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(payload),
+        headers: { "Content-Type": "application/json", Accept: "application/json" },
+        body: JSON.stringify({
+          access_key: contactForm.web3formsKey,
+          subject: `New ${payload.enquiry} enquiry from ${payload.name}`,
+          from_name: "House of Tula website",
+          replyto: payload.email,
+          Name: payload.name,
+          Email: payload.email,
+          Phone: payload.phone || "Not given",
+          "Enquiry about": payload.enquiry,
+          "Prefers a reply by": payload.reply,
+          "Happy to get event updates": payload.updates ? "Yes" : "No",
+          Message: payload.message,
+          botcheck: "",
+        }),
       });
-      if (!response.ok) {
-        const data = (await response.json().catch(() => null)) as { error?: string } | null;
-        setError(data?.error || "The message could not be sent. Please try again.");
+      const data = (await response.json().catch(() => null)) as { success?: boolean } | null;
+      if (!response.ok || !data?.success) {
+        setError("The message could not be sent. Please try again.");
         setStatus("error");
         return;
       }
@@ -170,6 +191,9 @@ export function ContactForm({ successMessage }: { successMessage?: string }) {
           required
         />
       </div>
+
+      {/* Hidden from people, catches spam bots */}
+      <input type="checkbox" name="botcheck" tabIndex={-1} autoComplete="off" aria-hidden="true" className="hidden" />
 
       <label className="flex items-start gap-3 font-body text-sm font-light leading-relaxed text-muted">
         <input className="mt-1" type="checkbox" name="updates" value="yes" />

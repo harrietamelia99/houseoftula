@@ -1,4 +1,4 @@
-const DEFAULT_SITE_URL = "https://houseoftula.co.uk";
+const DEFAULT_SITE_URL = "https://www.houseoftula.co.uk";
 
 export function getSiteUrl() {
   const raw = process.env.NEXT_PUBLIC_SITE_URL ?? DEFAULT_SITE_URL;
